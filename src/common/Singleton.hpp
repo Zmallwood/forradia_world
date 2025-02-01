@@ -1,6 +1,6 @@
 #pragma once
 
-namespace fw {
+namespace FW {
 template <class T>
 T& _()
 {

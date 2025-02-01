@@ -1,6 +1,6 @@
 #pragma once
 
-namespace fw {
+namespace FW {
 class SDLDevice {
 public:
     SDLDevice();

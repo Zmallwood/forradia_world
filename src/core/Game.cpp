@@ -1,7 +1,7 @@
 #include "Game.hpp"
 #include "engine/Engine.hpp"
 
-namespace fw {
+namespace FW {
 void Game::Run()
 {
     std::cout << "run game\n";

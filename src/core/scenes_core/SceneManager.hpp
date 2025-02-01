@@ -1,6 +1,6 @@
 #pragma once
 
-namespace fw {
+namespace FW {
 class IScene;
 
 class SceneManager {

@@ -4,7 +4,7 @@ int main(int argc, char** argv)
 {
     std::cout << "tjo\n";
 
-    fw::run_new_theme_0();
+    FW::RunNewTheme0();
 
     return 0;
 }

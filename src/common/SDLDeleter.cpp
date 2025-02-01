@@ -1,6 +1,6 @@
 #include "SDLDeleter.hpp"
 
-namespace fw {
+namespace FW {
 void SDLDeleter::operator()(SDL_Window* window) const
 {
     SDL_DestroyWindow(window);

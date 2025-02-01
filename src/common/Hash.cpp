@@ -1,6 +1,6 @@
 #include "Hash.hpp"
 
-namespace fw {
+namespace FW {
 int Hash(std::string_view text)
 {
     unsigned long hash { 5381 };

@@ -1,5 +1,5 @@
 #pragma once
 
-namespace fw {
+namespace FW {
 int Hash(std::string_view text);
 }

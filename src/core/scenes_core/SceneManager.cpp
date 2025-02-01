@@ -1,7 +1,7 @@
 #include "SceneManager.hpp"
 #include "IScene.hpp"
 
-namespace fw {
+namespace FW {
 SceneManager::SceneManager()
 {
 }

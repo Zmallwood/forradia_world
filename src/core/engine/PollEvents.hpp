@@ -1,5 +1,5 @@
 #pragma once
 
 namespace FW {
-void RunNewTheme0();
+void PollEvents();
 }

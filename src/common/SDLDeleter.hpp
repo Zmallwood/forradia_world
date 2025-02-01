@@ -1,6 +1,6 @@
 #pragma once
 
-namespace fw {
+namespace FW {
 class SDLDeleter {
 public:
     void operator()(SDL_Window* window) const;

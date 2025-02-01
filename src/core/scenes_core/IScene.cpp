@@ -1,6 +1,6 @@
 #include "IScene.hpp"
 
-namespace fw {
+namespace FW {
 void IScene::Update()
 {
     UpdateDerived();
