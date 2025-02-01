@@ -1,9 +1,11 @@
 #include "IntroScene.hpp"
 #include "Core/Rendering/ImageRenderer.hpp"
+#include "Core/ScenesCore/SceneManager.hpp"
 
 namespace FW {
 void IntroScene::UpdateDerived()
 {
+    _<SceneManager>().GoToScene(SceneNames::Main);
 }
 
 void IntroScene::RenderDerived() const

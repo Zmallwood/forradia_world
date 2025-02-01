@@ -53,7 +53,7 @@ target_precompile_headers(ForradiaWorld
         src/Common/MathLibrary/RectF.hpp
         src/Common/MathLibrary/Size.hpp
 #        src/Common/MathLibrary/SizeF.hpp
-#        src/Common/MathLibrary/Point.hpp
+        src/Common/MathLibrary/Point.hpp
 #        src/Common/MathLibrary/PointF.hpp
 #
         src/Common/Singleton.hpp

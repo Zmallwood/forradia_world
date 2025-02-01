@@ -1,11 +1,13 @@
 #include "SceneManager.hpp"
 #include "IScene.hpp"
 #include "Theme0/Scenes/Intro/IntroScene.hpp"
+#include "Theme0/Scenes/Main/MainScene.hpp"
 
 namespace FW {
 SceneManager::SceneManager()
 {
     AddScene(SceneNames::Intro, _<IntroScene>());
+    AddScene(SceneNames::Main, _<MainScene>());
 
     GoToScene(SceneNames::Intro);
 }
