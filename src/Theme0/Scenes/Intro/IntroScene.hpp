@@ -1,5 +1,5 @@
 #pragma once
-#include "core/scenes_core/IScene.hpp"
+#include "Core/ScenesCore/IScene.hpp"
 
 namespace FW {
 class IntroScene : public IScene {
