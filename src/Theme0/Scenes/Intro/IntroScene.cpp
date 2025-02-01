@@ -5,7 +5,7 @@
 namespace FW {
 void IntroScene::UpdateDerived()
 {
-    _<SceneManager>().GoToScene(SceneNames::Main);
+    _<SceneManager>().GoToScene(SceneNames::WorldGeneration);
 }
 
 void IntroScene::RenderDerived() const

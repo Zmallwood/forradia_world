@@ -2,11 +2,13 @@
 #include "IScene.hpp"
 #include "Theme0/Scenes/Intro/IntroScene.hpp"
 #include "Theme0/Scenes/Main/MainScene.hpp"
+#include "Theme0/Scenes/WorldGeneration/WorldGenerationScene.hpp"
 
 namespace FW {
 SceneManager::SceneManager()
 {
     AddScene(SceneNames::Intro, _<IntroScene>());
+    AddScene(SceneNames::WorldGeneration, _<WorldGenerationScene>());
     AddScene(SceneNames::Main, _<MainScene>());
 
     GoToScene(SceneNames::Intro);

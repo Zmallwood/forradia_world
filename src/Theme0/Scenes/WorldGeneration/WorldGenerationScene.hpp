@@ -2,7 +2,7 @@
 #include "Core/ScenesCore/IScene.hpp"
 
 namespace FW {
-class MainScene : public IScene {
+class WorldGenerationScene : public IScene {
 protected:
     void UpdateDerived() override;
     void RenderDerived() const override;

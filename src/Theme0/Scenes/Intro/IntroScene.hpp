@@ -4,7 +4,7 @@
 namespace FW {
 class IntroScene : public IScene {
 protected:
-    void UpdateDerived();
-    void RenderDerived() const;
+    void UpdateDerived() override;
+    void RenderDerived() const override;
 };
 }
