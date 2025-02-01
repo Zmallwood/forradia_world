@@ -1,4 +1,5 @@
 #include "PollEvents.hpp"
+#include "Core/Input/Keyboard/KeyboardInput.hpp"
 #include "Engine.hpp"
 
 namespace FW {
@@ -12,10 +13,10 @@ void PollEvents()
             _<Engine>().SetRunning(false);
             break;
         case SDL_KEYDOWN:
-            //    _<KeyboardInput>().RegisterKeyPress(event.key.keysym.sym);
+            _<KeyboardInput>().RegisterKeyPress(event.key.keysym.sym);
             break;
         case SDL_KEYUP:
-            //    _<KeyboardInput>().RegisterKeyRelease(event.key.keysym.sym);
+            _<KeyboardInput>().RegisterKeyRelease(event.key.keysym.sym);
             break;
         case SDL_MOUSEBUTTONDOWN:
             //    _<MouseInput>().RegisterMouseDown(event.button.button);
