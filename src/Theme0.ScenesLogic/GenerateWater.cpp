@@ -26,7 +26,7 @@ void GenerateWater()
 
                 if (dx * dx + dy * dy <= r * r) {
                     auto tile = worldArea->GetTile(x, y);
-                    tile->SetGround("GroundWater_0");
+                    tile->SetGround("GroundWater");
                 }
             }
         }

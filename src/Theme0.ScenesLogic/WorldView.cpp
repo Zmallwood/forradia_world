@@ -18,8 +18,8 @@ void WorldView::Render() const
     auto smallValue = 0.003f;
     for (auto y = 0; y < gridSize.h; y++) {
         for (auto x = 0; x < gridSize.w; x++) {
-            auto coordX = playerPosition.x - (gridSize.w - 1)/2 + x;
-            auto coordY = playerPosition.y - (gridSize.h - 1)/2 + y;
+            auto coordX = playerPosition.x - (gridSize.w - 1) / 2 + x;
+            auto coordY = playerPosition.y - (gridSize.h - 1) / 2 + y;
 
             if (coordX < 0 || coordY < 0 || coordX >= 100 || coordY >= 100) {
                 continue;
@@ -31,12 +31,21 @@ void WorldView::Render() const
 
             auto ground = tile->GetGround();
 
+            if (ground == Hash("GroundWater")) {
+                auto animIndex = (SDL_GetTicks() % 1200) / 400;
+                std::string animName = "GroundWater_" + std::to_string(animIndex);
+                ground = Hash(animName);
+            }
+
             _<ImageDrawDevice>().DrawImage(ground, dest);
 
             if (coordX == hoveredTile.x && coordY == hoveredTile.y) {
                 _<ImageDrawDevice>().DrawImage("HoveredTile", dest);
             }
 
+            auto object = tile->GetObject();
+
+            _<ImageDrawDevice>().DrawImage(object, dest);
 
             if (coordX == playerPosition.x && coordY == playerPosition.y) {
                 _<ImageDrawDevice>().DrawImage("Player", dest);

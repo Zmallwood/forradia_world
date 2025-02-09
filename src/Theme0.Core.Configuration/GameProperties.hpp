@@ -3,6 +3,6 @@
 namespace FW {
     class GameProperties {
     public:
-        const int k_numGridRows {11};
+        const int k_numGridRows {21};
     };
 }

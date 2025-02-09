@@ -13,7 +13,7 @@ public:
         m_ground = Hash(groundName);
     }
 
-    auto GetObjects() const
+    auto GetObject() const
     {
         return m_object;
     }
