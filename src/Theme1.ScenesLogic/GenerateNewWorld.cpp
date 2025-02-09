@@ -81,33 +81,51 @@ namespace ForradiaWorld
         /*
 =================== GENERATE OBJECTS ====================*/
 
-        auto numTree1s = 200;
+        auto numTree1s = 100;
 
         for (auto i = 0; i < numTree1s; i++)
         {
             auto x = rand() % size.w;
             auto y = rand() % size.h;
 
-            auto tile = worldArea->GetTile(x, y);
-
-            if (tile->GetGround() != Hash("GroundWater"))
+            for (auto j = 0; j < 20; j++)
             {
-                tile->SetObject("ObjectTree1");
+                if (worldArea->IsValidCoordinate(x, y))
+                {
+                    auto tile = worldArea->GetTile(x, y);
+
+                    if (tile->GetGround() != Hash("GroundWater"))
+                    {
+                        tile->SetObject("ObjectTree1");
+                    }
+                }
+
+                x += rand() % 4 - rand() % 4;
+                y += rand() % 4 - rand() % 4;
             }
         }
 
-        auto numTree2s = 200;
+        auto numTree2s = 100;
 
         for (auto i = 0; i < numTree2s; i++)
         {
             auto x = rand() % size.w;
             auto y = rand() % size.h;
 
-            auto tile = worldArea->GetTile(x, y);
-
-            if (tile->GetGround() != Hash("GroundWater"))
+            for (auto j = 0; j < 20; j++)
             {
-                tile->SetObject("ObjectTree2");
+                if (worldArea->IsValidCoordinate(x, y))
+                {
+                    auto tile = worldArea->GetTile(x, y);
+
+                    if (tile->GetGround() != Hash("GroundWater"))
+                    {
+                        tile->SetObject("ObjectTree2");
+                    }
+                }
+
+                x += rand() % 4 - rand() % 4;
+                y += rand() % 4 - rand() % 4;
             }
         }
 
@@ -132,6 +150,29 @@ namespace ForradiaWorld
                 creaturesMirrorRef.insert({ newCreature, { x, y } });
             }
         }
+
+        /*
+=================== GENERATE Enemies ====================*/
+
+        auto numEnemy1s = 200;
+
+        for (auto i = 0; i < numEnemy1s; i++)
+        {
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
+
+            auto tile = worldArea->GetTile(x, y);
+
+            if (tile->GetGround() != Hash("GroundWater"))
+            {
+                auto newCreature = std::make_shared<Enemy>("Enemy1");
+
+                tile->SetCreature(newCreature);
+
+                creaturesMirrorRef.insert({ newCreature, { x, y } });
+            }
+        }
+
         /*
 =================== GENERATE STARTING AREA ====================*/
 

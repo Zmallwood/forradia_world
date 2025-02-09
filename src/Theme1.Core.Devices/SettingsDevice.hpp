@@ -24,7 +24,7 @@ namespace ForradiaWorld
     class SettingsDevice
     {
       public:
-        const int k_numGridRows { 21 };
+        const int k_numGridRows { 15 };
         const Size k_worldAreaSize { 100, 100 };
     };
 }
