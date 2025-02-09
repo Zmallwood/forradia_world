@@ -1,30 +1,32 @@
 #pragma once
 
-namespace FW {
-class Tile {
-public:
-    auto GetGround() const
+namespace ForradiaWorld
+{
+    class Tile
     {
-        return m_ground;
-    }
+      public:
+        auto GetGround() const
+        {
+            return m_ground;
+        }
 
-    void SetGround(std::string_view groundName)
-    {
-        m_ground = Hash(groundName);
-    }
+        void SetGround(std::string_view groundName)
+        {
+            m_ground = Hash(groundName);
+        }
 
-    auto GetObject() const
-    {
-        return m_object;
-    }
+        auto GetObject() const
+        {
+            return m_object;
+        }
 
-    void SetObject(std::string_view objectName)
-    {
-        m_object = Hash(objectName);
-    }
+        void SetObject(std::string_view objectName)
+        {
+            m_object = Hash(objectName);
+        }
 
-private:
-    int m_ground { 0 };
-    int m_object { 0 };
-};
+      private:
+        int m_ground { 0 };
+        int m_object { 0 };
+    };
 }

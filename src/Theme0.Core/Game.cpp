@@ -1,9 +1,10 @@
 #include "Game.hpp"
 #include "Theme0.Core.Devices/EngineDevice.hpp"
 
-namespace FW {
-void Game::Run()
+namespace ForradiaWorld
 {
-    _<EngineDevice>().Run();
-}
+    void Game::Run()
+    {
+        _<EngineDevice>().Run();
+    }
 }

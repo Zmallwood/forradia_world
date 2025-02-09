@@ -2,14 +2,15 @@
 #include "Theme0.Core.Devices/ScenesDevice.hpp"
 #include "Theme0.ScenesLogic/GenerateNewWorld.hpp"
 
-namespace FW {
-void WorldGenerationScene::UpdateDerived()
+namespace ForradiaWorld
 {
-    GenerateNewWorld();
-    _<ScenesDevice>().GoToScene(SceneNames::Main);
-}
+    void WorldGenerationScene::UpdateDerived()
+    {
+        GenerateNewWorld();
+        _<ScenesDevice>().GoToScene(SceneNames::Main);
+    }
 
-void WorldGenerationScene::RenderDerived() const
-{
-}
+    void WorldGenerationScene::RenderDerived() const
+    {
+    }
 }

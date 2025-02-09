@@ -1,7 +1,7 @@
 ---
 Language:        Cpp
 # BasedOnStyle:  WebKit
-AccessModifierOffset: -4
+AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AlignArrayOfStructures: None
 AlignConsecutiveAssignments:
@@ -87,7 +87,7 @@ BreakAfterJavaFieldAnnotations: false
 BreakArrays:     true
 BreakBeforeBinaryOperators: All
 BreakBeforeConceptDeclarations: Always
-BreakBeforeBraces: WebKit
+BreakBeforeBraces: Allman
 BreakBeforeInlineASMColon: OnlyMultiline
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
@@ -155,7 +155,7 @@ LineEnding:      DeriveLF
 MacroBlockBegin: ''
 MacroBlockEnd:   ''
 MaxEmptyLinesToKeep: 1
-NamespaceIndentation: Inner
+NamespaceIndentation: All
 ObjCBinPackProtocolList: Auto
 ObjCBlockIndentWidth: 4
 ObjCBreakBeforeNestedBlockParam: true

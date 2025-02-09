@@ -1,5 +1,6 @@
 #pragma once
 
-namespace FW {
-void UpdatePlayerKBMovement();
+namespace ForradiaWorld
+{
+    void UpdatePlayerKBMovement();
 }

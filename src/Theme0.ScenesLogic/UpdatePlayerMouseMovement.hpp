@@ -1,5 +1,6 @@
 #pragma once
 
-namespace FW {
-void UpdatePlayerMouseMovement();
+namespace ForradiaWorld
+{
+    void UpdatePlayerMouseMovement();
 }

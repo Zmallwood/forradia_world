@@ -1,13 +1,14 @@
 #include "GenerateNewWorld.hpp"
-#include "ClearWithGrass.hpp"
-#include "GenerateObjects.hpp"
-#include "GenerateWater.hpp"
+#include "ClearWorldWithGrass.hpp"
+#include "GenerateObjectsForWorld.hpp"
+#include "GenerateWaterForWorld.hpp"
 
-namespace FW {
-void GenerateNewWorld()
+namespace ForradiaWorld
 {
-    ClearWithGrass();
-    GenerateWater();
-    GenerateObjects();
-}
+    void GenerateNewWorld()
+    {
+        ClearWorldWithGrass();
+        GenerateWaterForWorld();
+        GenerateObjectsForWorld();
+    }
 }

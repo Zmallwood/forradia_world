@@ -2,5 +2,5 @@
 
 namespace ForradiaWorld
 {
-    PointF GetMousePosition();
+    void ClearWorldWithGrass();
 }

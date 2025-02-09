@@ -1,6 +1,7 @@
 #pragma once
 
-namespace FW {
-Size GetGridSize();
-SizeF GetTileSize();
+namespace ForradiaWorld
+{
+    Size GetGridSize();
+    SizeF GetTileSize();
 }

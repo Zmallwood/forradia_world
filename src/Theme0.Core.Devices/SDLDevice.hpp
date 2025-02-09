@@ -1,25 +1,27 @@
 #pragma once
 
-namespace FW {
-class SDLDevice {
-public:
-    SDLDevice();
-
-    void ClearCanvas() const;
-    void PresentCanvas() const;
-
-    auto GetWindow() const
+namespace ForradiaWorld
+{
+    class SDLDevice
     {
-        return m_window;
-    }
+      public:
+        SDLDevice();
 
-    auto GetRenderer() const
-    {
-        return m_renderer;
-    }
+        void ClearCanvas() const;
+        void PresentCanvas() const;
 
-private:
-    std::shared_ptr<SDL_Window> m_window;
-    std::shared_ptr<SDL_Renderer> m_renderer;
-};
+        auto GetWindow() const
+        {
+            return m_window;
+        }
+
+        auto GetRenderer() const
+        {
+            return m_renderer;
+        }
+
+      private:
+        std::shared_ptr<SDL_Window> m_window;
+        std::shared_ptr<SDL_Renderer> m_renderer;
+    };
 }

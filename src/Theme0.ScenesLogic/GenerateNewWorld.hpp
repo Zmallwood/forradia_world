@@ -1,5 +1,6 @@
 #pragma once
 
-namespace FW {
-void GenerateNewWorld();
+namespace ForradiaWorld
+{
+    void GenerateNewWorld();
 }

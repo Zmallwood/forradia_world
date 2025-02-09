@@ -1,21 +1,23 @@
 #pragma once
 
-namespace FW {
-class MouseButton {
-public:
-    void RegisterPress();
-    void RegisterRelease();
-    bool GetBeenFiredPickResult();
-    bool GetBeenReleasedPickResult();
-
-    auto GetPressed() const
+namespace ForradiaWorld
+{
+    class MouseButton
     {
-        return m_pressed;
-    }
+      public:
+        void RegisterPress();
+        void RegisterRelease();
+        bool GetBeenFiredPickResult();
+        bool GetBeenReleasedPickResult();
 
-private:
-    bool m_pressed { false };
-    bool m_beenFired {false};
-    bool m_beenReleased {false};
-};
+        auto GetPressed() const
+        {
+            return m_pressed;
+        }
+
+      private:
+        bool m_pressed { false };
+        bool m_beenFired { false };
+        bool m_beenReleased { false };
+    };
 }

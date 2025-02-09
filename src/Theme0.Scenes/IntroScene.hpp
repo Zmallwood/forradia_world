@@ -1,11 +1,13 @@
 #pragma once
 #include "Theme0.Core.Assist/IScene.hpp"
 
-namespace FW {
-class IntroScene : public IScene {
-public:
-protected:
-    void UpdateDerived() override;
-    void RenderDerived() const override;
-};
+namespace ForradiaWorld
+{
+    class IntroScene : public IScene
+    {
+      public:
+      protected:
+        void UpdateDerived() override;
+        void RenderDerived() const override;
+    };
 }

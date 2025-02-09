@@ -1,8 +1,10 @@
 #pragma once
 
-namespace FW {
-class Game {
-public:
-    void Run();
-};
+namespace ForradiaWorld
+{
+    class Game
+    {
+      public:
+        void Run();
+    };
 }

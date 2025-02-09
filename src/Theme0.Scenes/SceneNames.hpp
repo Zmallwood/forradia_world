@@ -1,10 +1,12 @@
 #pragma once
 
-namespace FW {
-enum class SceneNames {
-    Intro,
-    MainMenu,
-    WorldGeneration,
-    Main
-};
+namespace ForradiaWorld
+{
+    enum class SceneNames
+    {
+        Intro,
+        MainMenu,
+        WorldGeneration,
+        Main
+    };
 }

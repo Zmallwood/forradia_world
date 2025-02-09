@@ -1,19 +1,21 @@
 #pragma once
 
-namespace FW {
-class ImageLoadDevice {
-public:
-    ImageLoadDevice();
+namespace ForradiaWorld
+{
+    class ImageLoadDevice
+    {
+      public:
+        ImageLoadDevice();
 
-    std::shared_ptr<SDL_Texture> GetImage(int imageNameHash) const;
-    Size GetImageSize(int imageNameHash) const;
+        std::shared_ptr<SDL_Texture> GetImage(int imageNameHash) const;
+        Size GetImageSize(int imageNameHash) const;
 
-private:
-    void LoadImages();
-    std::shared_ptr<SDL_Texture> LoadSingleImage(std::string_view path) const;
+      private:
+        void LoadImages();
+        std::shared_ptr<SDL_Texture> LoadSingleImage(std::string_view path) const;
 
-    inline static const std::string k_relativeImagesPath { "../resources/Images/" };
+        inline static const std::string k_relativeImagesPath { "../resources/Images/" };
 
-    std::map<int, std::shared_ptr<SDL_Texture>> m_images;
-};
+        std::map<int, std::shared_ptr<SDL_Texture>> m_images;
+    };
 }

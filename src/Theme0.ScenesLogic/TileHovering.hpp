@@ -1,16 +1,18 @@
 #pragma once
 
-namespace FW {
-class TileHovering {
-public:
-    void Update();
-
-    auto GetHoveredTile() const
+namespace ForradiaWorld
+{
+    class TileHovering
     {
-        return m_hoveredTile;
-    }
+      public:
+        void Update();
 
-private:
-    Point m_hoveredTile { -1, -1 };
-};
+        auto GetHoveredTile() const
+        {
+            return m_hoveredTile;
+        }
+
+      private:
+        Point m_hoveredTile { -1, -1 };
+    };
 }

@@ -1,21 +1,23 @@
 #pragma once
 #include "Theme0.Scenes/SceneNames.hpp"
 
-namespace FW {
-class IScene;
+namespace ForradiaWorld
+{
+    class IScene;
 
-class ScenesDevice {
-public:
-    ScenesDevice();
+    class ScenesDevice
+    {
+      public:
+        ScenesDevice();
 
-    void UpdateCurrentScene();
-    void RenderCurrentScene() const;
-    void GoToScene(SceneNames sceneName);
+        void UpdateCurrentScene();
+        void RenderCurrentScene() const;
+        void GoToScene(SceneNames sceneName);
 
-private:
-    void AddScene(SceneNames sceneName, IScene& scene);
+      private:
+        void AddScene(SceneNames sceneName, IScene& scene);
 
-    std::map<SceneNames, IScene&> m_scenes;
-    SceneNames m_currentScene { 0 };
-};
+        std::map<SceneNames, IScene&> m_scenes;
+        SceneNames m_currentScene { 0 };
+    };
 }

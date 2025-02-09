@@ -1,5 +1,6 @@
 #pragma once
 
-namespace FW {
-void RunNewTheme0();
+namespace ForradiaWorld
+{
+    void RunNewTheme0();
 }

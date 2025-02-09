@@ -1,9 +1,11 @@
 #pragma once
 
-namespace FW {
-class Point {
-public:
-    int x { 0 };
-    int y { 0 };
-};
+namespace ForradiaWorld
+{
+    class Point
+    {
+      public:
+        int x { 0 };
+        int y { 0 };
+    };
 }

@@ -1,8 +1,10 @@
 #pragma once
 
-namespace FW {
-class WorldView {
-public:
-    void Render() const;
-};
+namespace ForradiaWorld
+{
+    class WorldView
+    {
+      public:
+        void Render() const;
+    };
 }

@@ -2,7 +2,7 @@
 
 int main(int argc, char** argv)
 {
-    FW::RunNewTheme0();
+    ForradiaWorld::RunNewTheme0();
 
     return 0;
 }

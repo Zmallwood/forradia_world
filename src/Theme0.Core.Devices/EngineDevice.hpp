@@ -1,14 +1,16 @@
 #pragma once
 
-namespace FW {
-class EngineDevice {
-public:
-    void Run();
+namespace ForradiaWorld
+{
+    class EngineDevice
+    {
+      public:
+        void Run();
 
-private:
-    void Randomize() const;
-    void PollEvents();
+      private:
+        void Randomize() const;
+        void PollEvents();
 
-    bool m_running { true };
-};
+        bool m_running { true };
+    };
 }

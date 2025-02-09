@@ -1,47 +1,49 @@
 #pragma once
 
-namespace FW {
-class PlayerDevice {
-public:
-    void MoveUp();
-    void MoveRight();
-    void MoveDown();
-    void MoveLeft();
-
-    auto GetPosition() const
+namespace ForradiaWorld
+{
+    class PlayerDevice
     {
-        return m_position;
-    }
+      public:
+        void MoveUp();
+        void MoveRight();
+        void MoveDown();
+        void MoveLeft();
 
-    auto GetTicksLastMovement() const
-    {
-        return m_ticksLastMovement;
-    }
+        auto GetPosition() const
+        {
+            return m_position;
+        }
 
-    void SetTicksLastMovement(int value)
-    {
-        m_ticksLastMovement = value;
-    }
+        auto GetTicksLastMovement() const
+        {
+            return m_ticksLastMovement;
+        }
 
-    auto GetMovementSpeed() const
-    {
-        return m_movementSpeed;
-    }
+        void SetTicksLastMovement(int value)
+        {
+            m_ticksLastMovement = value;
+        }
 
-    auto GetDestination() const
-    {
-        return m_destination;
-    }
+        auto GetMovementSpeed() const
+        {
+            return m_movementSpeed;
+        }
 
-    void SetDestination(Point value)
-    {
-        m_destination = value;
-    }
+        auto GetDestination() const
+        {
+            return m_destination;
+        }
 
-private:
-    Point m_position { 50, 50 };
-    Point m_destination { -1, -1 };
-    int m_ticksLastMovement { 0 };
-    float m_movementSpeed { 3.0f };
-};
+        void SetDestination(Point value)
+        {
+            m_destination = value;
+        }
+
+      private:
+        Point m_position { 50, 50 };
+        Point m_destination { -1, -1 };
+        int m_ticksLastMovement { 0 };
+        float m_movementSpeed { 3.0f };
+    };
 }

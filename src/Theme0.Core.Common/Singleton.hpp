@@ -1,10 +1,11 @@
 #pragma once
 
-namespace FW {
-template <class T>
-T& _()
+namespace ForradiaWorld
 {
-    static T instance;
-    return instance;
-}
+    template <class T>
+    T& _()
+    {
+        static T instance;
+        return instance;
+    }
 }

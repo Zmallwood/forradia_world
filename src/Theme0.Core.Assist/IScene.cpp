@@ -1,13 +1,14 @@
 #include "IScene.hpp"
 
-namespace FW {
-void IScene::Update()
+namespace ForradiaWorld
 {
-    UpdateDerived();
-}
+    void IScene::Update()
+    {
+        UpdateDerived();
+    }
 
-void IScene::Render() const
-{
-    RenderDerived();
-}
+    void IScene::Render() const
+    {
+        RenderDerived();
+    }
 }

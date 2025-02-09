@@ -1,11 +1,12 @@
 #include "StringUtilities.hpp"
 
-namespace FW {
-std::string Replace(std::string_view text, char replaced, char replacedWith)
+namespace ForradiaWorld
 {
-    std::string textData = text.data();
-    std::replace(textData.begin(), textData.end(), replaced, replacedWith);
+    std::string Replace(std::string_view text, char replaced, char replacedWith)
+    {
+        std::string textData = text.data();
+        std::replace(textData.begin(), textData.end(), replaced, replacedWith);
 
-    return textData;
-}
+        return textData;
+    }
 }
