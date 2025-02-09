@@ -7,6 +7,33 @@ namespace ForradiaWorld
     class Creature
     {
       public:
-        virtual int GetType() const = 0;
+        Creature(std::string_view creatureName);
+
+        int GetType() const
+        {
+            return m_type;
+        }
+
+        virtual ~Creature() { }
+
+        auto GetTicksLastMovement() const
+        {
+            return m_ticksLastMovement;
+        }
+
+        void SetTicksLastMovement(int value)
+        {
+            m_ticksLastMovement = value;
+        }
+
+        auto GetMovementSpeed() const
+        {
+            return m_movementSpeed;
+        }
+
+      private:
+        int m_type { 0 };
+        int m_ticksLastMovement { 0 };
+        float m_movementSpeed { 1.0f };
     };
 }

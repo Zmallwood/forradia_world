@@ -4,8 +4,4 @@
 
 namespace ForradiaWorld
 {
-    Animal::Animal(std::string_view animalName)
-        : m_type(Hash(animalName))
-    {
-    }
 }

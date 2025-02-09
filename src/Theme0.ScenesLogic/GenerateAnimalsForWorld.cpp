@@ -11,6 +11,7 @@ namespace ForradiaWorld
     void GenerateAnimalsForWorld()
     {
         auto worldArea = _<World>().GetCurrentWorldArea();
+        auto& creaturesMirrorRef = worldArea->GetCreaturesMirrorRef();
 
         auto numWhiteRabbits = 200;
 
@@ -23,7 +24,9 @@ namespace ForradiaWorld
 
             if (tile->GetGround() != Hash("GroundWater"))
             {
-                tile->SetCreature(std::make_shared<Animal>("AnimalWhiteRabbit"));
+                auto newCreature = std::make_shared<Animal>("AnimalWhiteRabbit");
+                tile->SetCreature(newCreature);
+                creaturesMirrorRef.insert({ newCreature, { x, y } });
             }
         }
     }
