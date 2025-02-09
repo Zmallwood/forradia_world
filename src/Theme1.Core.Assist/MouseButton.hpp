@@ -23,8 +23,8 @@ namespace ForradiaWorld
 {
 
     /*
-Represents a single button on the mouse.
-*/
+Represents a single button on the mouse. */
+
     class MouseButton
     {
       public:
