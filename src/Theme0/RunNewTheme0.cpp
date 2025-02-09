@@ -1,5 +1,5 @@
 #include "RunNewTheme0.hpp"
-#include "Core/Game.hpp"
+#include "Theme0.Core/Game.hpp"
 
 namespace FW {
 void RunNewTheme0()
