@@ -12,6 +12,9 @@ namespace ForradiaWorld
     {
         Randomize();
 
+        /*\
+=================== GAME LOOP ====================*/
+
         while (m_running)
         {
             PollEvents();

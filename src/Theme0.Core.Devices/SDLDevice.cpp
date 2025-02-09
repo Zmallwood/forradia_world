@@ -26,6 +26,14 @@ namespace ForradiaWorld
         m_renderer = std::shared_ptr<SDL_Renderer>(
             SDL_CreateRenderer(m_window.get(), -1, SDL_RENDERER_ACCELERATED),
             SDLDeleter());
+
+        if (!m_renderer)
+        {
+            std::cout << "Renderer could not be created. SDL Error: "
+                      << std::string(SDL_GetError()) << std::endl;
+
+            return;
+        }
     }
 
     void SDLDevice::ClearCanvas() const

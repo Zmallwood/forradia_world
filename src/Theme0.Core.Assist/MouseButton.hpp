@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class MouseButton
     {
       public:
@@ -25,4 +26,5 @@ namespace ForradiaWorld
         bool m_beenFired { false };
         bool m_beenReleased { false };
     };
+
 }

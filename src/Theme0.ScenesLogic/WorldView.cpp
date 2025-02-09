@@ -1,8 +1,8 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "WorldView.hpp"
-#include "Theme0.Core.Devices/ImageDrawDevice.hpp"
 #include "Theme0.Core.Devices/HeroDevice.hpp"
+#include "Theme0.Core.Devices/ImageDrawDevice.hpp"
 #include "Theme0.Core.World/Everything.hpp"
 #include "Theme0.ScenesLogic/TileGridMath.hpp"
 #include "TileHovering.hpp"
@@ -11,7 +11,8 @@ namespace ForradiaWorld
 {
     void WorldView::Render() const
     {
-#define ___SETUP___
+        /*\
+=================== SETUP ====================*/
 
         auto worldArea = _<World>().GetCurrentWorldArea();
         Point heroPos = _<HeroDevice>().GetPosition();
@@ -23,14 +24,16 @@ namespace ForradiaWorld
 
         float smallValue = 0.003f;
 
-#define ___TILE_GRID_LOOP___
+        /*\
+=================== TILE GRID LOOP ====================*/
 
         for (auto y = 0; y < gridSize.h; y++)
         {
             for (auto x = 0; x < gridSize.w; x++)
             {
 
-#define ___TILE_SETUP___
+                /*\
+=================== TILE SETUP ====================*/
 
                 int coordX = heroPos.x - (gridSize.w - 1) / 2 + x;
                 int coordY = heroPos.y - (gridSize.h - 1) / 2 + y;
@@ -44,7 +47,8 @@ namespace ForradiaWorld
 
                 RectF dest { x * tileSize.w, y * tileSize.h, tileSize.w + smallValue, tileSize.h + smallValue };
 
-#define ___BLOCKED_SIGHT___
+                /*\
+*=================== BLOCKED SIGHT ====================*/
 
                 auto sightBlocked { false };
 
@@ -82,7 +86,8 @@ namespace ForradiaWorld
                     continue;
                 }
 
-#define ___GROUND_RENDER___
+                /*\
+*=================== GROUND RENDERING ====================*/
 
                 int ground = tile->GetGround();
 
@@ -95,7 +100,8 @@ namespace ForradiaWorld
                     ground = Hash(animName);
                 }
 
-#define ___OBJECT_RENDER___
+                /*\
+*=================== OBJECTS RENDERING ====================*/
 
                 _<ImageDrawDevice>().DrawImage(ground, dest);
 
@@ -108,7 +114,8 @@ namespace ForradiaWorld
 
                 _<ImageDrawDevice>().DrawImage(object, dest);
 
-#define ___CREATURE_RENDER___
+                /*\
+*=================== CREATURE RENDERING ====================*/
 
                 auto creature = tile->GetCreature();
 
@@ -117,7 +124,8 @@ namespace ForradiaWorld
                     _<ImageDrawDevice>().DrawImage(creature->GetType(), dest);
                 }
 
-#define ___PLAYER_RENDER___
+                /*\
+*=================== PLAYER RENDERING ====================*/
 
                 if (coordX == heroPos.x && coordY == heroPos.y)
                 {

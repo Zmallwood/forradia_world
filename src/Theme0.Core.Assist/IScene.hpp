@@ -4,6 +4,10 @@
 
 namespace ForradiaWorld
 {
+
+    /*\
+Base class which all other scene classes inherit from.
+*/
     class IScene
     {
       public:
@@ -16,4 +20,5 @@ namespace ForradiaWorld
 
         virtual void RenderDerived() const { }
     };
+
 }
