@@ -4,6 +4,8 @@
 
 namespace ForradiaWorld
 {
+    class Creature;
+
     class Tile
     {
       public:
@@ -27,8 +29,19 @@ namespace ForradiaWorld
             m_object = Hash(objectName);
         }
 
+        auto GetCreature() const
+        {
+            return m_creature;
+        }
+
+        void SetCreature(std::shared_ptr<Creature> value)
+        {
+            m_creature = value;
+        }
+
       private:
         int m_ground { 0 };
         int m_object { 0 };
+        std::shared_ptr<Creature> m_creature;
     };
 }

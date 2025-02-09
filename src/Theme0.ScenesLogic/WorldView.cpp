@@ -3,6 +3,7 @@
 #include "WorldView.hpp"
 #include "Theme0.Core.Devices/ImageDrawDevice.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"
+#include "Theme0.Core.World/Animal.hpp"
 #include "Theme0.Core.World/Tile.hpp"
 #include "Theme0.Core.World/World.hpp"
 #include "Theme0.Core.World/WorldArea.hpp"
@@ -54,6 +55,13 @@ namespace ForradiaWorld
                 auto object = tile->GetObject();
 
                 _<ImageDrawDevice>().DrawImage(object, dest);
+
+                auto creature = tile->GetCreature();
+
+                if (creature)
+                {
+                    _<ImageDrawDevice>().DrawImage(creature->GetType(), dest);
+                }
 
                 if (coordX == playerPosition.x && coordY == playerPosition.y)
                 {

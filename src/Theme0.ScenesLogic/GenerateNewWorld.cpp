@@ -4,6 +4,7 @@
 #include "ClearWorldWithGrass.hpp"
 #include "GenerateObjectsForWorld.hpp"
 #include "GenerateWaterForWorld.hpp"
+#include "GenerateAnimalsForWorld.hpp"
 
 namespace ForradiaWorld
 {
@@ -12,5 +13,6 @@ namespace ForradiaWorld
         ClearWorldWithGrass();
         GenerateWaterForWorld();
         GenerateObjectsForWorld();
+        GenerateAnimalsForWorld();
     }
 }
