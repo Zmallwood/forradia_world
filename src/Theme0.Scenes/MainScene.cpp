@@ -2,6 +2,7 @@
 
 #include "MainScene.hpp"
 #include "Theme0.ScenesLogic/TileHovering.hpp"
+#include "Theme0.ScenesLogic/UpdateAnimalsMovement.hpp"
 #include "Theme0.ScenesLogic/UpdatePlayerKBMovement.hpp"
 #include "Theme0.ScenesLogic/UpdatePlayerMouseMovement.hpp"
 #include "Theme0.ScenesLogic/WorldView.hpp"
@@ -10,6 +11,7 @@ namespace ForradiaWorld
 {
     void MainScene::UpdateDerived()
     {
+        UpdateAnimalsMovement();
         UpdatePlayerKBMovement();
         UpdatePlayerMouseMovement();
         _<TileHovering>().Update();

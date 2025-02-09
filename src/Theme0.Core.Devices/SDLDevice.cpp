@@ -12,7 +12,7 @@ namespace ForradiaWorld
             SDL_CreateWindow(
                 "Forradia World", SDL_WINDOWPOS_CENTERED,
                 SDL_WINDOWPOS_CENTERED, 660, 660,
-                SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE),
+                SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED),
             SDLDeleter());
 
         if (m_window == nullptr)
@@ -29,7 +29,7 @@ namespace ForradiaWorld
 
     void SDLDevice::ClearCanvas() const
     {
-        SDL_SetRenderDrawColor(m_renderer.get(), 0, 150, 255, 255);
+        SDL_SetRenderDrawColor(m_renderer.get(), 0, 0, 0, 255);
         SDL_RenderClear(m_renderer.get());
     }
 

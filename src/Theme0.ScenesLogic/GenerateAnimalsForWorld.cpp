@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "GenerateAnimalsForWorld.hpp"
 #include "Theme0.Core.World/Animal.hpp"
 #include "Theme0.Core.World/Tile.hpp"

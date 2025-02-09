@@ -4,5 +4,5 @@
 
 namespace ForradiaWorld
 {
-    void GenerateAnimalsForWorld();
+    void UpdateAnimalsMovement();
 }
