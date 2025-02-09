@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "TileHovering.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"
 #include "TileGridMath.hpp"

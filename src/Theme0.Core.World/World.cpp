@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "World.hpp"
 #include "WorldArea.hpp"
 

@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "TileGridMath.hpp"
 #include "Theme0.Core.Configuration/GameProperties.hpp"
 

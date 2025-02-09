@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "WorldGenerationScene.hpp"
 #include "Theme0.Core.Devices/ScenesDevice.hpp"
 #include "Theme0.ScenesLogic/GenerateNewWorld.hpp"

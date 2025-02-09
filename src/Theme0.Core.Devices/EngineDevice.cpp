@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "EngineDevice.hpp"
 #include "Theme0.Core.Devices/KeyboardInputDevice.hpp"
 #include "Theme0.Core.Devices/MouseInputDevice.hpp"

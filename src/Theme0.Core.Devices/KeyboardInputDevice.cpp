@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "KeyboardInputDevice.hpp"
 
 namespace ForradiaWorld

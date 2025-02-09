@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "MainScene.hpp"
 #include "Theme0.ScenesLogic/TileHovering.hpp"
 #include "Theme0.ScenesLogic/UpdatePlayerKBMovement.hpp"

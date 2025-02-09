@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "WorldView.hpp"
 #include "Theme0.Core.Devices/ImageDrawDevice.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"

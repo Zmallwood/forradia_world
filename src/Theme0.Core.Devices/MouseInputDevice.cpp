@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "MouseInputDevice.hpp"
 #include "Theme0.Core.Assist/MouseButton.hpp"
 

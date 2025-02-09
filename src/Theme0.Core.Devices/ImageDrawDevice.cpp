@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "ImageDrawDevice.hpp"
 #include "Theme0.Core.Devices/ImageLoadDevice.hpp"
 #include "Theme0.Core.Devices/SDLDevice.hpp"

@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "IntroScene.hpp"
 #include "Theme0.Core.Devices/ImageDrawDevice.hpp"
 #include "Theme0.Core.Devices/ScenesDevice.hpp"

@@ -1,3 +1,5 @@
+// Copyright 2025 Andreas Åkerberg
+
 #include "GenerateWaterForWorld.hpp"
 #include "Theme0.Core.World/Tile.hpp"
 #include "Theme0.Core.World/World.hpp"
