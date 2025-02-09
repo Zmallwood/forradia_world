@@ -21,6 +21,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= GENERAL UTILS ============= */
+
     template <class T>
     T& _()
     {
@@ -45,13 +48,25 @@ namespace ForradiaWorld
         void operator()(TTF_Font* font) const;
     };
 
+    /*
+============= STRING UTILS ============= */
+
     std::string Replace(std::string_view text, char replaced, char replacedWith);
+
+    /*
+============= FILE UTILS ============= */
 
     std::string GetFileExtension(std::string_view path);
 
     std::string GetFileNameNoExtension(std::string_view path);
 
+    /*
+============= MOUSE UTILS ============= */
+
     PointF GetMousePosition();
+
+    /*
+============= CANVAS UTILS ============= */
 
     Size GetCanvasSize();
 
