@@ -4,7 +4,7 @@
 
 namespace ForradiaWorld
 {
-    class PlayerDevice
+    class HeroDevice
     {
       public:
         void MoveUp();

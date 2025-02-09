@@ -3,8 +3,8 @@
 #include "MainScene.hpp"
 #include "Theme0.ScenesLogic/TileHovering.hpp"
 #include "Theme0.ScenesLogic/UpdateAnimalsMovement.hpp"
-#include "Theme0.ScenesLogic/UpdatePlayerKBMovement.hpp"
-#include "Theme0.ScenesLogic/UpdatePlayerMouseMovement.hpp"
+#include "Theme0.ScenesLogic/UpdateHeroKeyboardMovement.hpp"
+#include "Theme0.ScenesLogic/UpdateHeroMouseMovement.hpp"
 #include "Theme0.ScenesLogic/WorldView.hpp"
 
 namespace ForradiaWorld
@@ -12,8 +12,8 @@ namespace ForradiaWorld
     void MainScene::UpdateDerived()
     {
         UpdateAnimalsMovement();
-        UpdatePlayerKBMovement();
-        UpdatePlayerMouseMovement();
+        UpdateHeroKeyboardMovement();
+        UpdateHeroMouseMovement();
         _<TileHovering>().Update();
     }
 

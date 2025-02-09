@@ -1,12 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "UpdatePlayerKBMovement.hpp"
+#include "UpdateHeroKeyboardMovement.hpp"
 #include "Theme0.Core.Devices/KeyboardDevice.hpp"
-#include "Theme0.Core.Devices/PlayerDevice.hpp"
+#include "Theme0.Core.Devices/HeroDevice.hpp"
 
 namespace ForradiaWorld
 {
-    void UpdatePlayerKBMovement()
+    void UpdateHeroKeyboardMovement()
     {
         auto upPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_UP);
         auto rightPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_RIGHT);
@@ -15,31 +15,31 @@ namespace ForradiaWorld
 
         auto now = SDL_GetTicks();
 
-        if (now > _<PlayerDevice>().GetTicksLastMovement() + 1000 / _<PlayerDevice>().GetMovementSpeed()
+        if (now > _<HeroDevice>().GetTicksLastMovement() + 1000 / _<HeroDevice>().GetMovementSpeed()
             && (upPressed || rightPressed || downPressed || leftPressed))
         {
 
             if (upPressed)
             {
-                _<PlayerDevice>().MoveUp();
+                _<HeroDevice>().MoveUp();
             }
 
             if (rightPressed)
             {
-                _<PlayerDevice>().MoveRight();
+                _<HeroDevice>().MoveRight();
             }
 
             if (downPressed)
             {
-                _<PlayerDevice>().MoveDown();
+                _<HeroDevice>().MoveDown();
             }
 
             if (leftPressed)
             {
-                _<PlayerDevice>().MoveLeft();
+                _<HeroDevice>().MoveLeft();
             }
 
-            _<PlayerDevice>().SetTicksLastMovement(now);
+            _<HeroDevice>().SetTicksLastMovement(now);
         }
     }
 }

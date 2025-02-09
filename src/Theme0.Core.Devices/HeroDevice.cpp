@@ -1,25 +1,25 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "PlayerDevice.hpp"
+#include "HeroDevice.hpp"
 
 namespace ForradiaWorld
 {
-    void PlayerDevice::MoveUp()
+    void HeroDevice::MoveUp()
     {
         m_position.y--;
     }
 
-    void PlayerDevice::MoveRight()
+    void HeroDevice::MoveRight()
     {
         m_position.x++;
     }
 
-    void PlayerDevice::MoveLeft()
+    void HeroDevice::MoveLeft()
     {
         m_position.x--;
     }
 
-    void PlayerDevice::MoveDown()
+    void HeroDevice::MoveDown()
     {
         m_position.y++;
     }

@@ -2,7 +2,7 @@
 
 #include "WorldView.hpp"
 #include "Theme0.Core.Devices/ImageDrawDevice.hpp"
-#include "Theme0.Core.Devices/PlayerDevice.hpp"
+#include "Theme0.Core.Devices/HeroDevice.hpp"
 #include "Theme0.Core.World/Everything.hpp"
 #include "Theme0.ScenesLogic/TileGridMath.hpp"
 #include "TileHovering.hpp"
@@ -14,7 +14,7 @@ namespace ForradiaWorld
 #define ___SETUP___
 
         auto worldArea = _<World>().GetCurrentWorldArea();
-        Point playerPosition = _<PlayerDevice>().GetPosition();
+        Point heroPos = _<HeroDevice>().GetPosition();
 
         Size gridSize = GetGridSize();
         SizeF tileSize = GetTileSize();
@@ -32,8 +32,8 @@ namespace ForradiaWorld
 
 #define ___TILE_SETUP___
 
-                int coordX = playerPosition.x - (gridSize.w - 1) / 2 + x;
-                int coordY = playerPosition.y - (gridSize.h - 1) / 2 + y;
+                int coordX = heroPos.x - (gridSize.w - 1) / 2 + x;
+                int coordY = heroPos.y - (gridSize.h - 1) / 2 + y;
 
                 if (coordX < 0 || coordY < 0 || coordX >= 100 || coordY >= 100)
                 {
@@ -48,8 +48,8 @@ namespace ForradiaWorld
 
                 auto sightBlocked { false };
 
-                auto dx = playerPosition.x - coordX;
-                auto dy = playerPosition.y - coordY;
+                auto dx = heroPos.x - coordX;
+                auto dy = heroPos.y - coordY;
 
                 auto numSteps = std::max(std::abs(dx), std::abs(dy));
 
@@ -118,7 +118,7 @@ namespace ForradiaWorld
 
 #define ___PLAYER_RENDER___
 
-                if (coordX == playerPosition.x && coordY == playerPosition.y)
+                if (coordX == heroPos.x && coordY == heroPos.y)
                 {
                     _<ImageDrawDevice>().DrawImage("Player", dest);
                 }
