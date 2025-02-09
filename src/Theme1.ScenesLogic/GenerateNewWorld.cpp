@@ -144,6 +144,18 @@ namespace ForradiaWorld
             }
         }
 
+        auto numStoneBoulders = 200;
+
+        for (auto i = 0; i < numPinkFlowers; i++)
+        {
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
+
+            auto tile = worldArea->GetTile(x, y);
+
+            tile->SetObject("ObjectStoneBoulder");
+        }
+
         /*
 =================== GENERATE ANIMALS ====================*/
 
