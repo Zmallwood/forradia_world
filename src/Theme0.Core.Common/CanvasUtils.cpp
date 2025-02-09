@@ -1,6 +1,6 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "CanvasUtilities.hpp"
+#include "CanvasUtils.hpp"
 #include "Theme0.Core.Devices/SDLDevice.hpp"
 
 namespace ForradiaWorld

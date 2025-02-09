@@ -1,6 +1,6 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "MouseUtilities.hpp"
+#include "MouseUtils.hpp"
 
 namespace ForradiaWorld
 {

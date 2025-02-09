@@ -50,12 +50,10 @@ target_precompile_headers(ForradiaWorld
         <SDL2/SDL_image.h>
         <SDL2/SDL_ttf.h>
 
-        src/Theme0.Core.Common/MathLibrary.hpp
-        src/Theme0.Core.Common/Singleton.hpp
-        src/Theme0.Core.Common/Hash.hpp
-        src/Theme0.Core.Common/SDLDeleter.hpp
-        src/Theme0.Core.Common/FileUtilities.hpp
-        src/Theme0.Core.Common/StringUtilities.hpp
-        src/Theme0.Core.Common/CanvasUtilities.hpp
-        src/Theme0.Core.Common/MouseUtilities.hpp
+        src/Theme0.Core.Common/MathLib.hpp
+        src/Theme0.Core.Common/Utils.hpp
+        src/Theme0.Core.Common/FileUtils.hpp
+        src/Theme0.Core.Common/StringUtils.hpp
+        src/Theme0.Core.Common/CanvasUtils.hpp
+        src/Theme0.Core.Common/MouseUtils.hpp
 )

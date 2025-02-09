@@ -1,6 +1,6 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "StringUtilities.hpp"
+#include "StringUtils.hpp"
 
 namespace ForradiaWorld
 {

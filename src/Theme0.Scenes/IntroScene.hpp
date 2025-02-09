@@ -1,6 +1,7 @@
 // Copyright 2025 Andreas Åkerberg
 
 #pragma once
+
 #include "Theme0.Core.Assist/IScene.hpp"
 
 namespace ForradiaWorld
