@@ -8,6 +8,7 @@ namespace ForradiaWorld
     T& _()
     {
         static T instance;
+
         return instance;
     }
 

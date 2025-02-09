@@ -20,6 +20,7 @@ namespace ForradiaWorld
             for (auto x = 0; x < 100; x++)
             {
                 auto tile = worldArea->GetTile(x, y);
+
                 tile->SetGround("GroundGrass");
             }
         }
@@ -32,6 +33,7 @@ namespace ForradiaWorld
         {
             auto xCenter = rand() % 100;
             auto yCenter = rand() % 100;
+
             auto r = 3 + rand() % 8;
 
             for (auto y = yCenter - r; y <= yCenter + r; y++)
@@ -49,6 +51,7 @@ namespace ForradiaWorld
                     if (dx * dx + dy * dy <= r * r)
                     {
                         auto tile = worldArea->GetTile(x, y);
+
                         tile->SetGround("GroundWater");
                     }
                 }
@@ -65,6 +68,7 @@ namespace ForradiaWorld
             auto y = rand() % 100;
 
             auto tile = worldArea->GetTile(x, y);
+
             if (tile->GetGround() != Hash("GroundWater"))
             {
                 tile->SetObject("ObjectTree1");
@@ -79,6 +83,7 @@ namespace ForradiaWorld
             auto y = rand() % 100;
 
             auto tile = worldArea->GetTile(x, y);
+
             if (tile->GetGround() != Hash("GroundWater"))
             {
                 tile->SetObject("ObjectTree2");
@@ -86,6 +91,7 @@ namespace ForradiaWorld
         }
 
         auto startTile = worldArea->GetTile(50, 50);
+
         startTile->SetObject("ObjectClaimFlag");
 
 #define ___GENERATE_ANIMALS___
@@ -102,7 +108,9 @@ namespace ForradiaWorld
             if (tile->GetGround() != Hash("GroundWater"))
             {
                 auto newCreature = std::make_shared<Animal>("AnimalWhiteRabbit");
+
                 tile->SetCreature(newCreature);
+
                 creaturesMirrorRef.insert({ newCreature, { x, y } });
             }
         }

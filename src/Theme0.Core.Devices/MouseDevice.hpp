@@ -19,7 +19,6 @@ namespace ForradiaWorld
         {
             return m_leftButton;
         }
-
         auto GetRightButton() const
         {
             return m_leftButton;

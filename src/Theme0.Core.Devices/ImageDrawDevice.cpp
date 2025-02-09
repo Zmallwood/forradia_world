@@ -9,14 +9,16 @@ namespace ForradiaWorld
     void ImageDrawDevice::DrawImage(int imageNameHash, RectF destination) const
     {
         auto image = _<ImageLoadDevice>().GetImage(imageNameHash);
+
         auto canvasSize = GetCanvasSize();
 
         auto xPx = static_cast<int>(destination.x * canvasSize.w);
         auto yPx = static_cast<int>(destination.y * canvasSize.h);
+
         auto widthPx = static_cast<int>(destination.w * canvasSize.w);
         auto heightPx = static_cast<int>(destination.h * canvasSize.h);
 
-        auto sdlRectangle = SDL_Rect { xPx, yPx, widthPx, heightPx };
+        SDL_Rect sdlRectangle { xPx, yPx, widthPx, heightPx };
 
         SDL_RenderCopy(_<SDLDevice>().GetRenderer().get(), image.get(), nullptr, &sdlRectangle);
     }

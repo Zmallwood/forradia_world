@@ -26,6 +26,7 @@ namespace ForradiaWorld
         if (destination.x == heroPos.x && destination.y == heroPos.y)
         {
             _<HeroDevice>().SetDestination({ -1, -1 });
+
             return;
         }
 

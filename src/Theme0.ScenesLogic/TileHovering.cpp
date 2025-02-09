@@ -12,10 +12,13 @@ namespace ForradiaWorld
         auto gridSize = GetGridSize();
         auto tileSize = GetTileSize();
         auto heroPos = _<HeroDevice>().GetPosition();
+
         auto relX = mousePosition.x / tileSize.w;
         auto relY = mousePosition.y / tileSize.h;
+
         auto xCoord = static_cast<int>(heroPos.x - (gridSize.w - 1) / 2 + relX);
         auto yCoord = static_cast<int>(heroPos.y - (gridSize.h - 1) / 2 + relY);
+
         m_hoveredTile = { xCoord, yCoord };
     }
 }

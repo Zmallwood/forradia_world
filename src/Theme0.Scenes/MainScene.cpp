@@ -12,8 +12,11 @@ namespace ForradiaWorld
     void MainScene::UpdateDerived()
     {
         UpdateAnimalsMovement();
+
         UpdateHeroKeyboardMovement();
+
         UpdateHeroMouseMovement();
+
         _<TileHovering>().Update();
     }
 

@@ -14,6 +14,7 @@ namespace ForradiaWorld
     void IntroScene::RenderDerived() const
     {
         _<ImageDrawDevice>().DrawImage("DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+
         _<ImageDrawDevice>().DrawImage("ForradiaWorldLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
     }
 }

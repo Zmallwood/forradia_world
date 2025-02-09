@@ -9,6 +9,7 @@ namespace ForradiaWorld
     void WorldGenerationScene::UpdateDerived()
     {
         GenerateNewWorld();
+
         _<ScenesDevice>().GoToScene(SceneNames::Main);
     }
 

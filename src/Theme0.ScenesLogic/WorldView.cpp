@@ -72,6 +72,7 @@ namespace ForradiaWorld
                     if (currTile->GetObject())
                     {
                         sightBlocked = true;
+
                         break;
                     }
                 }

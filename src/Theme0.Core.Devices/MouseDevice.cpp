@@ -16,10 +16,15 @@ namespace ForradiaWorld
         switch (button)
         {
         case SDL_BUTTON_LEFT:
+
             m_leftButton->RegisterPress();
+
             break;
+
         case SDL_BUTTON_RIGHT:
+
             m_rightButton->RegisterPress();
+
             break;
         }
     }
@@ -29,10 +34,15 @@ namespace ForradiaWorld
         switch (button)
         {
         case SDL_BUTTON_LEFT:
+
             m_leftButton->RegisterRelease();
+
             break;
+
         case SDL_BUTTON_RIGHT:
+
             m_rightButton->RegisterRelease();
+
             break;
         }
     }

@@ -20,6 +20,7 @@ namespace ForradiaWorld
         {
             auto creature = it->first;
             Point coord = it->second;
+
             auto animal = std::dynamic_pointer_cast<Animal>(creature);
 
             if (animal)
@@ -48,6 +49,7 @@ namespace ForradiaWorld
                             animal->SetTicksLastMovement(now);
 
                             ++it;
+
                             continue;
                         }
                     }

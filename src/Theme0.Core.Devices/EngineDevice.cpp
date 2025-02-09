@@ -15,6 +15,7 @@ namespace ForradiaWorld
         while (m_running)
         {
             PollEvents();
+
             _<ScenesDevice>().UpdateCurrentScene();
             _<SDLDevice>().ClearCanvas();
             _<ScenesDevice>().RenderCurrentScene();
@@ -36,19 +37,33 @@ namespace ForradiaWorld
             switch (event.type)
             {
             case SDL_QUIT:
+
                 m_running = false;
+
                 break;
+
             case SDL_KEYDOWN:
+
                 _<KeyboardDevice>().RegisterKeyPress(event.key.keysym.sym);
+
                 break;
+
             case SDL_KEYUP:
+
                 _<KeyboardDevice>().RegisterKeyRelease(event.key.keysym.sym);
+
                 break;
+
             case SDL_MOUSEBUTTONDOWN:
+
                 _<MouseDevice>().RegisterButtonPress(event.button.button);
+
                 break;
+
             case SDL_MOUSEBUTTONUP:
+
                 _<MouseDevice>().RegisterButtonRelease(event.button.button);
+
                 break;
             }
         }

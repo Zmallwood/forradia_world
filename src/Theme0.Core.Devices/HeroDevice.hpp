@@ -19,12 +19,10 @@ namespace ForradiaWorld
         {
             return m_position;
         }
-
         auto GetTicksLastMovement() const
         {
             return m_ticksLastMovement;
         }
-
         void SetTicksLastMovement(int value)
         {
             m_ticksLastMovement = value;
@@ -34,12 +32,10 @@ namespace ForradiaWorld
         {
             return m_movementSpeed;
         }
-
         auto GetDestination() const
         {
             return m_destination;
         }
-
         void SetDestination(Point value)
         {
             m_destination = value;

@@ -47,6 +47,7 @@ namespace ForradiaWorld
                     SDL_CreateTextureFromSurface(_<SDLDevice>().GetRenderer().get(), surface.get()),
                     SDLDeleter())
             };
+
             return texture;
         }
 
