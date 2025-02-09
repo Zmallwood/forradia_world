@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     /*
 Represents a single button on the mouse. */
 
@@ -58,5 +57,4 @@ Returns the released-state and resets this state. */
         bool m_beenFired { false };
         bool m_beenReleased { false };
     };
-
 }

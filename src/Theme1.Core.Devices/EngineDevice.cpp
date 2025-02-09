@@ -29,43 +29,61 @@
 
 namespace ForradiaWorld
 {
-
     void EngineDevice::Run()
     {
-        Randomize();
 
-        /*\
-=================== GAME LOOP ====================*/
+        /*
+Seed with time to get unique randomization in the game each game start. */
+
+        srand(time(nullptr));
+
+        /*
+============= GAME LOOP ============= */
 
         while (m_running)
         {
+            /*
+Handle input. */
+
             PollEvents();
 
+            /*
+Update. */
+
             _<ScenesDevice>().UpdateCurrentScene();
+
+            /*
+Render. */
+
             _<SDLDevice>().ClearCanvas();
             _<ScenesDevice>().RenderCurrentScene();
             _<SDLDevice>().PresentCanvas();
         }
     }
 
-    void EngineDevice::Randomize() const
-    {
-        srand(time(nullptr));
-    }
-
     void EngineDevice::PollEvents()
     {
         SDL_Event event;
+
+        /*
+Go through all existing events. */
 
         while (SDL_PollEvent(&event))
         {
             switch (event.type)
             {
+
+                /*
+The user has sent a quit event by closing the game window. */
+
             case SDL_QUIT:
 
                 m_running = false;
 
                 break;
+
+                /*
+A keyboard key has been pressed. */
 
             case SDL_KEYDOWN:
 
@@ -73,17 +91,26 @@ namespace ForradiaWorld
 
                 break;
 
+                /*
+A keyboard key has been released. */
+
             case SDL_KEYUP:
 
                 _<KeyboardDevice>().RegisterKeyRelease(event.key.keysym.sym);
 
                 break;
 
+                /*
+A mouse button has been pressed. */
+
             case SDL_MOUSEBUTTONDOWN:
 
                 _<MouseDevice>().RegisterButtonPress(event.button.button);
 
                 break;
+
+                /*
+A mouse button has been released */
 
             case SDL_MOUSEBUTTONUP:
 
@@ -93,5 +120,4 @@ namespace ForradiaWorld
             }
         }
     }
-
 }

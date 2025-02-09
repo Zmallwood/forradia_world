@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     void IScene::Update()
     {
         /*
@@ -37,5 +36,4 @@ Render the parts in the inheriting class. */
 
         RenderDerived();
     }
-
 }

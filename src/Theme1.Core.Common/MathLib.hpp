@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     /*
 2D point with coordinates of ints. */
 
@@ -73,5 +72,4 @@ namespace ForradiaWorld
         float w { 0.0f };
         float h { 0.0f };
     };
-
 }

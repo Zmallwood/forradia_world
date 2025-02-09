@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     /*
 Base class which all other scene classes inherit from. */
 
@@ -49,5 +48,4 @@ Do the render work of the inheriting scene. */
 
         virtual void RenderDerived() const { }
     };
-
 }

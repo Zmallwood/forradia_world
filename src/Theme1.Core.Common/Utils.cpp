@@ -151,7 +151,7 @@ Divide the pixel values with the canvas size to get the "fractional" values as f
     Size GetCanvasSize()
     {
         /*
-To hold hte canvas size in pixels. */
+To hold the canvas size in pixels. */
 
         Size canvasSize;
 

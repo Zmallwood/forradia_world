@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     void MouseButton::RegisterPress()
     {
         /*
@@ -65,5 +64,4 @@ Get state, reset it and return. */
 
         return result;
     }
-
 }

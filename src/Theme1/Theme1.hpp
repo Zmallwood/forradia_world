@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     /*
 The default theme that can be run with the Forradia World engine. */
 
@@ -33,5 +32,4 @@ Run an instance of Theme1. */
 
         void Run();
     };
-
 }
