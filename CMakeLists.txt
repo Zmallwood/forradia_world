@@ -52,8 +52,4 @@ target_precompile_headers(ForradiaWorld
 
         src/Theme0.Core.Common/MathLib.hpp
         src/Theme0.Core.Common/Utils.hpp
-        src/Theme0.Core.Common/FileUtils.hpp
-        src/Theme0.Core.Common/StringUtils.hpp
-        src/Theme0.Core.Common/CanvasUtils.hpp
-        src/Theme0.Core.Common/MouseUtils.hpp
 )
