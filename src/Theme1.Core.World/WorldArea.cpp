@@ -48,6 +48,11 @@ namespace ForradiaWorld
         return m_tiles.at(x).at(y);
     }
 
+    std::shared_ptr<Tile> WorldArea::GetTile(Point coordinate) const
+    {
+        return GetTile(coordinate.x, coordinate.y);
+    }
+
     Size WorldArea::GetSize() const
     {
         auto width = static_cast<int>(m_tiles.size());

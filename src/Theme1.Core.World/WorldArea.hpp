@@ -31,6 +31,8 @@ namespace ForradiaWorld
 
         std::shared_ptr<Tile> GetTile(int x, int y) const;
 
+        std::shared_ptr<Tile> GetTile(Point coordinate) const;
+
         Size GetSize() const;
 
         bool IsValidCoordinate(int x, int y) const;

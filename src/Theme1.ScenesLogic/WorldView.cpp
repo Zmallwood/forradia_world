@@ -73,7 +73,7 @@ namespace ForradiaWorld
                 RectF dest { x * tileSize.w, y * tileSize.h, tileSize.w + smallValue, tileSize.h + smallValue };
 
                 /*
-*=================== BLOCKED SIGHT ====================*/
+=================== BLOCKED SIGHT ====================*/
 
                 auto sightBlocked { false };
 
@@ -112,7 +112,7 @@ namespace ForradiaWorld
                 }
 
                 /*
-*=================== GROUND RENDERING ====================*/
+=================== GROUND RENDERING ====================*/
 
                 int ground = tile->GetGround();
 
@@ -126,7 +126,7 @@ namespace ForradiaWorld
                 }
 
                 /*
-*=================== OBJECTS RENDERING ====================*/
+=================== OBJECTS RENDERING ====================*/
 
                 _<ImageDrawDevice>().DrawImage(ground, dest);
 
@@ -140,7 +140,7 @@ namespace ForradiaWorld
                 _<ImageDrawDevice>().DrawImage(object, dest);
 
                 /*
-*=================== CREATURE RENDERING ====================*/
+=================== CREATURE RENDERING ====================*/
 
                 auto creature = tile->GetCreature();
 
@@ -150,7 +150,7 @@ namespace ForradiaWorld
                 }
 
                 /*
-*=================== PLAYER RENDERING ====================*/
+=================== PLAYER RENDERING ====================*/
 
                 if (coordX == heroPos.x && coordY == heroPos.y)
                 {

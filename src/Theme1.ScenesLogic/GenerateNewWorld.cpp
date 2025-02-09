@@ -25,15 +25,16 @@ namespace ForradiaWorld
 {
     void GenerateNewWorld()
     {
-#define ___SETUP___
+        /*
+=================== SETUP ====================*/
 
         auto worldArea = _<World>().GetCurrentWorldArea();
 
         auto& creaturesMirrorRef = worldArea->GetCreaturesMirrorRef();
 
         auto size = worldArea->GetSize();
-
-#define ___CLEARWORLD_WITH_GRASS___
+        /*
+=================== CLEAR WORLD WITH GRASS ====================*/
 
         for (auto y = 0; y < size.h; y++)
         {
@@ -44,8 +45,8 @@ namespace ForradiaWorld
                 tile->SetGround("GroundGrass");
             }
         }
-
-#define ___GENERATE_WATER___
+        /*
+=================== GENERATE WATER ====================*/
 
         auto numLakes = 30 + rand() % 10;
 
@@ -77,8 +78,8 @@ namespace ForradiaWorld
                 }
             }
         }
-
-#define ___GENERATE_OBJECTS___
+        /*
+=================== GENERATE OBJECTS ====================*/
 
         auto numTree1s = 200;
 
@@ -110,11 +111,8 @@ namespace ForradiaWorld
             }
         }
 
-        auto startTile = worldArea->GetTile(50, 50);
-
-        startTile->SetObject("ObjectClaimFlag");
-
-#define ___GENERATE_ANIMALS___
+        /*
+=================== GENERATE ANIMALS ====================*/
 
         auto numWhiteRabbits = 200;
 
@@ -134,5 +132,24 @@ namespace ForradiaWorld
                 creaturesMirrorRef.insert({ newCreature, { x, y } });
             }
         }
+        /*
+=================== GENERATE STARTING AREA ====================*/
+
+        auto startCoordinate = Point { 50, 50 };
+        auto areaSize = Size { 11, 11 };
+
+        auto startTile = worldArea->GetTile(startCoordinate);
+
+        for (auto y = startCoordinate.y - (areaSize.h - 1) / 2; y < startCoordinate.y + (areaSize.h - 1); y++)
+        {
+            for (auto x = startCoordinate.x - (areaSize.w - 1) / 2; x < startCoordinate.x + (areaSize.w - 1); x++)
+            {
+                auto tile = worldArea->GetTile(x, y);
+
+                tile->SetGround("GroundGrass");
+            }
+        }
+
+        startTile->SetObject("ObjectClaimFlag");
     }
 }
