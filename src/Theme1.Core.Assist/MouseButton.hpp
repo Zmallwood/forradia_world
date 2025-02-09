@@ -28,13 +28,28 @@ Represents a single button on the mouse. */
     class MouseButton
     {
       public:
+        /*
+Register the button as having been pressed. */
+
         void RegisterPress();
+
+        /*
+Register the button as having been released. */
 
         void RegisterRelease();
 
+        /*
+Returns the fired-state and resets this state. */
+
         bool GetBeenFiredPickResult();
 
+        /*
+Returns the released-state and resets this state. */
+
         bool GetBeenReleasedPickResult();
+
+        /*
+Get Pressed. */
 
         auto GetPressed() const
         {

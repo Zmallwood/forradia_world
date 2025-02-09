@@ -28,6 +28,9 @@ The default theme that can be run with the Forradia World engine. */
     class Theme1
     {
       public:
+        /*
+Run an instance of Theme1. */
+
         void Run();
     };
 
