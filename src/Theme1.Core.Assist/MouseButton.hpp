@@ -17,13 +17,31 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class MouseButton
+    {
+      public:
+        void RegisterPress();
 
-    return 0;
+        void RegisterRelease();
+
+        bool GetBeenFiredPickResult();
+
+        bool GetBeenReleasedPickResult();
+
+        auto GetPressed() const
+        {
+            return m_pressed;
+        }
+
+      private:
+        bool m_pressed { false };
+        bool m_beenFired { false };
+        bool m_beenReleased { false };
+    };
+
 }

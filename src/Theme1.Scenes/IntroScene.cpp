@@ -17,13 +17,25 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "IntroScene.hpp"
 
-int main(int argc, char** argv)
+#include "Theme1.Core.Devices/ImageDrawDevice.hpp"
+
+#include "Theme1.Core.Devices/ScenesDevice.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    void IntroScene::UpdateDerived()
+    {
+        _<ScenesDevice>().GoToScene(SceneNames::WorldGeneration);
+    }
 
-    return 0;
+    void IntroScene::RenderDerived() const
+    {
+        _<ImageDrawDevice>().DrawImage("DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+
+        _<ImageDrawDevice>().DrawImage("ForradiaWorldLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
+    }
+
 }

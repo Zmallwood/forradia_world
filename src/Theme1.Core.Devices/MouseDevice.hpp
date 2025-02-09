@@ -17,13 +17,34 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class MouseButton;
 
-    return 0;
+    class MouseDevice
+    {
+      public:
+        MouseDevice();
+
+        void RegisterButtonPress(Uint8 button);
+
+        void RegisterButtonRelease(Uint8 button);
+
+        auto GetLeftButton() const
+        {
+            return m_leftButton;
+        }
+        auto GetRightButton() const
+        {
+            return m_leftButton;
+        }
+
+      private:
+        std::shared_ptr<MouseButton> m_leftButton;
+        std::shared_ptr<MouseButton> m_rightButton;
+    };
+
 }

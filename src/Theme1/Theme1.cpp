@@ -17,13 +17,19 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "Theme1.hpp"
 
-int main(int argc, char** argv)
+#include "Theme1.Core.Devices/EngineDevice.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    void Theme1::Run()
+    {
+        /*\
+Run engine instance.
+*/
+        _<EngineDevice>().Run();
+    }
 
-    return 0;
 }

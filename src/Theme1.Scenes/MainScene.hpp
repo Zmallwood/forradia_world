@@ -17,13 +17,19 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+#include "Theme1.Core.Assist/IScene.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class MainScene : public IScene
+    {
+      protected:
+        void UpdateDerived() override;
 
-    return 0;
+        void RenderDerived() const override;
+    };
+
 }

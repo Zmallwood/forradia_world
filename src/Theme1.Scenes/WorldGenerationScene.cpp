@@ -17,13 +17,24 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "WorldGenerationScene.hpp"
 
-int main(int argc, char** argv)
+#include "Theme1.Core.Devices/ScenesDevice.hpp"
+
+#include "Theme1.ScenesLogic/GenerateNewWorld.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    void WorldGenerationScene::UpdateDerived()
+    {
+        GenerateNewWorld();
 
-    return 0;
+        _<ScenesDevice>().GoToScene(SceneNames::Main);
+    }
+
+    void WorldGenerationScene::RenderDerived() const
+    {
+    }
+
 }

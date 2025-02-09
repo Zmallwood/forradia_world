@@ -17,13 +17,16 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "World.hpp"
 
-int main(int argc, char** argv)
+#include "WorldArea.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    World::World()
+        : m_currentWorldArea(std::make_shared<WorldArea>())
+    {
+    }
 
-    return 0;
 }

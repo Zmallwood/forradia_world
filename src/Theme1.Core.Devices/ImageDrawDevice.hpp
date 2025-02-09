@@ -17,13 +17,17 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class ImageDrawDevice
+    {
+      public:
+        void DrawImage(int imageNameHash, RectF destination) const;
 
-    return 0;
+        void DrawImage(std::string_view imageName, RectF destination) const;
+    };
+
 }

@@ -17,13 +17,25 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    /*\
+Base class which all other scene classes inherit from.
+*/
+    class IScene
+    {
+      public:
+        void Update();
 
-    return 0;
+        void Render() const;
+
+      protected:
+        virtual void UpdateDerived() { }
+
+        virtual void RenderDerived() const { }
+    };
+
 }

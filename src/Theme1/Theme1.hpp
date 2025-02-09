@@ -17,13 +17,18 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    /*\
+The default theme that can be run with the Forradia World engine.
+*/
+    class Theme1
+    {
+      public:
+        void Run();
+    };
 
-    return 0;
 }

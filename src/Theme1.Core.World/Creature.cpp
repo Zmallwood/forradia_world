@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "Creature.hpp"
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    Creature::Creature(std::string_view creatureName)
+        : m_type(Hash(creatureName))
+    {
+    }
 
-    return 0;
 }

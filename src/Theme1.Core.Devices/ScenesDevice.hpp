@@ -17,13 +17,31 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+#include "Theme1.Scenes/SceneNames.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class IScene;
 
-    return 0;
+    class ScenesDevice
+    {
+      public:
+        ScenesDevice();
+
+        void UpdateCurrentScene();
+
+        void RenderCurrentScene() const;
+
+        void GoToScene(SceneNames sceneName);
+
+      private:
+        void AddScene(SceneNames sceneName, IScene& scene);
+
+        std::map<SceneNames, IScene&> m_scenes;
+        SceneNames m_currentScene { 0 };
+    };
+
 }

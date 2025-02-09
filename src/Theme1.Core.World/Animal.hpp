@@ -17,13 +17,17 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+#include "Creature.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class Animal : public Creature
+    {
+      public:
+        using Creature::Creature;
+    };
 
-    return 0;
 }

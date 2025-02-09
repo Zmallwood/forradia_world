@@ -17,13 +17,33 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "TileGridMath.hpp"
 
-int main(int argc, char** argv)
+#include "Theme1.Core.Devices/SettingsDevice.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    Size GetGridSize()
+    {
+        auto numGridRows = _<SettingsDevice>().k_numGridRows;
 
-    return 0;
+        auto aspectRatio = GetAspectRatio();
+
+        auto numGridCols = static_cast<int>(numGridRows * aspectRatio) + 1;
+
+        return { numGridCols, numGridRows };
+    }
+
+    SizeF GetTileSize()
+    {
+        auto numGridRows = _<SettingsDevice>().k_numGridRows;
+
+        auto tileHeight = 1.0f / numGridRows;
+
+        auto tileWidth = ConvertHeightToWidth(tileHeight);
+
+        return { tileWidth, tileHeight };
+    }
+
 }

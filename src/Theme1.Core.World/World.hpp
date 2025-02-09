@@ -17,13 +17,25 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class WorldArea;
 
-    return 0;
+    class World
+    {
+      public:
+        World();
+
+        auto GetCurrentWorldArea() const
+        {
+            return m_currentWorldArea;
+        }
+
+      private:
+        std::shared_ptr<WorldArea> m_currentWorldArea;
+    };
+
 }

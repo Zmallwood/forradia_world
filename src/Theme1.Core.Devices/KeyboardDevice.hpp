@@ -17,13 +17,22 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class KeyboardDevice
+    {
+      public:
+        void RegisterKeyPress(SDL_Keycode key);
 
-    return 0;
+        void RegisterKeyRelease(SDL_Keycode key);
+
+        bool KeyIsPressed(SDL_Keycode key) const;
+
+      private:
+        std::set<SDL_Keycode> m_pressedKeys;
+    };
+
 }

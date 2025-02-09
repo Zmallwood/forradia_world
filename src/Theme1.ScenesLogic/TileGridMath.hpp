@@ -17,13 +17,13 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    Size GetGridSize();
 
-    return 0;
+    SizeF GetTileSize();
+
 }

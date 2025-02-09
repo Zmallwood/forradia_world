@@ -17,13 +17,29 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "WorldArea.hpp"
 
-int main(int argc, char** argv)
+#include "Tile.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    WorldArea::WorldArea()
+    {
+        for (auto x = 0; x < 100; x++)
+        {
+            m_tiles.push_back(std::vector<std::shared_ptr<Tile>>());
 
-    return 0;
+            for (auto y = 0; y < 100; y++)
+            {
+                m_tiles.at(x).push_back(std::make_shared<Tile>());
+            }
+        }
+    }
+
+    std::shared_ptr<Tile> WorldArea::GetTile(int x, int y) const
+    {
+        return m_tiles.at(x).at(y);
+    }
+
 }

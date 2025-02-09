@@ -17,13 +17,29 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class Tile;
+    class Creature;
 
-    return 0;
+    class WorldArea
+    {
+      public:
+        WorldArea();
+
+        std::shared_ptr<Tile> GetTile(int x, int y) const;
+
+        auto& GetCreaturesMirrorRef()
+        {
+            return m_creaturesMirror;
+        }
+
+      private:
+        std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;
+        std::map<std::shared_ptr<Creature>, Point> m_creaturesMirror;
+    };
+
 }

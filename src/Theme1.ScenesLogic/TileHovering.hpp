@@ -17,13 +17,23 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class TileHovering
+    {
+      public:
+        void Update();
 
-    return 0;
+        auto GetHoveredTile() const
+        {
+            return m_hoveredTile;
+        }
+
+      private:
+        Point m_hoveredTile { -1, -1 };
+    };
+
 }

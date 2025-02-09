@@ -17,13 +17,32 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    class SDLDevice
+    {
+      public:
+        SDLDevice();
 
-    return 0;
+        void ClearCanvas() const;
+
+        void PresentCanvas() const;
+
+        auto GetWindow() const
+        {
+            return m_window;
+        }
+        auto GetRenderer() const
+        {
+            return m_renderer;
+        }
+
+      private:
+        std::shared_ptr<SDL_Window> m_window;
+        std::shared_ptr<SDL_Renderer> m_renderer;
+    };
+
 }

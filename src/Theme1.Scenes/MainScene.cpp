@@ -17,13 +17,35 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "MainScene.hpp"
 
-int main(int argc, char** argv)
+#include "Theme1.ScenesLogic/TileHovering.hpp"
+
+#include "Theme1.ScenesLogic/UpdateAnimalsMovement.hpp"
+
+#include "Theme1.ScenesLogic/UpdateHeroKeyboardMovement.hpp"
+
+#include "Theme1.ScenesLogic/UpdateHeroMouseMovement.hpp"
+
+#include "Theme1.ScenesLogic/WorldView.hpp"
+
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    void MainScene::UpdateDerived()
+    {
+        UpdateAnimalsMovement();
 
-    return 0;
+        UpdateHeroKeyboardMovement();
+
+        UpdateHeroMouseMovement();
+
+        _<TileHovering>().Update();
+    }
+
+    void MainScene::RenderDerived() const
+    {
+        _<WorldView>().Render();
+    }
+
 }

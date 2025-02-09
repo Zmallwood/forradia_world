@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#pragma once
 
-int main(int argc, char** argv)
-{
-    using namespace ForradiaWorld;
+#include "Animal.hpp"
 
-    _<Theme1>().Run();
+#include "Creature.hpp"
 
-    return 0;
-}
+#include "Tile.hpp"
+
+#include "World.hpp"
+
+#include "WorldArea.hpp"

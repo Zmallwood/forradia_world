@@ -17,13 +17,29 @@
  * limitations under the License.
  */
 
-#include "Theme1/Theme1.hpp"
+#include "HeroDevice.hpp"
 
-int main(int argc, char** argv)
+namespace ForradiaWorld
 {
-    using namespace ForradiaWorld;
 
-    _<Theme1>().Run();
+    void HeroDevice::MoveUp()
+    {
+        m_position.y--;
+    }
 
-    return 0;
+    void HeroDevice::MoveRight()
+    {
+        m_position.x++;
+    }
+
+    void HeroDevice::MoveLeft()
+    {
+        m_position.x--;
+    }
+
+    void HeroDevice::MoveDown()
+    {
+        m_position.y++;
+    }
+
 }

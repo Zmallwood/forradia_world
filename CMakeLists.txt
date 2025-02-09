@@ -50,6 +50,6 @@ target_precompile_headers(ForradiaWorld
         <SDL2/SDL_image.h>
         <SDL2/SDL_ttf.h>
 
-        src/Theme0.Core.Common/MathLib.hpp
-        src/Theme0.Core.Common/Utils.hpp
+        src/Theme1.Core.Common/MathLib.hpp
+        src/Theme1.Core.Common/Utils.hpp
 )
