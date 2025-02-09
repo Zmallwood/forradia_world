@@ -23,6 +23,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: WorldArea ============= */
 
     WorldArea::WorldArea()
     {
@@ -41,5 +43,4 @@ namespace ForradiaWorld
     {
         return m_tiles.at(x).at(y);
     }
-
 }

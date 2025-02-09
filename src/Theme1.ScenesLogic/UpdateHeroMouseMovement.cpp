@@ -19,8 +19,6 @@
 
 #include "UpdateHeroMouseMovement.hpp"
 
-#include "Theme1.Core.Assist/MouseButton.hpp"
-
 #include "Theme1.Core.Devices/MouseDevice.hpp"
 
 #include "Theme1.Core.Devices/HeroDevice.hpp"
@@ -29,7 +27,6 @@
 
 namespace ForradiaWorld
 {
-
     void UpdateHeroMouseMovement()
     {
         auto now = SDL_GetTicks();
@@ -80,5 +77,4 @@ namespace ForradiaWorld
             _<HeroDevice>().SetTicksLastMovement(now);
         }
     }
-
 }

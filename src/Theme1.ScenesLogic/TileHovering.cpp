@@ -25,6 +25,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: TileHovering ============= */
 
     void TileHovering::Update()
     {
@@ -41,5 +43,4 @@ namespace ForradiaWorld
 
         m_hoveredTile = { xCoord, yCoord };
     }
-
 }

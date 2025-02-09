@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     class ImageDrawDevice
     {
       public:
@@ -29,5 +28,4 @@ namespace ForradiaWorld
 
         void DrawImage(std::string_view imageName, RectF destination) const;
     };
-
 }

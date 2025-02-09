@@ -23,11 +23,9 @@
 
 namespace ForradiaWorld
 {
-
     class Animal : public Creature
     {
       public:
         using Creature::Creature;
     };
-
 }

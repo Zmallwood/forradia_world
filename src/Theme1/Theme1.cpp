@@ -23,6 +23,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: Theme1 ============= */
+
     void Theme1::Run()
     {
         /*

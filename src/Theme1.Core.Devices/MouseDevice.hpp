@@ -21,8 +21,42 @@
 
 namespace ForradiaWorld
 {
+    /*
+Represents a single button on the mouse. */
 
-    class MouseButton;
+    class MouseButton
+    {
+      public:
+        /*
+Register the button as having been pressed. */
+
+        void RegisterPress();
+
+        /*
+Register the button as having been released. */
+
+        void RegisterRelease();
+
+        /*
+Returns the fired-state and resets this state. */
+
+        bool GetBeenFiredPickResult();
+
+        /*
+Returns the released-state and resets this state. */
+
+        bool GetBeenReleasedPickResult();
+
+        auto GetPressed() const
+        {
+            return m_pressed;
+        }
+
+      private:
+        bool m_pressed { false };
+        bool m_beenFired { false };
+        bool m_beenReleased { false };
+    };
 
     class MouseDevice
     {
@@ -46,5 +80,4 @@ namespace ForradiaWorld
         std::shared_ptr<MouseButton> m_leftButton;
         std::shared_ptr<MouseButton> m_rightButton;
     };
-
 }

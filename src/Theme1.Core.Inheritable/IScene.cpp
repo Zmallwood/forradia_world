@@ -17,44 +17,26 @@
  * limitations under the License.
  */
 
-#pragma once
+#include "IScene.hpp"
 
 namespace ForradiaWorld
 {
     /*
-Represents a single button on the mouse. */
+============= CLASS: IScene ============= */
 
-    class MouseButton
+    void IScene::Update()
     {
-      public:
         /*
-Register the button as having been pressed. */
+Update the parts in the inheriting class. */
 
-        void RegisterPress();
+        UpdateDerived();
+    }
 
+    void IScene::Render() const
+    {
         /*
-Register the button as having been released. */
+Render the parts in the inheriting class. */
 
-        void RegisterRelease();
-
-        /*
-Returns the fired-state and resets this state. */
-
-        bool GetBeenFiredPickResult();
-
-        /*
-Returns the released-state and resets this state. */
-
-        bool GetBeenReleasedPickResult();
-
-        auto GetPressed() const
-        {
-            return m_pressed;
-        }
-
-      private:
-        bool m_pressed { false };
-        bool m_beenFired { false };
-        bool m_beenReleased { false };
-    };
+        RenderDerived();
+    }
 }

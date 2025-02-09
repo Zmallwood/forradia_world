@@ -25,6 +25,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: IntroScene ============= */
 
     void IntroScene::UpdateDerived()
     {
@@ -37,5 +39,4 @@ namespace ForradiaWorld
 
         _<ImageDrawDevice>().DrawImage("ForradiaWorldLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
     }
-
 }

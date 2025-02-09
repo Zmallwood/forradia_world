@@ -27,6 +27,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: ScenesDevice ============= */
 
     ScenesDevice::ScenesDevice()
     {
@@ -62,5 +64,4 @@ namespace ForradiaWorld
     {
         m_currentScene = sceneName;
     }
-
 }

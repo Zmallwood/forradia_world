@@ -19,11 +19,10 @@
 
 #pragma once
 
-#include "Theme1.Core.Assist/IScene.hpp"
+#include "Theme1.Core.Inheritable/IScene.hpp"
 
 namespace ForradiaWorld
 {
-
     class IntroScene : public IScene
     {
       protected:
@@ -31,5 +30,4 @@ namespace ForradiaWorld
 
         void RenderDerived() const override;
     };
-
 }

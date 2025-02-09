@@ -21,7 +21,5 @@
 
 namespace ForradiaWorld
 {
-
     void UpdateHeroMouseMovement();
-
 }

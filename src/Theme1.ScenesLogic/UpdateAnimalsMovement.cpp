@@ -29,7 +29,6 @@
 
 namespace ForradiaWorld
 {
-
     void UpdateAnimalsMovement()
     {
         auto worldArea = _<World>().GetCurrentWorldArea();
@@ -81,5 +80,4 @@ namespace ForradiaWorld
             ++it;
         }
     }
-
 }

@@ -23,7 +23,6 @@
 
 namespace ForradiaWorld
 {
-
     Size GetGridSize()
     {
         auto numGridRows = _<SettingsDevice>().k_numGridRows;
@@ -45,5 +44,4 @@ namespace ForradiaWorld
 
         return { tileWidth, tileHeight };
     }
-
 }

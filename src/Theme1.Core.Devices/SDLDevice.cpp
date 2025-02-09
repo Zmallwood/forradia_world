@@ -21,6 +21,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: SDLDevice ============= */
 
     SDLDevice::SDLDevice()
     {
@@ -65,5 +67,4 @@ namespace ForradiaWorld
     {
         SDL_RenderPresent(m_renderer.get());
     }
-
 }

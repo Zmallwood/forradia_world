@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     class SDLDevice
     {
       public:
@@ -44,5 +43,4 @@ namespace ForradiaWorld
         std::shared_ptr<SDL_Window> m_window;
         std::shared_ptr<SDL_Renderer> m_renderer;
     };
-
 }

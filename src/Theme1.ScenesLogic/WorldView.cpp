@@ -31,6 +31,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: WorldView ============= */
 
     void WorldView::Render() const
     {
@@ -157,5 +159,4 @@ namespace ForradiaWorld
             }
         }
     }
-
 }

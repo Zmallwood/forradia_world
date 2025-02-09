@@ -25,6 +25,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: WorldGenerationScene ============= */
 
     void WorldGenerationScene::UpdateDerived()
     {
@@ -36,5 +38,4 @@ namespace ForradiaWorld
     void WorldGenerationScene::RenderDerived() const
     {
     }
-
 }

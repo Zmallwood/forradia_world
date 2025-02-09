@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     class WorldArea;
 
     class World
@@ -37,5 +36,4 @@ namespace ForradiaWorld
       private:
         std::shared_ptr<WorldArea> m_currentWorldArea;
     };
-
 }

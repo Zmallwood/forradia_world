@@ -25,7 +25,6 @@
 
 namespace ForradiaWorld
 {
-
     void UpdateHeroKeyboardMovement()
     {
         auto upPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_UP);
@@ -62,5 +61,4 @@ namespace ForradiaWorld
             _<HeroDevice>().SetTicksLastMovement(now);
         }
     }
-
 }

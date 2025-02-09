@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     class ImageLoadDevice
     {
       public:
@@ -40,5 +39,4 @@ namespace ForradiaWorld
 
         std::map<int, std::shared_ptr<SDL_Texture>> m_images;
     };
-
 }

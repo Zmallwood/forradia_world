@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     enum class SceneNames
     {
         Intro,
@@ -32,5 +31,4 @@ namespace ForradiaWorld
 
         Main
     };
-
 }

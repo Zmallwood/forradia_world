@@ -23,6 +23,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: ImageLoadDevice ============= */
 
     ImageLoadDevice::ImageLoadDevice()
     {
@@ -95,5 +97,4 @@ namespace ForradiaWorld
 
         return { width, height };
     }
-
 }

@@ -21,7 +21,6 @@
 
 namespace ForradiaWorld
 {
-
     class KeyboardDevice
     {
       public:
@@ -34,5 +33,4 @@ namespace ForradiaWorld
       private:
         std::set<SDL_Keycode> m_pressedKeys;
     };
-
 }

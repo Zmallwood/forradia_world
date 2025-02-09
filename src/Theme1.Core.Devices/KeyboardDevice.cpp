@@ -21,6 +21,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: KeyboardDevice ============= */
 
     void KeyboardDevice::RegisterKeyPress(SDL_Keycode key)
     {
@@ -36,5 +38,4 @@ namespace ForradiaWorld
     {
         return m_pressedKeys.contains(key);
     }
-
 }

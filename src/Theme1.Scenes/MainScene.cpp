@@ -31,6 +31,8 @@
 
 namespace ForradiaWorld
 {
+    /*
+============= CLASS: MainScene ============= */
 
     void MainScene::UpdateDerived()
     {
@@ -47,5 +49,4 @@ namespace ForradiaWorld
     {
         _<WorldView>().Render();
     }
-
 }

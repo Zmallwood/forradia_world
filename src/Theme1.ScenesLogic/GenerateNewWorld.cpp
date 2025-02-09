@@ -23,7 +23,6 @@
 
 namespace ForradiaWorld
 {
-
     void GenerateNewWorld()
     {
 #define ___SETUP___
@@ -134,5 +133,4 @@ namespace ForradiaWorld
             }
         }
     }
-
 }
