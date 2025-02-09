@@ -23,6 +23,8 @@
 
 #include "Theme1.Core.Devices/ImageDrawDevice.hpp"
 
+#include "Theme1.Core.Devices/ObjectIndexDevice.hpp"
+
 #include "Theme1.Core.World/Everything.hpp"
 
 #include "Theme1.ScenesLogic/TileGridMath.hpp"
@@ -98,8 +100,15 @@ namespace ForradiaWorld
 
                     auto currTile = worldArea->GetTile(stepCoordX, stepCoordY);
 
-                    if (currTile->GetObject())
+                    auto object = currTile->GetObject();
+
+                    if (object)
                     {
+                        if (_<ObjectIndexDevice>().ObjectAllowsSight(object))
+                        {
+                            continue;
+                        }
+
                         sightBlocked = true;
 
                         break;
