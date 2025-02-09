@@ -138,15 +138,50 @@ namespace ForradiaWorld
         auto startCoordinate = Point { 50, 50 };
         auto areaSize = Size { 11, 11 };
 
+        auto left = startCoordinate.x - (areaSize.w - 1) / 2;
+        auto right = startCoordinate.x + (areaSize.w - 1) / 2;
+        auto top = startCoordinate.y - (areaSize.h - 1) / 2;
+        auto bottom = startCoordinate.y + (areaSize.h - 1) / 2;
+
         auto startTile = worldArea->GetTile(startCoordinate);
 
-        for (auto y = startCoordinate.y - (areaSize.h - 1) / 2; y < startCoordinate.y + (areaSize.h - 1); y++)
+        for (auto y = top; y < bottom; y++)
         {
-            for (auto x = startCoordinate.x - (areaSize.w - 1) / 2; x < startCoordinate.x + (areaSize.w - 1); x++)
+            for (auto x = left; x < right; x++)
             {
                 auto tile = worldArea->GetTile(x, y);
 
                 tile->SetGround("GroundGrass");
+
+                if (x == left || x == right - 1)
+                {
+                    tile->SetObject("ObjectWoodenFenceVertical");
+                }
+
+                if (y == top || y == bottom - 1)
+                {
+                    tile->SetObject("ObjectWoodenFenceHorizontal");
+                }
+
+                if (x == left && y == top)
+                {
+                    tile->SetObject("ObjectWoodenFenceNW");
+                }
+
+                if (x == right - 1 && y == top)
+                {
+                    tile->SetObject("ObjectWoodenFenceNE");
+                }
+
+                if (x == left && y == bottom - 1)
+                {
+                    tile->SetObject("ObjectWoodenFenceSW");
+                }
+
+                if (x == right - 1 && y == bottom - 1)
+                {
+                    tile->SetObject("ObjectWoodenFenceSE");
+                }
             }
         }
 
