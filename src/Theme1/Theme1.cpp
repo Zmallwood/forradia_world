@@ -26,7 +26,7 @@ namespace ForradiaWorld
 
     void Theme1::Run()
     {
-        /*\
+        /*
 Run engine instance.
 */
         _<EngineDevice>().Run();

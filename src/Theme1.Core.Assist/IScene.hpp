@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
 
-    /*\
+    /*
 Base class which all other scene classes inherit from.
 */
     class IScene

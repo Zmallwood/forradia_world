@@ -24,7 +24,7 @@ namespace ForradiaWorld
 
     void MouseButton::RegisterPress()
     {
-        /*\
+        /*
 Set states corresponding to a mouse button press.
 */
         m_pressed = true;
@@ -34,7 +34,7 @@ Set states corresponding to a mouse button press.
 
     void MouseButton::RegisterRelease()
     {
-        /*\
+        /*
 Set states corresponding to a mouse button release.
 */
         m_pressed = false;
@@ -44,7 +44,7 @@ Set states corresponding to a mouse button release.
 
     bool MouseButton::GetBeenFiredPickResult()
     {
-        /*\
+        /*
 Get state, reset it and return.
 */
         auto result = m_beenFired;
@@ -56,7 +56,7 @@ Get state, reset it and return.
 
     bool MouseButton::GetBeenReleasedPickResult()
     {
-        /*\
+        /*
 Get state, reset it and return.
 */
         auto result = m_beenReleased;

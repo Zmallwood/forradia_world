@@ -24,7 +24,7 @@ namespace ForradiaWorld
 
     void IScene::Update()
     {
-        /*\
+        /*
 Update the parts in the inheriting class.
 */
         UpdateDerived();
@@ -32,7 +32,7 @@ Update the parts in the inheriting class.
 
     void IScene::Render() const
     {
-        /*\
+        /*
 Render the parts in the inheriting class.
 */
         RenderDerived();

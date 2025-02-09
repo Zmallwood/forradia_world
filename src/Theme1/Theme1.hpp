@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
 
-    /*\
+    /*
 The default theme that can be run with the Forradia World engine.
 */
     class Theme1
