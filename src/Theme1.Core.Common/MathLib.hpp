@@ -22,6 +22,9 @@
 namespace ForradiaWorld
 {
 
+    /*
+2D point with coordinates of ints. */
+
     class Point
     {
       public:
@@ -29,12 +32,18 @@ namespace ForradiaWorld
         int y { 0 };
     };
 
+    /*
+2D point with coordinates of floats. */
+
     class PointF
     {
       public:
         float x { 0.0f };
         float y { 0.0f };
     };
+
+    /*
+2D rectangle with coordinates and size of floats. */
 
     class RectF
     {
@@ -45,12 +54,18 @@ namespace ForradiaWorld
         float h { 0.0f };
     };
 
+    /*
+2D size with size of ints. */
+
     class Size
     {
       public:
         int w { 0 };
         int h { 0 };
     };
+
+    /*
+2D size with size of floats. */
 
     class SizeF
     {

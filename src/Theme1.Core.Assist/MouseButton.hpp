@@ -48,9 +48,6 @@ Returns the released-state and resets this state. */
 
         bool GetBeenReleasedPickResult();
 
-        /*
-Get Pressed. */
-
         auto GetPressed() const
         {
             return m_pressed;
