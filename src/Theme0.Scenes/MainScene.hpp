@@ -6,6 +6,7 @@
 
 namespace ForradiaWorld
 {
+
     class MainScene : public IScene
     {
       protected:
@@ -13,4 +14,5 @@ namespace ForradiaWorld
 
         void RenderDerived() const override;
     };
+
 }

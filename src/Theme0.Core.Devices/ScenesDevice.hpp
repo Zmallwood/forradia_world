@@ -6,6 +6,7 @@
 
 namespace ForradiaWorld
 {
+
     class IScene;
 
     class ScenesDevice
@@ -25,4 +26,5 @@ namespace ForradiaWorld
         std::map<SceneNames, IScene&> m_scenes;
         SceneNames m_currentScene { 0 };
     };
+
 }

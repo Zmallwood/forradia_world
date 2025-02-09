@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     void HeroDevice::MoveUp()
     {
         m_position.y--;
@@ -23,4 +24,5 @@ namespace ForradiaWorld
     {
         m_position.y++;
     }
+
 }

@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "GenerateNewWorld.hpp"
+
 #include "Theme0.Core.World/Everything.hpp"
 
 namespace ForradiaWorld
 {
+
     void GenerateNewWorld()
     {
 #define ___SETUP___
@@ -115,4 +117,5 @@ namespace ForradiaWorld
             }
         }
     }
+
 }

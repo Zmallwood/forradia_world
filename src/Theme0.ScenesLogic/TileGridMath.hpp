@@ -4,7 +4,9 @@
 
 namespace ForradiaWorld
 {
+
     Size GetGridSize();
 
     SizeF GetTileSize();
+
 }

@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     void KeyboardDevice::RegisterKeyPress(SDL_Keycode key)
     {
         m_pressedKeys.insert(key);
@@ -18,4 +19,5 @@ namespace ForradiaWorld
     {
         return m_pressedKeys.contains(key);
     }
+
 }

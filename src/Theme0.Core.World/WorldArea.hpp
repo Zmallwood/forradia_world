@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class Tile;
     class Creature;
 
@@ -23,4 +24,5 @@ namespace ForradiaWorld
         std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;
         std::map<std::shared_ptr<Creature>, Point> m_creaturesMirror;
     };
+
 }

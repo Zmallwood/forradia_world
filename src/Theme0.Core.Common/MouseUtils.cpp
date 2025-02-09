@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     PointF GetMousePosition()
     {
         int xPx;
@@ -18,4 +19,5 @@ namespace ForradiaWorld
 
         return { x, y };
     }
+
 }

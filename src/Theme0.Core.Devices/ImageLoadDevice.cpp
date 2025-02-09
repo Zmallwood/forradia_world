@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "ImageLoadDevice.hpp"
-#include "Theme0.Core.Devices/SDLDevice.hpp"
+
+#include "SDLDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     ImageLoadDevice::ImageLoadDevice()
     {
         LoadImages();
@@ -76,4 +78,5 @@ namespace ForradiaWorld
 
         return { width, height };
     }
+
 }

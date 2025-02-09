@@ -1,11 +1,14 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "TileHovering.hpp"
+
 #include "Theme0.Core.Devices/HeroDevice.hpp"
+
 #include "TileGridMath.hpp"
 
 namespace ForradiaWorld
 {
+
     void TileHovering::Update()
     {
         auto mousePosition = GetMousePosition();
@@ -21,4 +24,5 @@ namespace ForradiaWorld
 
         m_hoveredTile = { xCoord, yCoord };
     }
+
 }

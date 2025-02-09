@@ -1,11 +1,14 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "IntroScene.hpp"
+
 #include "Theme0.Core.Devices/ImageDrawDevice.hpp"
+
 #include "Theme0.Core.Devices/ScenesDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     void IntroScene::UpdateDerived()
     {
         _<ScenesDevice>().GoToScene(SceneNames::WorldGeneration);
@@ -17,4 +20,5 @@ namespace ForradiaWorld
 
         _<ImageDrawDevice>().DrawImage("ForradiaWorldLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
     }
+
 }

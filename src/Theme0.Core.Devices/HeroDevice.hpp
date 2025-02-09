@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class HeroDevice
     {
       public:
@@ -47,4 +48,5 @@ namespace ForradiaWorld
         int m_ticksLastMovement { 0 };
         float m_movementSpeed { 3.0f };
     };
+
 }

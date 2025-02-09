@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class MouseButton;
 
     class MouseDevice
@@ -28,4 +29,5 @@ namespace ForradiaWorld
         std::shared_ptr<MouseButton> m_leftButton;
         std::shared_ptr<MouseButton> m_rightButton;
     };
+
 }

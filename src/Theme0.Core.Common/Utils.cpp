@@ -2,6 +2,7 @@
 
 namespace ForradiaWorld
 {
+
     int Hash(std::string_view text)
     {
         unsigned long hash { 5381 };
@@ -38,4 +39,5 @@ namespace ForradiaWorld
     {
         TTF_CloseFont(font);
     }
+
 }

@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class Creature;
 
     class Tile
@@ -39,4 +40,5 @@ namespace ForradiaWorld
         int m_object { 0 };
         std::shared_ptr<Creature> m_creature;
     };
+
 }

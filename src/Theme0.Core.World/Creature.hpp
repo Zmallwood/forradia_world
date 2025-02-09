@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class Creature
     {
       public:
@@ -33,4 +34,5 @@ namespace ForradiaWorld
         int m_ticksLastMovement { 0 };
         float m_movementSpeed { 1.0f };
     };
+
 }

@@ -1,13 +1,18 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "EngineDevice.hpp"
-#include "Theme0.Core.Devices/KeyboardDevice.hpp"
-#include "Theme0.Core.Devices/MouseDevice.hpp"
-#include "Theme0.Core.Devices/SDLDevice.hpp"
-#include "Theme0.Core.Devices/ScenesDevice.hpp"
+
+#include "KeyboardDevice.hpp"
+
+#include "MouseDevice.hpp"
+
+#include "SDLDevice.hpp"
+
+#include "ScenesDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     void EngineDevice::Run()
     {
         Randomize();
@@ -71,4 +76,5 @@ namespace ForradiaWorld
             }
         }
     }
+
 }

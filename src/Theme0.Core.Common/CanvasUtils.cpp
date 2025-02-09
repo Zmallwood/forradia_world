@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "CanvasUtils.hpp"
+
 #include "Theme0.Core.Devices/SDLDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     Size GetCanvasSize()
     {
         Size canvasSize;
@@ -30,4 +32,5 @@ namespace ForradiaWorld
     {
         return height / GetAspectRatio();
     }
+
 }

@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class EngineDevice
     {
       public:
@@ -16,4 +17,5 @@ namespace ForradiaWorld
 
         bool m_running { true };
     };
+
 }

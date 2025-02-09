@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class Point
     {
       public:
@@ -40,4 +41,5 @@ namespace ForradiaWorld
         float w { 0.0f };
         float h { 0.0f };
     };
+
 }

@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "MouseDevice.hpp"
+
 #include "Theme0.Core.Assist/MouseButton.hpp"
 
 namespace ForradiaWorld
 {
+
     MouseDevice::MouseDevice()
         : m_leftButton(std::make_shared<MouseButton>())
         , m_rightButton(std::make_shared<MouseButton>())
@@ -46,4 +48,5 @@ namespace ForradiaWorld
             break;
         }
     }
+
 }

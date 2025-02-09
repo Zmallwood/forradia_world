@@ -1,11 +1,14 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "UpdateHeroKeyboardMovement.hpp"
+
 #include "Theme0.Core.Devices/KeyboardDevice.hpp"
+
 #include "Theme0.Core.Devices/HeroDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     void UpdateHeroKeyboardMovement()
     {
         auto upPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_UP);
@@ -42,4 +45,5 @@ namespace ForradiaWorld
             _<HeroDevice>().SetTicksLastMovement(now);
         }
     }
+
 }

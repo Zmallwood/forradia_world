@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "WorldArea.hpp"
+
 #include "Tile.hpp"
 
 namespace ForradiaWorld
 {
+
     WorldArea::WorldArea()
     {
         for (auto x = 0; x < 100; x++)
@@ -22,4 +24,5 @@ namespace ForradiaWorld
     {
         return m_tiles.at(x).at(y);
     }
+
 }

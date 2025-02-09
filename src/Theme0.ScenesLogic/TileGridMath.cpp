@@ -1,10 +1,12 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "TileGridMath.hpp"
+
 #include "Theme0.Core.Devices/SettingsDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     Size GetGridSize()
     {
         auto numGridRows = _<SettingsDevice>().k_numGridRows;
@@ -26,4 +28,5 @@ namespace ForradiaWorld
 
         return { tileWidth, tileHeight };
     }
+
 }

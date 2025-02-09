@@ -1,12 +1,16 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "ScenesDevice.hpp"
+
 #include "Theme0.Scenes/IntroScene.hpp"
+
 #include "Theme0.Scenes/MainScene.hpp"
+
 #include "Theme0.Scenes/WorldGenerationScene.hpp"
 
 namespace ForradiaWorld
 {
+
     ScenesDevice::ScenesDevice()
     {
         AddScene(SceneNames::Intro, _<IntroScene>());
@@ -41,4 +45,5 @@ namespace ForradiaWorld
     {
         m_currentScene = sceneName;
     }
+
 }

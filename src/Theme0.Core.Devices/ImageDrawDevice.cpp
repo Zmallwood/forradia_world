@@ -1,11 +1,14 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "ImageDrawDevice.hpp"
-#include "Theme0.Core.Devices/ImageLoadDevice.hpp"
-#include "Theme0.Core.Devices/SDLDevice.hpp"
+
+#include "ImageLoadDevice.hpp"
+
+#include "SDLDevice.hpp"
 
 namespace ForradiaWorld
 {
+
     void ImageDrawDevice::DrawImage(int imageNameHash, RectF destination) const
     {
         auto image = _<ImageLoadDevice>().GetImage(imageNameHash);
@@ -27,4 +30,5 @@ namespace ForradiaWorld
     {
         DrawImage(Hash(imageName), destination);
     }
+
 }

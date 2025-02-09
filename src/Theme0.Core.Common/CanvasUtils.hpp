@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     Size GetCanvasSize();
 
     float GetAspectRatio();
@@ -11,4 +12,5 @@ namespace ForradiaWorld
     float ConvertWidthToHeight(float width);
 
     float ConvertHeightToWidth(float height);
+
 }

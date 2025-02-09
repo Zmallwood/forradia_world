@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     SDLDevice::SDLDevice()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
@@ -47,4 +48,5 @@ namespace ForradiaWorld
     {
         SDL_RenderPresent(m_renderer.get());
     }
+
 }

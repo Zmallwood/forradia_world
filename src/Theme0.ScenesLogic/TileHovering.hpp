@@ -4,6 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     class TileHovering
     {
       public:
@@ -17,4 +18,5 @@ namespace ForradiaWorld
       private:
         Point m_hoveredTile { -1, -1 };
     };
+
 }

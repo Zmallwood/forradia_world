@@ -4,5 +4,7 @@
 
 namespace ForradiaWorld
 {
+
     void GenerateNewWorld();
+
 }
