@@ -8,9 +8,9 @@ namespace ForradiaWorld
 {
     class IntroScene : public IScene
     {
-      public:
       protected:
         void UpdateDerived() override;
+
         void RenderDerived() const override;
     };
 }

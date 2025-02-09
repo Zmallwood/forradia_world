@@ -19,14 +19,18 @@ namespace ForradiaWorld
     bool MouseButton::GetBeenFiredPickResult()
     {
         auto result = m_beenFired;
+
         m_beenFired = false;
+
         return result;
     }
 
     bool MouseButton::GetBeenReleasedPickResult()
     {
         auto result = m_beenReleased;
+
         m_beenReleased = false;
+
         return result;
     }
 }

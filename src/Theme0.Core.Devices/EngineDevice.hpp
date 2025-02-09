@@ -11,6 +11,7 @@ namespace ForradiaWorld
 
       private:
         void Randomize() const;
+
         void PollEvents();
 
         bool m_running { true };

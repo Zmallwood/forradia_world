@@ -2,7 +2,7 @@
 
 #include "UpdatePlayerMouseMovement.hpp"
 #include "Theme0.Core.Assist/MouseButton.hpp"
-#include "Theme0.Core.Devices/MouseInputDevice.hpp"
+#include "Theme0.Core.Devices/MouseDevice.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"
 #include "TileHovering.hpp"
 
@@ -12,7 +12,7 @@ namespace ForradiaWorld
     {
         auto now = SDL_GetTicks();
 
-        auto leftMouseFired = _<MouseInputDevice>().GetLeftButton()->GetBeenFiredPickResult();
+        auto leftMouseFired = _<MouseDevice>().GetLeftButton()->GetBeenFiredPickResult();
         auto hoveredTile = _<TileHovering>().GetHoveredTile();
 
         if (leftMouseFired)

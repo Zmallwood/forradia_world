@@ -1,8 +1,8 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "EngineDevice.hpp"
-#include "Theme0.Core.Devices/KeyboardInputDevice.hpp"
-#include "Theme0.Core.Devices/MouseInputDevice.hpp"
+#include "Theme0.Core.Devices/KeyboardDevice.hpp"
+#include "Theme0.Core.Devices/MouseDevice.hpp"
 #include "Theme0.Core.Devices/SDLDevice.hpp"
 #include "Theme0.Core.Devices/ScenesDevice.hpp"
 
@@ -39,16 +39,16 @@ namespace ForradiaWorld
                 m_running = false;
                 break;
             case SDL_KEYDOWN:
-                _<KeyboardInputDevice>().RegisterKeyPress(event.key.keysym.sym);
+                _<KeyboardDevice>().RegisterKeyPress(event.key.keysym.sym);
                 break;
             case SDL_KEYUP:
-                _<KeyboardInputDevice>().RegisterKeyRelease(event.key.keysym.sym);
+                _<KeyboardDevice>().RegisterKeyRelease(event.key.keysym.sym);
                 break;
             case SDL_MOUSEBUTTONDOWN:
-                _<MouseInputDevice>().RegisterButtonPress(event.button.button);
+                _<MouseDevice>().RegisterButtonPress(event.button.button);
                 break;
             case SDL_MOUSEBUTTONUP:
-                _<MouseInputDevice>().RegisterButtonRelease(event.button.button);
+                _<MouseDevice>().RegisterButtonRelease(event.button.button);
                 break;
             }
         }

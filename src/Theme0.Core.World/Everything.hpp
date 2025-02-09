@@ -2,9 +2,8 @@
 
 #pragma once
 
-#include "World.hpp"
-#include "Creature.hpp"
 #include "Animal.hpp"
+#include "Creature.hpp"
 #include "Tile.hpp"
-#include "WorldArea.hpp"
 #include "World.hpp"
+#include "WorldArea.hpp"

@@ -10,6 +10,7 @@ namespace ForradiaWorld
     {
       protected:
         void UpdateDerived() override;
+
         void RenderDerived() const override;
     };
 }

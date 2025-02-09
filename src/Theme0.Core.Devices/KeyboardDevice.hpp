@@ -4,11 +4,13 @@
 
 namespace ForradiaWorld
 {
-    class KeyboardInputDevice
+    class KeyboardDevice
     {
       public:
         void RegisterKeyPress(SDL_Keycode key);
+
         void RegisterKeyRelease(SDL_Keycode key);
+
         bool KeyIsPressed(SDL_Keycode key) const;
 
       private:

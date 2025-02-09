@@ -6,12 +6,13 @@ namespace ForradiaWorld
 {
     class MouseButton;
 
-    class MouseInputDevice
+    class MouseDevice
     {
       public:
-        MouseInputDevice();
+        MouseDevice();
 
         void RegisterButtonPress(Uint8 button);
+
         void RegisterButtonRelease(Uint8 button);
 
         auto GetLeftButton() const

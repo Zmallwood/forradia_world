@@ -8,8 +8,11 @@ namespace ForradiaWorld
     {
       public:
         void RegisterPress();
+
         void RegisterRelease();
+
         bool GetBeenFiredPickResult();
+
         bool GetBeenReleasedPickResult();
 
         auto GetPressed() const

@@ -9,23 +9,20 @@ namespace ForradiaWorld
       public:
         Creature(std::string_view creatureName);
 
+        virtual ~Creature() { }
+
         int GetType() const
         {
             return m_type;
         }
-
-        virtual ~Creature() { }
-
         auto GetTicksLastMovement() const
         {
             return m_ticksLastMovement;
         }
-
         void SetTicksLastMovement(int value)
         {
             m_ticksLastMovement = value;
         }
-
         auto GetMovementSpeed() const
         {
             return m_movementSpeed;

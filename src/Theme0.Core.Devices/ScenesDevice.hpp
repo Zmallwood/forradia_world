@@ -14,7 +14,9 @@ namespace ForradiaWorld
         ScenesDevice();
 
         void UpdateCurrentScene();
+
         void RenderCurrentScene() const;
+
         void GoToScene(SceneNames sceneName);
 
       private:

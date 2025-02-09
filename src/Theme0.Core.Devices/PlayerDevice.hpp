@@ -8,8 +8,11 @@ namespace ForradiaWorld
     {
       public:
         void MoveUp();
+
         void MoveRight();
+
         void MoveDown();
+
         void MoveLeft();
 
         auto GetPosition() const

@@ -1,17 +1,17 @@
 // Copyright 2025 Andreas Åkerberg
 
-#include "MouseInputDevice.hpp"
+#include "MouseDevice.hpp"
 #include "Theme0.Core.Assist/MouseButton.hpp"
 
 namespace ForradiaWorld
 {
-    MouseInputDevice::MouseInputDevice()
+    MouseDevice::MouseDevice()
         : m_leftButton(std::make_shared<MouseButton>())
         , m_rightButton(std::make_shared<MouseButton>())
     {
     }
 
-    void MouseInputDevice::RegisterButtonPress(Uint8 button)
+    void MouseDevice::RegisterButtonPress(Uint8 button)
     {
         switch (button)
         {
@@ -24,7 +24,7 @@ namespace ForradiaWorld
         }
     }
 
-    void MouseInputDevice::RegisterButtonRelease(Uint8 button)
+    void MouseDevice::RegisterButtonRelease(Uint8 button)
     {
         switch (button)
         {

@@ -1,17 +1,17 @@
 // Copyright 2025 Andreas Åkerberg
 
 #include "UpdatePlayerKBMovement.hpp"
-#include "Theme0.Core.Devices/KeyboardInputDevice.hpp"
+#include "Theme0.Core.Devices/KeyboardDevice.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"
 
 namespace ForradiaWorld
 {
     void UpdatePlayerKBMovement()
     {
-        auto upPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_UP);
-        auto rightPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_RIGHT);
-        auto downPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_DOWN);
-        auto leftPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_LEFT);
+        auto upPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_UP);
+        auto rightPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_RIGHT);
+        auto downPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_DOWN);
+        auto leftPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_LEFT);
 
         auto now = SDL_GetTicks();
 
