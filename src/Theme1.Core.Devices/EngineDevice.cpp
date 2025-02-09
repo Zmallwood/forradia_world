@@ -27,6 +27,8 @@
 
 #include "ScenesDevice.hpp"
 
+#include "FPSCounterDevice.hpp"
+
 namespace ForradiaWorld
 {
     /*
@@ -54,12 +56,14 @@ Handle input coming from the player. */
 Update the engine. */
 
             _<ScenesDevice>().UpdateCurrentScene();
+            _<FPSCounterDevice>().Update();
 
             /*
 Render the engine. */
 
             _<SDLDevice>().ClearCanvas();
             _<ScenesDevice>().RenderCurrentScene();
+            _<FPSCounterDevice>().Render();
             _<SDLDevice>().PresentCanvas();
         }
     }
