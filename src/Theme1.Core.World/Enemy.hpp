@@ -19,14 +19,13 @@
 
 #pragma once
 
-#include "Animal.hpp"
-
 #include "Creature.hpp"
 
-#include "Enemy.hpp"
-
-#include "Tile.hpp"
-
-#include "World.hpp"
-
-#include "WorldArea.hpp"
+namespace ForradiaWorld
+{
+    class Enemy : public Creature
+    {
+      public:
+        using Creature::Creature;
+    };
+}

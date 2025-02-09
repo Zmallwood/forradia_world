@@ -46,17 +46,17 @@ Seed with time to get unique randomization in the game each game start. */
         while (m_running)
         {
             /*
-Handle input. */
+Handle input coming from the player. */
 
             PollEvents();
 
             /*
-Update. */
+Update the engine. */
 
             _<ScenesDevice>().UpdateCurrentScene();
 
             /*
-Render. */
+Render the engine. */
 
             _<SDLDevice>().ClearCanvas();
             _<ScenesDevice>().RenderCurrentScene();
