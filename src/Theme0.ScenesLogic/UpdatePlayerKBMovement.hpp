@@ -1,5 +1,5 @@
 #pragma once
 
 namespace FW {
-void UpdatePlayerMovement();
+void UpdatePlayerKBMovement();
 }

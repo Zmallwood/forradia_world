@@ -1,5 +1,6 @@
 #include "EngineDevice.hpp"
 #include "Theme0.Core.Devices/KeyboardInputDevice.hpp"
+#include "Theme0.Core.Devices/MouseInputDevice.hpp"
 #include "Theme0.Core.Devices/SDLDevice.hpp"
 #include "Theme0.Core.Devices/ScenesDevice.hpp"
 
@@ -38,10 +39,10 @@ void EngineDevice::PollEvents()
             _<KeyboardInputDevice>().RegisterKeyRelease(event.key.keysym.sym);
             break;
         case SDL_MOUSEBUTTONDOWN:
-            //    _<MouseInput>().RegisterMouseDown(event.button.button);
+            _<MouseInputDevice>().RegisterButtonPress(event.button.button);
             break;
         case SDL_MOUSEBUTTONUP:
-            //    _<MouseInput>().RegisterMouseUp(event.button.button);
+            _<MouseInputDevice>().RegisterButtonRelease(event.button.button);
             break;
         }
     }

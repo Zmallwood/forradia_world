@@ -1,9 +1,9 @@
-#include "UpdatePlayerMovement.hpp"
+#include "UpdatePlayerKBMovement.hpp"
 #include "Theme0.Core.Devices/PlayerDevice.hpp"
 #include "Theme0.Core.Devices/KeyboardInputDevice.hpp"
 
 namespace FW {
-void UpdatePlayerMovement()
+void UpdatePlayerKBMovement()
 {
     auto upPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_UP);
     auto rightPressed = _<KeyboardInputDevice>().KeyIsPressed(SDLK_RIGHT);
