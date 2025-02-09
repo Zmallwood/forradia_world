@@ -31,6 +31,10 @@ namespace ForradiaWorld
 
         std::shared_ptr<Tile> GetTile(int x, int y) const;
 
+        Size GetSize() const;
+
+        bool IsValidCoordinate(int x, int y) const;
+
         auto& GetCreaturesMirrorRef()
         {
             return m_creaturesMirror;

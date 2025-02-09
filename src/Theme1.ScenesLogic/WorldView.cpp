@@ -36,7 +36,7 @@ namespace ForradiaWorld
 
     void WorldView::Render() const
     {
-        /*\
+        /*
 =================== SETUP ====================*/
 
         auto worldArea = _<World>().GetCurrentWorldArea();
@@ -49,7 +49,7 @@ namespace ForradiaWorld
 
         float smallValue = 0.003f;
 
-        /*\
+        /*
 =================== TILE GRID LOOP ====================*/
 
         for (auto y = 0; y < gridSize.h; y++)
@@ -57,13 +57,13 @@ namespace ForradiaWorld
             for (auto x = 0; x < gridSize.w; x++)
             {
 
-                /*\
+                /*
 =================== TILE SETUP ====================*/
 
                 int coordX = heroPos.x - (gridSize.w - 1) / 2 + x;
                 int coordY = heroPos.y - (gridSize.h - 1) / 2 + y;
 
-                if (coordX < 0 || coordY < 0 || coordX >= 100 || coordY >= 100)
+                if (!worldArea->IsValidCoordinate(coordX, coordY))
                 {
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace ForradiaWorld
 
                 RectF dest { x * tileSize.w, y * tileSize.h, tileSize.w + smallValue, tileSize.h + smallValue };
 
-                /*\
+                /*
 *=================== BLOCKED SIGHT ====================*/
 
                 auto sightBlocked { false };
@@ -111,21 +111,21 @@ namespace ForradiaWorld
                     continue;
                 }
 
-                /*\
+                /*
 *=================== GROUND RENDERING ====================*/
 
                 int ground = tile->GetGround();
 
                 if (ground == Hash("GroundWater"))
                 {
-                    int animIndex = (SDL_GetTicks() % 1200) / 400;
+                    int animIndex = ((SDL_GetTicks() + 10 * coordX * coordY) % 1200) / 400;
 
                     std::string animName = "GroundWater_" + std::to_string(animIndex);
 
                     ground = Hash(animName);
                 }
 
-                /*\
+                /*
 *=================== OBJECTS RENDERING ====================*/
 
                 _<ImageDrawDevice>().DrawImage(ground, dest);
@@ -139,7 +139,7 @@ namespace ForradiaWorld
 
                 _<ImageDrawDevice>().DrawImage(object, dest);
 
-                /*\
+                /*
 *=================== CREATURE RENDERING ====================*/
 
                 auto creature = tile->GetCreature();
@@ -149,7 +149,7 @@ namespace ForradiaWorld
                     _<ImageDrawDevice>().DrawImage(creature->GetType(), dest);
                 }
 
-                /*\
+                /*
 *=================== PLAYER RENDERING ====================*/
 
                 if (coordX == heroPos.x && coordY == heroPos.y)

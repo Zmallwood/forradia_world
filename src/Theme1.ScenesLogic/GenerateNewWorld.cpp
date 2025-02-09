@@ -31,11 +31,13 @@ namespace ForradiaWorld
 
         auto& creaturesMirrorRef = worldArea->GetCreaturesMirrorRef();
 
+        auto size = worldArea->GetSize();
+
 #define ___CLEARWORLD_WITH_GRASS___
 
-        for (auto y = 0; y < 100; y++)
+        for (auto y = 0; y < size.h; y++)
         {
-            for (auto x = 0; x < 100; x++)
+            for (auto x = 0; x < size.w; x++)
             {
                 auto tile = worldArea->GetTile(x, y);
 
@@ -49,8 +51,8 @@ namespace ForradiaWorld
 
         for (auto i = 0; i < numLakes; i++)
         {
-            auto xCenter = rand() % 100;
-            auto yCenter = rand() % 100;
+            auto xCenter = rand() % size.w;
+            auto yCenter = rand() % size.h;
 
             auto r = 3 + rand() % 8;
 
@@ -58,7 +60,7 @@ namespace ForradiaWorld
             {
                 for (auto x = xCenter - r; x <= xCenter + r; x++)
                 {
-                    if (x < 0 || y < 0 || x >= 100 || y >= 100)
+                    if (!worldArea->IsValidCoordinate(x, y))
                     {
                         continue;
                     }
@@ -82,8 +84,8 @@ namespace ForradiaWorld
 
         for (auto i = 0; i < numTree1s; i++)
         {
-            auto x = rand() % 100;
-            auto y = rand() % 100;
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
 
             auto tile = worldArea->GetTile(x, y);
 
@@ -97,8 +99,8 @@ namespace ForradiaWorld
 
         for (auto i = 0; i < numTree2s; i++)
         {
-            auto x = rand() % 100;
-            auto y = rand() % 100;
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
 
             auto tile = worldArea->GetTile(x, y);
 
@@ -118,8 +120,8 @@ namespace ForradiaWorld
 
         for (auto i = 0; i < numWhiteRabbits; i++)
         {
-            auto x = rand() % 100;
-            auto y = rand() % 100;
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
 
             auto tile = worldArea->GetTile(x, y);
 

@@ -25,5 +25,6 @@ namespace ForradiaWorld
     {
       public:
         const int k_numGridRows { 21 };
+        const Size k_worldAreaSize { 100, 100 };
     };
 }

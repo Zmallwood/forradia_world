@@ -21,6 +21,8 @@
 
 #include "Tile.hpp"
 
+#include "Theme1.Core.Devices/SettingsDevice.hpp"
+
 namespace ForradiaWorld
 {
     /*
@@ -28,11 +30,13 @@ namespace ForradiaWorld
 
     WorldArea::WorldArea()
     {
-        for (auto x = 0; x < 100; x++)
+        auto size = _<SettingsDevice>().k_worldAreaSize;
+
+        for (auto x = 0; x < size.w; x++)
         {
             m_tiles.push_back(std::vector<std::shared_ptr<Tile>>());
 
-            for (auto y = 0; y < 100; y++)
+            for (auto y = 0; y < size.h; y++)
             {
                 m_tiles.at(x).push_back(std::make_shared<Tile>());
             }
@@ -42,5 +46,25 @@ namespace ForradiaWorld
     std::shared_ptr<Tile> WorldArea::GetTile(int x, int y) const
     {
         return m_tiles.at(x).at(y);
+    }
+
+    Size WorldArea::GetSize() const
+    {
+        auto width = static_cast<int>(m_tiles.size());
+        auto height = 0;
+
+        if (width)
+        {
+            height = static_cast<int>(m_tiles.at(0).size());
+        }
+
+        return { width, height };
+    }
+
+    bool WorldArea::IsValidCoordinate(int x, int y) const
+    {
+        auto size = GetSize();
+
+        return x >= 0 && y >= 0 && x < size.w && y < size.h;
     }
 }
