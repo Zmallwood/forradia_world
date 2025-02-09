@@ -4,7 +4,7 @@
 
 namespace ForradiaWorld
 {
-    class Game
+    class Theme0
     {
       public:
         void Run();
