@@ -129,6 +129,21 @@ namespace ForradiaWorld
             }
         }
 
+        auto numPinkFlowers = 200;
+
+        for (auto i = 0; i < numPinkFlowers; i++)
+        {
+            auto x = rand() % size.w;
+            auto y = rand() % size.h;
+
+            auto tile = worldArea->GetTile(x, y);
+
+            if (tile->GetGround() != Hash("GroundWater"))
+            {
+                tile->SetObject("ObjectPinkFlower");
+            }
+        }
+
         /*
 =================== GENERATE ANIMALS ====================*/
 

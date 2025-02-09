@@ -49,7 +49,7 @@ namespace ForradiaWorld
 
         Point hoveredTile = _<TileHovering>().GetHoveredTile();
 
-        float smallValue = 0.003f;
+        float smallValue = 0.002f;
 
         /*
 =================== TILE GRID LOOP ====================*/

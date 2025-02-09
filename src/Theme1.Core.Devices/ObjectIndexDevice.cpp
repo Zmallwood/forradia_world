@@ -31,6 +31,7 @@ namespace ForradiaWorld
         AddEntry("ObjectWoodenFenceNE", "Wooden fence", OBJECT_ALLOWS_SIGHT);
         AddEntry("ObjectWoodenFenceSE", "Wooden fence", OBJECT_ALLOWS_SIGHT);
         AddEntry("ObjectWoodenFenceSW", "Wooden fence", OBJECT_ALLOWS_SIGHT);
+        AddEntry("ObjectPinkFlower", "Pink flower", OBJECT_ALLOWS_SIGHT);
     }
 
     bool ObjectIndexDevice::ObjectAllowsSight(int objectHash) const
