@@ -70,5 +70,4 @@ namespace ForradiaWorld
 
         std::map<FontSizes, std::shared_ptr<TTF_Font>> m_fonts; ///< Stores loaded fonts mapped by size.
     };
-
 }

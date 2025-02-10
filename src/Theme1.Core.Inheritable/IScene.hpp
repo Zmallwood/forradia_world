@@ -53,5 +53,4 @@ namespace ForradiaWorld
         */
         virtual void RenderDerived() const { }
     };
-
 }

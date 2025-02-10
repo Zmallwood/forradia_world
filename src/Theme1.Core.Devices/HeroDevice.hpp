@@ -108,5 +108,4 @@ namespace ForradiaWorld
         int m_ticksLastMovement { 0 }; ///< Stores the last movement time in ticks.
         float m_movementSpeed { 3.0f }; ///< The speed of hero movement.
     };
-
 }

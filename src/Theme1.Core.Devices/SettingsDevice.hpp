@@ -38,5 +38,4 @@ namespace ForradiaWorld
         */
         const Size k_worldAreaSize { 100, 100 };
     };
-
 }

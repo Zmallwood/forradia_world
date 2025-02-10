@@ -92,5 +92,4 @@ namespace ForradiaWorld
         int m_object { 0 }; /**< The hashed value representing the object on the tile. */
         std::shared_ptr<Creature> m_creature; /**< A shared pointer to the creature occupying the tile. */
     };
-
 }

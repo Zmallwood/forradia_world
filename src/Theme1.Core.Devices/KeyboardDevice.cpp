@@ -35,5 +35,4 @@ namespace ForradiaWorld
     {
         return m_pressedKeys.contains(key); // Check if the key is currently pressed
     }
-
 }

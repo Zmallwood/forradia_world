@@ -159,5 +159,4 @@ namespace ForradiaWorld
     * @return The computed width.
     */
     float ConvertHeightToWidth(float height);
-
 }

@@ -96,5 +96,4 @@ namespace ForradiaWorld
         /// A map storing creatures and their respective positions in the world area.
         std::map<std::shared_ptr<Creature>, Point> m_creaturesMirror;
     };
-
 }

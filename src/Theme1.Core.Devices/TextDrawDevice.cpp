@@ -129,5 +129,4 @@ namespace ForradiaWorld
         SDL_FreeSurface(surface); // Free the surface after use.
         SDL_DestroyTexture(message); // Destroy the texture to free memory.
     }
-
 }

@@ -39,5 +39,4 @@ namespace ForradiaWorld
         */
         using Creature::Creature;
     };
-
 }

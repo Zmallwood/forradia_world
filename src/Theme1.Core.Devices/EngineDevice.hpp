@@ -59,5 +59,4 @@ namespace ForradiaWorld
         */
         bool m_running { true };
     };
-
 }

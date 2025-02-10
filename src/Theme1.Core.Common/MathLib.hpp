@@ -106,5 +106,4 @@ namespace ForradiaWorld
         /** @brief The height of the size. */
         float h { 0.0f };
     };
-
 }

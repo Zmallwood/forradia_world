@@ -56,5 +56,4 @@ namespace ForradiaWorld
       private:
         std::set<SDL_Keycode> m_pressedKeys; ///< A set to store currently pressed keys.
     };
-
 }

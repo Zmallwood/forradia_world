@@ -102,5 +102,4 @@ namespace ForradiaWorld
 
         return { width, height }; // Return the width and height of the image
     }
-
 }

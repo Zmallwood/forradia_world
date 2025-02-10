@@ -32,5 +32,4 @@ namespace ForradiaWorld
         // Calls the derived class's implementation of RenderDerived()
         RenderDerived();
     }
-
 }

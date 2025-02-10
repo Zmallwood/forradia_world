@@ -76,5 +76,4 @@ namespace ForradiaWorld
         // Update the screen with the latest rendered frame
         SDL_RenderPresent(m_renderer.get());
     }
-
 }

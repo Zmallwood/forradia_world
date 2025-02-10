@@ -52,5 +52,4 @@ namespace ForradiaWorld
       private:
         std::shared_ptr<WorldArea> m_currentWorldArea; /**< A shared pointer to the current world area. */
     };
-
 }

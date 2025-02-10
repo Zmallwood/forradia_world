@@ -42,5 +42,4 @@ namespace ForradiaWorld
         // Draw the FPS counter on the screen at the top-right corner
         _<TextDrawDevice>().DrawString("FPS: " + std::to_string(m_fps), 0.95f, 0.05f);
     }
-
 }

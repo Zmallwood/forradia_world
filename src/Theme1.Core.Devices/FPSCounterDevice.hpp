@@ -51,5 +51,4 @@ namespace ForradiaWorld
         int m_framesCount { 0 }; ///< Counts the number of frames rendered in the current second.
         int m_ticksLastUpdate { 0 }; ///< Stores the last time (in milliseconds) the FPS was updated.
     };
-
 }

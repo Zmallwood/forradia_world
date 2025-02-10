@@ -56,5 +56,4 @@ namespace ForradiaWorld
         // Insert a new entry in the object index with the specified hash, label, and flags
         m_entries.insert({ Hash(objectName), { label.data(), flags } });
     }
-
 }

@@ -78,5 +78,4 @@ namespace ForradiaWorld
         /// Stores the currently active scene.
         SceneNames m_currentScene { 0 };
     };
-
 }

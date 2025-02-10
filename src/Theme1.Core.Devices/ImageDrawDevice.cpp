@@ -52,5 +52,4 @@ namespace ForradiaWorld
         // Hash the image name and delegate to the hashed version of DrawImage
         DrawImage(Hash(imageName), destination);
     }
-
 }

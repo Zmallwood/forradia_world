@@ -66,5 +66,4 @@ namespace ForradiaWorld
         /// A map storing loaded images, keyed by their hashed names.
         std::map<int, std::shared_ptr<SDL_Texture>> m_images;
     };
-
 }

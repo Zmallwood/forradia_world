@@ -66,5 +66,4 @@ namespace ForradiaWorld
         // Change the current active scene
         m_currentScene = sceneName;
     }
-
 }

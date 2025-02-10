@@ -89,5 +89,4 @@ namespace ForradiaWorld
         */
         std::map<int, ObjectIndexEntry> m_entries;
     };
-
 }

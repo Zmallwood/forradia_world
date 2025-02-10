@@ -77,5 +77,4 @@ namespace ForradiaWorld
         // Check if the coordinates are within the bounds of the world area
         return x >= 0 && y >= 0 && x < size.w && y < size.h;
     }
-
 }

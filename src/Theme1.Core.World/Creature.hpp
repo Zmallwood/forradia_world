@@ -85,5 +85,4 @@ namespace ForradiaWorld
         int m_ticksLastMovement { 0 }; ///< The ticks of the last movement.
         float m_movementSpeed { 1.0f }; ///< The movement speed of the creature.
     };
-
 }

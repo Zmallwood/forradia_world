@@ -65,5 +65,4 @@ namespace ForradiaWorld
         std::shared_ptr<SDL_Window> m_window; ///< Smart pointer holding the SDL window.
         std::shared_ptr<SDL_Renderer> m_renderer; ///< Smart pointer holding the SDL renderer.
     };
-
 }

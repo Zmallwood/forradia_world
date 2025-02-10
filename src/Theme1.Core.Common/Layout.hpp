@@ -76,5 +76,4 @@ namespace ForradiaWorld
         */
         Center
     };
-
 }
