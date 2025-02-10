@@ -5,7 +5,7 @@
  * This file is part of Forradia World.
  *
  * Licensed under the MIT License (the "License");
- * you may not use this file except in compliance with the License.
+ * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     https://opensource.org/licenses/MIT
@@ -21,14 +21,22 @@
 
 namespace ForradiaWorld
 {
-    /*
-The default theme that can be run with the Forradia World engine. */
-
+    /**
+     * @class Theme1
+     * @brief Represents the default theme in the Forradia World project.
+     *
+     * This class is responsible for managing and executing
+     * theme-related functionality specific to Theme1.
+     */
     class Theme1
     {
       public:
-        /* Run an instance of Theme1. */
-
+        /**
+         * @brief Executes the main functionality of Theme1.
+         *
+         * This function is responsible for running the operations
+         * associated with Theme1.
+         */
         void Run();
     };
 }

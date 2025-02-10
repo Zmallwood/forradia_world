@@ -23,9 +23,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: World */
-
     World::World()
         : m_currentWorldArea(std::make_shared<WorldArea>())
     {

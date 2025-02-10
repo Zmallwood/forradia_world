@@ -25,9 +25,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: ImageDrawDevice */
-
     void ImageDrawDevice::DrawImage(int imageNameHash, RectF destination) const
     {
         auto image = _<ImageLoadDevice>().GetImage(imageNameHash);

@@ -21,9 +21,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: KeyboardDevice */
-
     void KeyboardDevice::RegisterKeyPress(SDL_Keycode key)
     {
         m_pressedKeys.insert(key);

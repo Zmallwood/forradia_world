@@ -21,22 +21,13 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: IScene */
-
     void IScene::Update()
     {
-        /*
-Update the parts in the inheriting class. */
-
         UpdateDerived();
     }
 
     void IScene::Render() const
     {
-        /*
-Render the parts in the inheriting class. */
-
         RenderDerived();
     }
 }

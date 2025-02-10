@@ -31,9 +31,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: MainScene */
-
     void MainScene::UpdateDerived()
     {
         UpdateAnimalsMovement();

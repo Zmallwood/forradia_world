@@ -25,9 +25,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: WorldGenerationScene */
-
     void WorldGenerationScene::UpdateDerived()
     {
         GenerateNewWorld();

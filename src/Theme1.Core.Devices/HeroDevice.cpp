@@ -21,26 +21,23 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: HeroDevice */
-
     void HeroDevice::MoveUp()
     {
-        m_position.y--;
+        m_position.y--; // Move the hero one unit up (decrease Y coordinate)
     }
 
     void HeroDevice::MoveRight()
     {
-        m_position.x++;
+        m_position.x++; // Move the hero one unit to the right (increase X coordinate)
     }
 
     void HeroDevice::MoveLeft()
     {
-        m_position.x--;
+        m_position.x--; // Move the hero one unit to the left (decrease X coordinate)
     }
 
     void HeroDevice::MoveDown()
     {
-        m_position.y++;
+        m_position.y++; // Move the hero one unit down (increase Y coordinate)
     }
 }

@@ -27,9 +27,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: ScenesServiceDevice */
-
     ScenesServiceDevice::ScenesServiceDevice()
     {
         AddScene(SceneNames::Intro, _<IntroScene>());

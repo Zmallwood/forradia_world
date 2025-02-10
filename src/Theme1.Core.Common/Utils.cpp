@@ -21,152 +21,133 @@
 
 namespace ForradiaWorld
 {
-    /*
-============= GENERAL UTILITIES ============= */
+    // =============================================
+    // Hashing Utilities
+    // =============================================
 
     int Hash(std::string_view text)
     {
-        /* Alghorithm from forgotten source on the net. */
+        unsigned long hash { 5381 }; // Initialize hash to a prime value.
 
-        unsigned long hash { 5381 };
-
+        // Iterate through each character of the input string.
         for (size_t i { 0 }; i < text.size(); ++i)
         {
+            // Update the hash using a common hash function (djb2).
             hash = 33 * hash + (unsigned char)text[i];
         }
 
+        // Return the computed hash as an integer.
         return static_cast<int>(hash);
     }
 
-    /*
-CLASS: SDLDeleter */
+    // =============================================
+    // SDL Resource Management
+    // =============================================
 
     void SDLDeleter::operator()(SDL_Window* window) const
     {
-        /* Proper destruction of SDL_Window object. */
-
-        SDL_DestroyWindow(window);
+        SDL_DestroyWindow(window); // Free the SDL_Window object.
     }
 
     void SDLDeleter::operator()(SDL_Renderer* renderer) const
     {
-        /* Proper destruction of SDL_Renderer object. */
-
-        SDL_DestroyRenderer(renderer);
+        SDL_DestroyRenderer(renderer); // Free the SDL_Renderer object.
     }
 
     void SDLDeleter::operator()(SDL_Surface* surface) const
     {
-        /* Proper destruction of SDL_Surface object. */
-
-        SDL_FreeSurface(surface);
+        SDL_FreeSurface(surface); // Free the SDL_Surface object.
     }
 
     void SDLDeleter::operator()(SDL_Texture* texture) const
     {
-        /* Proper destruction of SDL_Texture object. */
-
-        SDL_DestroyTexture(texture);
+        SDL_DestroyTexture(texture); // Free the SDL_Texture object.
     }
 
     void SDLDeleter::operator()(TTF_Font* font) const
     {
-        /* Proper destruction of TTF_Font object. */
-
-        TTF_CloseFont(font);
+        TTF_CloseFont(font); // Close the TTF_Font object.
     }
 
-    /*
-============= STRING UTILITIES ============= */
+    // =============================================
+    // String Manipulation Utilities
+    // =============================================
 
     std::string Replace(std::string_view text, char replaced, char replacedWith)
     {
-        std::string textData = text.data();
+        std::string textData = text.data(); // Convert input to string.
 
-        /* Replace all occurences of replaced with replacedWith. */
-
+        // Replace all occurrences of 'replaced' with 'replacedWith' in the string.
         std::replace(textData.begin(), textData.end(), replaced, replacedWith);
 
-        return textData;
+        return textData; // Return the modified string.
     }
-
-    /*
-============= FILE UTILITIES ============= */
 
     std::string GetFileExtension(std::string_view path)
     {
-        /* Find index of last dot in path, and return everything following that index. */
-
+        // Extract the substring starting from the last dot (file extension).
         return path.substr(path.find_last_of('.') + 1).data();
     }
 
     std::string GetFileNameNoExtension(std::string_view path)
     {
-        /* Find index of last slash and get the filename following that slash. */
-
+        // Get the substring of the file name (without path).
         auto nameWithExtension = std::string(path.substr(path.find_last_of('/') + 1));
 
-        /* Find the index of the last dot in the above string, and return everything preceeding that dot. */
-
+        // Return the file name without its extension by slicing before the last dot.
         return nameWithExtension.substr(0, nameWithExtension.find_last_of('.'));
     }
 
-    /*
-============= MOUSE UTILITIES ============= */
+    // =============================================
+    // Input and Rendering Utilities
+    // =============================================
 
     PointF GetMousePosition()
     {
-        /* To hold the mouse position coordinates in pixels. */
+        int xPx, yPx;
 
-        int xPx;
-        int yPx;
+        SDL_GetMouseState(&xPx, &yPx); // Get mouse position in pixels.
 
-        /* Get mouse position in pixels from SDL. */
+        auto canvasSize = GetCanvasSize(); // Get the canvas size.
 
-        SDL_GetMouseState(&xPx, &yPx);
-
-        auto canvasSize = GetCanvasSize();
-
-        /* Divide the pixel values with the canvas size to get the "fractional" values as floats. */
-
+        // Calculate the relative mouse position as a fraction of the canvas size.
         auto x = static_cast<float>(xPx) / canvasSize.w;
         auto y = static_cast<float>(yPx) / canvasSize.h;
 
-        return { x, y };
+        return { x, y }; // Return mouse position as a PointF (relative to canvas).
     }
-
-    /*
-============= CANVAS UTILITIES ============= */
 
     Size GetCanvasSize()
     {
-        /* To hold the canvas size in pixels. */
-
         Size canvasSize;
 
-        /* Get the dimensions from SDL. */
-
+        // Get the size of the window (canvas).
         SDL_GetWindowSize(_<SDLDevice>().GetWindow().get(), &canvasSize.w, &canvasSize.h);
 
-        return canvasSize;
+        return canvasSize; // Return the canvas size.
     }
 
     float GetAspectRatio()
     {
-        auto canvasSize = GetCanvasSize();
+        auto canvasSize = GetCanvasSize(); // Get the canvas size.
 
-        /* Aspect ratio is obtained as: width / height. */
-
+        // Calculate and return the aspect ratio (width / height).
         return static_cast<float>(canvasSize.w) / canvasSize.h;
     }
 
+    // =============================================
+    // Aspect Ratio Conversions
+    // =============================================
+
     float ConvertWidthToHeight(float width)
     {
+        // Convert width to height using the aspect ratio.
         return width * GetAspectRatio();
     }
 
     float ConvertHeightToWidth(float height)
     {
+        // Convert height to width using the aspect ratio.
         return height / GetAspectRatio();
     }
 }

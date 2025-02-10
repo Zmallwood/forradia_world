@@ -23,25 +23,25 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: FPSCounterDevice */
-
     void FPSCounterDevice::Update()
     {
-        auto now = SDL_GetTicks();
+        auto now = SDL_GetTicks(); // Get the current time in milliseconds
 
+        // Update FPS count every second
         if (now > m_ticksLastUpdate + 1000)
         {
-            m_fps = m_framesCount;
-            m_framesCount = 0;
-            m_ticksLastUpdate = now;
+            m_fps = m_framesCount; // Store the number of frames rendered in the last second
+            m_framesCount = 0; // Reset frame count for the new second
+            m_ticksLastUpdate = now; // Update the last recorded time
         }
 
-        m_framesCount++;
+        m_framesCount++; // Increment the frame counter
     }
 
     void FPSCounterDevice::Render() const
     {
+        // Draw the FPS counter on the screen at the top-right corner
         _<TextDrawDevice>().DrawString("FPS: " + std::to_string(m_fps), 0.95f, 0.05f);
     }
+
 }

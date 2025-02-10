@@ -23,9 +23,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: TextDrawDevice */
-
     TextDrawDevice::TextDrawDevice()
     {
         TTF_Init();
@@ -40,8 +37,6 @@ CLASS: TextDrawDevice */
         auto fontPath = std::string(SDL_GetBasePath()) + k_defaultFontPath;
 
         auto fontPathUnixStyle = Replace(fontPath, '\\', '/');
-
-        std::cout << fontPathUnixStyle << std::endl;
 
         auto newFont = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontPathUnixStyle.c_str(), fontSizeN), SDLDeleter());
 

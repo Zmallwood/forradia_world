@@ -21,30 +21,15 @@
 
 namespace ForradiaWorld
 {
-    /*
-Base class which all other scene classes inherit from. */
-
     class IScene
     {
       public:
-        /*
-Do all update work of the scene. */
-
         void Update();
-
-        /*
-Do all render work of the scene. */
 
         void Render() const;
 
       protected:
-        /*
-Do the update work of the inheriting scene. */
-
         virtual void UpdateDerived() { }
-
-        /*
-Do the render work of the inheriting scene. */
 
         virtual void RenderDerived() const { }
     };

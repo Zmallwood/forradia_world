@@ -21,14 +21,8 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: MouseButton */
-
     void MouseButton::RegisterPress()
     {
-        /*
-Set states corresponding to a mouse button press. */
-
         m_pressed = true;
 
         m_beenFired = true;
@@ -36,9 +30,6 @@ Set states corresponding to a mouse button press. */
 
     void MouseButton::RegisterRelease()
     {
-        /*
-Set states corresponding to a mouse button release. */
-
         m_pressed = false;
 
         m_beenReleased = true;
@@ -46,9 +37,6 @@ Set states corresponding to a mouse button release. */
 
     bool MouseButton::GetBeenFiredPickResult()
     {
-        /*
-Get state, reset it and return. */
-
         auto result = m_beenFired;
 
         m_beenFired = false;
@@ -58,18 +46,12 @@ Get state, reset it and return. */
 
     bool MouseButton::GetBeenReleasedPickResult()
     {
-        /*
-Get state, reset it and return. */
-
         auto result = m_beenReleased;
 
         m_beenReleased = false;
 
         return result;
     }
-
-    /*
-CLASS: MouseDevice */
 
     MouseDevice::MouseDevice()
         : m_leftButton(std::make_shared<MouseButton>())

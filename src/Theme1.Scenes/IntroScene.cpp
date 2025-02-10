@@ -25,9 +25,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: IntroScene */
-
     void IntroScene::UpdateDerived()
     {
         _<ScenesServiceDevice>().GoToScene(SceneNames::WorldGeneration);

@@ -23,13 +23,9 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: TileHovering */
-
     void Theme1::Run()
     {
-        /* Run engine instance. */
-
+        // Retrieve the singleton instance of EngineDevice and run it.
         _<EngineDevice>().Run();
     }
 }

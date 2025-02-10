@@ -31,100 +31,60 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: EngineDevice */
-
     void EngineDevice::Run()
     {
+        srand(time(nullptr)); // Seed the random number generator with the current time.
 
-        /*
-Seed with time to get unique randomization in the game each game start. */
-
-        srand(time(nullptr));
-
-        /*
-============= GAME LOOP ============= */
-
+        // Main game loop, runs while m_running is true.
         while (m_running)
         {
-            /*
-Handle input coming from the player. */
+            PollEvents(); // Poll events (e.g., input events).
 
-            PollEvents();
+            _<ScenesServiceDevice>().UpdateCurrentScene(); // Update the current scene.
+            _<FPSCounterDevice>().Update(); // Update FPS counter.
 
-            /*
-Update the engine. */
-
-            _<ScenesServiceDevice>().UpdateCurrentScene();
-            _<FPSCounterDevice>().Update();
-
-            /*
-Render the engine. */
-
-            _<SDLDevice>().ClearCanvas();
-            _<ScenesServiceDevice>().RenderCurrentScene();
-            _<FPSCounterDevice>().Render();
-            _<SDLDevice>().PresentCanvas();
+            _<SDLDevice>().ClearCanvas(); // Clear the canvas (prepare for new frame).
+            _<ScenesServiceDevice>().RenderCurrentScene(); // Render the current scene to the canvas.
+            _<FPSCounterDevice>().Render(); // Render the FPS counter to the canvas.
+            _<SDLDevice>().PresentCanvas(); // Present the canvas (display the rendered content).
         }
     }
 
     void EngineDevice::PollEvents()
     {
-        SDL_Event event;
+        SDL_Event event; // SDL event object to store event data.
 
-        /*
-Go through all existing events. */
-
+        // Loop to poll all available events in the event queue.
         while (SDL_PollEvent(&event))
         {
             switch (event.type)
             {
-
-                /*
-The user has sent a quit event by closing the game window. */
-
             case SDL_QUIT:
-
+                // SDL_QUIT event (user clicked close button, etc.), stop the game.
                 m_running = false;
-
                 break;
-
-                /*
-A keyboard key has been pressed. */
 
             case SDL_KEYDOWN:
-
+                // Handle key press event.
                 _<KeyboardDevice>().RegisterKeyPress(event.key.keysym.sym);
-
                 break;
-
-                /*
-A keyboard key has been released. */
 
             case SDL_KEYUP:
-
+                // Handle key release event.
                 _<KeyboardDevice>().RegisterKeyRelease(event.key.keysym.sym);
-
                 break;
-
-                /*
-A mouse button has been pressed. */
 
             case SDL_MOUSEBUTTONDOWN:
-
+                // Handle mouse button press event.
                 _<MouseDevice>().RegisterButtonPress(event.button.button);
-
                 break;
 
-                /*
-A mouse button has been released */
-
             case SDL_MOUSEBUTTONUP:
-
+                // Handle mouse button release event.
                 _<MouseDevice>().RegisterButtonRelease(event.button.button);
-
                 break;
             }
         }
     }
+
 }

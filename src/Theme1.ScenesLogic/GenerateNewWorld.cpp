@@ -25,16 +25,11 @@ namespace ForradiaWorld
 {
     void GenerateNewWorld()
     {
-        /*
-=================== SETUP ====================*/
-
         auto worldArea = _<World>().GetCurrentWorldArea();
 
         auto& creaturesMirrorRef = worldArea->GetCreaturesMirrorRef();
 
         auto size = worldArea->GetSize();
-        /*
-=================== CLEAR WORLD WITH GRASS ====================*/
 
         for (auto y = 0; y < size.h; y++)
         {
@@ -45,8 +40,6 @@ namespace ForradiaWorld
                 tile->SetGround("GroundGrass");
             }
         }
-        /*
-=================== GENERATE WATER ====================*/
 
         auto numLakes = 30 + rand() % 10;
 
@@ -78,8 +71,6 @@ namespace ForradiaWorld
                 }
             }
         }
-        /*
-=================== GENERATE OBJECTS ====================*/
 
         auto numTree1s = 100;
 
@@ -156,9 +147,6 @@ namespace ForradiaWorld
             tile->SetObject("ObjectStoneBoulder");
         }
 
-        /*
-=================== GENERATE ANIMALS ====================*/
-
         auto numWhiteRabbits = 200;
 
         for (auto i = 0; i < numWhiteRabbits; i++)
@@ -178,9 +166,6 @@ namespace ForradiaWorld
             }
         }
 
-        /*
-=================== GENERATE Enemies ====================*/
-
         auto numEnemy1s = 200;
 
         for (auto i = 0; i < numEnemy1s; i++)
@@ -199,9 +184,6 @@ namespace ForradiaWorld
                 creaturesMirrorRef.insert({ newCreature, { x, y } });
             }
         }
-
-        /*
-=================== GENERATE STARTING AREA ====================*/
 
         auto startCoordinate = Point { 50, 50 };
         auto areaSize = Size { 11, 11 };

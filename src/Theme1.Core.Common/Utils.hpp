@@ -21,91 +21,143 @@
 
 namespace ForradiaWorld
 {
-    /*
-============= GENERAL UTILS ============= */
+    // =============================================
+    // Singleton Pattern Utilities
+    // =============================================
 
-    /*
-Singleton helper function. */
-
+    /**
+    * @brief Returns a singleton instance of a given type.
+    * @tparam T The type of the instance.
+    * @return A reference to the singleton instance.
+    */
     template <class T>
     T& _()
     {
         static T instance;
-
         return instance;
     }
 
-    /*
-Primary used hash function.. */
+    // =============================================
+    // Hashing Utilities
+    // =============================================
 
+    /**
+    * @brief Computes a hash value from a given string.
+    * @param text The input string to hash.
+    * @return The computed hash value.
+    */
     int Hash(std::string_view text);
 
-    /*
-Helper class to properly cleanup smart pointers of SDL objects. */
+    // =============================================
+    // SDL Resource Management
+    // =============================================
 
+    /**
+    * @class SDLDeleter
+    * @brief A functor class for safely deleting SDL resources.
+    *
+    * This class provides custom deleter functions for various SDL types
+    * to be used with smart pointers.
+    */
     class SDLDeleter
     {
       public:
+        /**
+        * @brief Deletes an SDL window.
+        * @param window Pointer to the SDL_Window to delete.
+        */
         void operator()(SDL_Window* window) const;
 
+        /**
+        * @brief Deletes an SDL renderer.
+        * @param renderer Pointer to the SDL_Renderer to delete.
+        */
         void operator()(SDL_Renderer* renderer) const;
 
+        /**
+        * @brief Deletes an SDL surface.
+        * @param surface Pointer to the SDL_Surface to delete.
+        */
         void operator()(SDL_Surface* surface) const;
 
+        /**
+        * @brief Deletes an SDL texture.
+        * @param texture Pointer to the SDL_Texture to delete.
+        */
         void operator()(SDL_Texture* texture) const;
 
+        /**
+        * @brief Deletes an SDL font.
+        * @param font Pointer to the TTF_Font to delete.
+        */
         void operator()(TTF_Font* font) const;
     };
 
-    /*
-============= STRING UTILS ============= */
+    // =============================================
+    // String Manipulation Utilities
+    // =============================================
 
-    /*
-Replace all occurrences of a character with another character in a string. */
-
+    /**
+    * @brief Replaces all occurrences of a character in a string.
+    * @param text The input string.
+    * @param replaced The character to be replaced.
+    * @param replacedWith The character to replace with.
+    * @return A new string with replaced characters.
+    */
     std::string Replace(std::string_view text, char replaced, char replacedWith);
 
-    /*
-============= FILE UTILS ============= */
-
-    /*
-Get file extension from a file path. */
-
+    /**
+    * @brief Extracts the file extension from a file path.
+    * @param path The file path.
+    * @return The file extension as a string.
+    */
     std::string GetFileExtension(std::string_view path);
 
-    /*
-Get filename without extension for a file path. */
-
+    /**
+    * @brief Extracts the file name without the extension from a file path.
+    * @param path The file path.
+    * @return The file name without its extension.
+    */
     std::string GetFileNameNoExtension(std::string_view path);
 
-    /*
-============= MOUSE UTILS ============= */
+    // =============================================
+    // Input and Rendering Utilities
+    // =============================================
 
-    /*
-Get mouse position, where coordinates range from 0.0 - 1.0. */
-
+    /**
+    * @brief Gets the current mouse position.
+    * @return The mouse position as a PointF.
+    */
     PointF GetMousePosition();
 
-    /*
-============= CANVAS UTILS ============= */
-
-    /*
-Get canvas size in pixels. */
-
+    /**
+    * @brief Gets the size of the rendering canvas.
+    * @return The canvas size as a Size object.
+    */
     Size GetCanvasSize();
 
-    /*
-Get current aspect ratio for game window. */
-
+    /**
+    * @brief Calculates the aspect ratio of the canvas.
+    * @return The aspect ratio as a float.
+    */
     float GetAspectRatio();
 
-    /*
-Convert a float represented width to corresponding height. */
+    // =============================================
+    // Aspect Ratio Conversions
+    // =============================================
 
+    /**
+    * @brief Converts a width value to a corresponding height based on aspect ratio.
+    * @param width The width value to convert.
+    * @return The computed height.
+    */
     float ConvertWidthToHeight(float width);
 
-    /*
-Convert a float represented height to corresponding width. */
-
+    /**
+    * @brief Converts a height value to a corresponding width based on aspect ratio.
+    * @param height The height value to convert.
+    * @return The computed width.
+    */
     float ConvertHeightToWidth(float height);
+
 }

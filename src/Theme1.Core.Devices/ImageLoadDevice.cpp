@@ -23,9 +23,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: ImageLoadDevice */
-
     ImageLoadDevice::ImageLoadDevice()
     {
         LoadImages();

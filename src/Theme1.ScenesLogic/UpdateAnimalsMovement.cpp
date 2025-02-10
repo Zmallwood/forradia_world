@@ -40,6 +40,7 @@ namespace ForradiaWorld
         for (auto it = creaturesMirrorRef.begin(); it != creaturesMirrorRef.end();)
         {
             auto creature = it->first;
+
             Point coord = it->second;
 
             auto animal = std::dynamic_pointer_cast<Animal>(creature);

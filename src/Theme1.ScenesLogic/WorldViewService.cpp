@@ -33,14 +33,8 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: WorldViewService */
-
     void WorldViewService::Render() const
     {
-        /*
-=================== SETUP ====================*/
-
         auto worldArea = _<World>().GetCurrentWorldArea();
         Point heroPos = _<HeroDevice>().GetPosition();
 
@@ -51,17 +45,10 @@ CLASS: WorldViewService */
 
         float smallValue = 0.002f;
 
-        /*
-=================== TILE GRID LOOP ====================*/
-
         for (auto y = 0; y < gridSize.h; y++)
         {
             for (auto x = 0; x < gridSize.w; x++)
             {
-
-                /*
-=================== TILE SETUP ====================*/
-
                 int coordX = heroPos.x - (gridSize.w - 1) / 2 + x;
                 int coordY = heroPos.y - (gridSize.h - 1) / 2 + y;
 
@@ -73,9 +60,6 @@ CLASS: WorldViewService */
                 auto tile = worldArea->GetTile(coordX, coordY);
 
                 RectF dest { x * tileSize.w, y * tileSize.h, tileSize.w + smallValue, tileSize.h + smallValue };
-
-                /*
-=================== BLOCKED SIGHT ====================*/
 
                 auto sightBlocked { false };
 
@@ -120,9 +104,6 @@ CLASS: WorldViewService */
                     continue;
                 }
 
-                /*
-=================== GROUND RENDERING ====================*/
-
                 int ground = tile->GetGround();
 
                 if (ground == Hash("GroundWater"))
@@ -133,9 +114,6 @@ CLASS: WorldViewService */
 
                     ground = Hash(animName);
                 }
-
-                /*
-=================== OBJECTS RENDERING ====================*/
 
                 _<ImageDrawDevice>().DrawImage(ground, dest);
 
@@ -148,18 +126,12 @@ CLASS: WorldViewService */
 
                 _<ImageDrawDevice>().DrawImage(object, dest);
 
-                /*
-=================== CREATURE RENDERING ====================*/
-
                 auto creature = tile->GetCreature();
 
                 if (creature)
                 {
                     _<ImageDrawDevice>().DrawImage(creature->GetType(), dest);
                 }
-
-                /*
-=================== PLAYER RENDERING ====================*/
 
                 if (coordX == heroPos.x && coordY == heroPos.y)
                 {

@@ -21,27 +21,60 @@
 
 namespace ForradiaWorld
 {
-    /*
-Different points that a graphical object can be anchored to. */
-
+    /**
+ * @enum AnchorStyles
+ * @brief Defines various anchor positions for UI elements.
+ *
+ * This enumeration specifies different anchor points that
+ * can be used to align or position elements relative to
+ * a container or reference point.
+ */
     enum class AnchorStyles
     {
+        /**
+        * @brief Anchors to the top-left corner.
+        */
         TopLeft,
 
+        /**
+        * @brief Anchors to the top-center position.
+        */
         TopCenter,
 
+        /**
+        * @brief Anchors to the top-right corner.
+        */
         TopRight,
 
+        /**
+        * @brief Anchors to the center-right position.
+        */
         RightCenter,
 
+        /**
+        * @brief Anchors to the bottom-right corner.
+        */
         BottomRight,
 
+        /**
+        * @brief Anchors to the bottom-center position.
+        */
         BottomCenter,
 
+        /**
+        * @brief Anchors to the bottom-left corner.
+        */
         BottomLeft,
 
+        /**
+        * @brief Anchors to the center-left position.
+        */
         LeftCenter,
 
+        /**
+        * @brief Anchors to the absolute center.
+        */
         Center
     };
+
 }

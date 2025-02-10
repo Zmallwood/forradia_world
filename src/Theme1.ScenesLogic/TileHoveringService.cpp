@@ -25,9 +25,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: TileHoveringService */
-
     void TileHoveringService::Update()
     {
         auto mousePosition = GetMousePosition();

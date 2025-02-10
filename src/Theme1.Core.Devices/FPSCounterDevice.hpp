@@ -21,15 +21,35 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class FPSCounterDevice
+    * @brief Manages FPS (Frames Per Second) tracking and rendering.
+    *
+    * This class tracks the frame rate of the application and renders
+    * the FPS count on the screen.
+    */
     class FPSCounterDevice
     {
       public:
+        /**
+        * @brief Updates the FPS counter.
+        *
+        * This function tracks the number of frames rendered per second
+        * and updates the FPS value accordingly.
+        */
         void Update();
+
+        /**
+        * @brief Renders the FPS count on the screen.
+        *
+        * Displays the current FPS value as an on-screen text overlay.
+        */
         void Render() const;
 
       private:
-        int m_fps { 0 };
-        int m_framesCount { 0 };
-        int m_ticksLastUpdate { 0 };
+        int m_fps { 0 }; ///< Stores the calculated FPS value.
+        int m_framesCount { 0 }; ///< Counts the number of frames rendered in the current second.
+        int m_ticksLastUpdate { 0 }; ///< Stores the last time (in milliseconds) the FPS was updated.
     };
+
 }

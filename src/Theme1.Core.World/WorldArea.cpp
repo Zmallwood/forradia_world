@@ -25,9 +25,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: WorldArea */
-
     WorldArea::WorldArea()
     {
         auto size = _<SettingsDevice>().k_worldAreaSize;

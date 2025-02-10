@@ -21,9 +21,6 @@
 
 namespace ForradiaWorld
 {
-    /*
-CLASS: SDLDevice */
-
     SDLDevice::SDLDevice()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
@@ -32,7 +29,7 @@ CLASS: SDLDevice */
             SDL_CreateWindow(
                 "Forradia World", SDL_WINDOWPOS_CENTERED,
                 SDL_WINDOWPOS_CENTERED, 660, 660,
-                SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED),
+                SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_FULLSCREEN_DESKTOP),
             SDLDeleter());
 
         if (!m_window)
