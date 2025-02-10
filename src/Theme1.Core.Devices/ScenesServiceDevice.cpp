@@ -18,11 +18,8 @@
  */
 
 #include "ScenesServiceDevice.hpp"
-
 #include "Theme1.Scenes/IntroScene.hpp"
-
 #include "Theme1.Scenes/MainScene.hpp"
-
 #include "Theme1.Scenes/WorldGenerationScene.hpp"
 
 namespace ForradiaWorld

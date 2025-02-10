@@ -18,9 +18,7 @@
  */
 
 #include "IntroScene.hpp"
-
 #include "Theme1.Core.Devices/ImageDrawDevice.hpp"
-
 #include "Theme1.Core.Devices/ScenesServiceDevice.hpp"
 
 namespace ForradiaWorld

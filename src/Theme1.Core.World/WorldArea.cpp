@@ -18,9 +18,7 @@
  */
 
 #include "WorldArea.hpp"
-
 #include "Tile.hpp"
-
 #include "Theme1.Core.Devices/SettingsDevice.hpp"
 
 namespace ForradiaWorld

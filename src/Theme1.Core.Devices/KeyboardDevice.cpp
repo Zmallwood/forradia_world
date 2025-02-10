@@ -23,16 +23,17 @@ namespace ForradiaWorld
 {
     void KeyboardDevice::RegisterKeyPress(SDL_Keycode key)
     {
-        m_pressedKeys.insert(key);
+        m_pressedKeys.insert(key); // Add the pressed key to the set
     }
 
     void KeyboardDevice::RegisterKeyRelease(SDL_Keycode key)
     {
-        m_pressedKeys.erase(key);
+        m_pressedKeys.erase(key); // Remove the released key from the set
     }
 
     bool KeyboardDevice::KeyIsPressed(SDL_Keycode key) const
     {
-        return m_pressedKeys.contains(key);
+        return m_pressedKeys.contains(key); // Check if the key is currently pressed
     }
+
 }

@@ -18,9 +18,7 @@
  */
 
 #include "WorldGenerationScene.hpp"
-
 #include "Theme1.Core.Devices/ScenesServiceDevice.hpp"
-
 #include "Theme1.ScenesLogic/GenerateNewWorld.hpp"
 
 namespace ForradiaWorld

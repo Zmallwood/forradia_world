@@ -18,7 +18,6 @@
  */
 
 #include "FPSCounterDevice.hpp"
-
 #include "TextDrawDevice.hpp"
 
 namespace ForradiaWorld

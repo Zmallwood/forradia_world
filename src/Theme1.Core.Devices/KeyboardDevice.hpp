@@ -21,16 +21,40 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class KeyboardDevice
+    * @brief Manages keyboard input and tracks the state of pressed keys.
+    */
     class KeyboardDevice
     {
       public:
+        /**
+        * @brief Registers a key press event.
+        *
+        * Adds the key to the list of currently pressed keys.
+        * @param key The SDL keycode of the pressed key.
+        */
         void RegisterKeyPress(SDL_Keycode key);
 
+        /**
+        * @brief Registers a key release event.
+        *
+        * Removes the key from the list of currently pressed keys.
+        * @param key The SDL keycode of the released key.
+        */
         void RegisterKeyRelease(SDL_Keycode key);
 
+        /**
+        * @brief Checks if a specific key is currently pressed.
+        *
+        * Checks if the key is in the list of pressed keys.
+        * @param key The SDL keycode of the key to check.
+        * @return True if the key is pressed, otherwise false.
+        */
         bool KeyIsPressed(SDL_Keycode key) const;
 
       private:
-        std::set<SDL_Keycode> m_pressedKeys;
+        std::set<SDL_Keycode> m_pressedKeys; ///< A set to store currently pressed keys.
     };
+
 }

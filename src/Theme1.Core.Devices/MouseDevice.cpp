@@ -23,34 +23,28 @@ namespace ForradiaWorld
 {
     void MouseButton::RegisterPress()
     {
-        m_pressed = true;
-
-        m_beenFired = true;
+        m_pressed = true; // Set the button to pressed.
+        m_beenFired = true; // Mark that the button has been pressed (fired).
     }
 
     void MouseButton::RegisterRelease()
     {
-        m_pressed = false;
-
-        m_beenReleased = true;
+        m_pressed = false; // Set the button to not pressed.
+        m_beenReleased = true; // Mark that the button has been released.
     }
 
     bool MouseButton::GetBeenFiredPickResult()
     {
-        auto result = m_beenFired;
-
-        m_beenFired = false;
-
-        return result;
+        auto result = m_beenFired; // Store the result of whether the button was fired.
+        m_beenFired = false; // Reset the fired state for future checks.
+        return result; // Return the result.
     }
 
     bool MouseButton::GetBeenReleasedPickResult()
     {
-        auto result = m_beenReleased;
-
-        m_beenReleased = false;
-
-        return result;
+        auto result = m_beenReleased; // Store the result of whether the button was released.
+        m_beenReleased = false; // Reset the released state for future checks.
+        return result; // Return the result.
     }
 
     MouseDevice::MouseDevice()
@@ -63,16 +57,12 @@ namespace ForradiaWorld
     {
         switch (button)
         {
-        case SDL_BUTTON_LEFT:
-
-            m_leftButton->RegisterPress();
-
+        case SDL_BUTTON_LEFT: // If the left button is pressed.
+            m_leftButton->RegisterPress(); // Register the press for the left button.
             break;
 
-        case SDL_BUTTON_RIGHT:
-
-            m_rightButton->RegisterPress();
-
+        case SDL_BUTTON_RIGHT: // If the right button is pressed.
+            m_rightButton->RegisterPress(); // Register the press for the right button.
             break;
         }
     }
@@ -81,17 +71,14 @@ namespace ForradiaWorld
     {
         switch (button)
         {
-        case SDL_BUTTON_LEFT:
-
-            m_leftButton->RegisterRelease();
-
+        case SDL_BUTTON_LEFT: // If the left button is released.
+            m_leftButton->RegisterRelease(); // Register the release for the left button.
             break;
 
-        case SDL_BUTTON_RIGHT:
-
-            m_rightButton->RegisterRelease();
-
+        case SDL_BUTTON_RIGHT: // If the right button is released.
+            m_rightButton->RegisterRelease(); // Register the release for the right button.
             break;
         }
     }
+
 }

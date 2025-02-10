@@ -18,17 +18,11 @@
  */
 
 #include "WorldViewService.hpp"
-
 #include "Theme1.Core.Devices/HeroDevice.hpp"
-
 #include "Theme1.Core.Devices/ImageDrawDevice.hpp"
-
 #include "Theme1.Core.Devices/ObjectIndexDevice.hpp"
-
 #include "Theme1.Core.World/Everything.hpp"
-
 #include "Theme1.ScenesLogic/TileGridMath.hpp"
-
 #include "TileHoveringService.hpp"
 
 namespace ForradiaWorld

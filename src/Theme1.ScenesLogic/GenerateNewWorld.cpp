@@ -18,7 +18,6 @@
  */
 
 #include "GenerateNewWorld.hpp"
-
 #include "Theme1.Core.World/Everything.hpp"
 
 namespace ForradiaWorld

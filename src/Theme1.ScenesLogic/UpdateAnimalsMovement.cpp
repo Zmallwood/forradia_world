@@ -18,13 +18,9 @@
  */
 
 #include "UpdateAnimalsMovement.hpp"
-
 #include "Theme1.Core.World/Animal.hpp"
-
 #include "Theme1.Core.World/Tile.hpp"
-
 #include "Theme1.Core.World/World.hpp"
-
 #include "Theme1.Core.World/WorldArea.hpp"
 
 namespace ForradiaWorld

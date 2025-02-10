@@ -18,9 +18,7 @@
  */
 
 #include "UpdateHeroKeyboardMovement.hpp"
-
 #include "Theme1.Core.Devices/KeyboardDevice.hpp"
-
 #include "Theme1.Core.Devices/HeroDevice.hpp"
 
 namespace ForradiaWorld

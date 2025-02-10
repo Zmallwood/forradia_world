@@ -18,15 +18,10 @@
  */
 
 #include "MainScene.hpp"
-
 #include "Theme1.ScenesLogic/TileHoveringService.hpp"
-
 #include "Theme1.ScenesLogic/UpdateAnimalsMovement.hpp"
-
 #include "Theme1.ScenesLogic/UpdateHeroKeyboardMovement.hpp"
-
 #include "Theme1.ScenesLogic/UpdateHeroMouseMovement.hpp"
-
 #include "Theme1.ScenesLogic/WorldViewService.hpp"
 
 namespace ForradiaWorld

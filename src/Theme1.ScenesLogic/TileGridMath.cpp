@@ -18,7 +18,6 @@
  */
 
 #include "TileGridMath.hpp"
-
 #include "Theme1.Core.Devices/SettingsDevice.hpp"
 
 namespace ForradiaWorld

@@ -18,11 +18,8 @@
  */
 
 #include "UpdateHeroMouseMovement.hpp"
-
 #include "Theme1.Core.Devices/MouseDevice.hpp"
-
 #include "Theme1.Core.Devices/HeroDevice.hpp"
-
 #include "TileHoveringService.hpp"
 
 namespace ForradiaWorld

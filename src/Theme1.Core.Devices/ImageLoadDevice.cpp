@@ -18,35 +18,39 @@
  */
 
 #include "ImageLoadDevice.hpp"
-
 #include "SDLDevice.hpp"
 
 namespace ForradiaWorld
 {
     ImageLoadDevice::ImageLoadDevice()
     {
-        LoadImages();
+        LoadImages(); // Load all images upon initialization
     }
 
     void ImageLoadDevice::LoadImages()
     {
+        // Construct the full path to the images directory
         auto imagesPath = std::string(SDL_GetBasePath()) + k_relativeImagesPath.data();
 
+        // Check if the directory exists before proceeding
         if (!std::filesystem::exists(imagesPath))
         {
             return;
         }
 
+        // Iterate through all files in the directory recursively
         for (auto it : std::filesystem::recursive_directory_iterator { imagesPath })
         {
-            auto filePath { Replace(it.path().string(), '\\', '/') };
+            auto filePath { Replace(it.path().string(), '\\', '/') }; // Normalize file path
 
+            // Only process PNG files
             if (GetFileExtension(filePath) == "png")
             {
                 auto fileName = GetFileNameNoExtension(filePath);
-                auto hash { Hash(fileName) };
-                auto image { LoadSingleImage(filePath) };
+                auto hash { Hash(fileName) }; // Generate a hash for the filename
+                auto image { LoadSingleImage(filePath) }; // Load the image
 
+                // Store the loaded image in the map with its hash as the key
                 m_images.insert({ hash, image });
             }
         }
@@ -54,32 +58,35 @@ namespace ForradiaWorld
 
     std::shared_ptr<SDL_Texture> ImageLoadDevice::LoadSingleImage(std::string_view path) const
     {
+        // Load image into an SDL_Surface
         auto surface { std::shared_ptr<SDL_Surface>(
             IMG_Load(path.data()),
             SDLDeleter()) };
 
         if (surface)
         {
+            // Convert SDL_Surface to SDL_Texture
             auto texture {
                 std::shared_ptr<SDL_Texture>(
                     SDL_CreateTextureFromSurface(_<SDLDevice>().GetRenderer().get(), surface.get()),
                     SDLDeleter())
             };
 
-            return texture;
+            return texture; // Return the loaded texture
         }
 
-        return nullptr;
+        return nullptr; // Return nullptr if loading failed
     }
 
     std::shared_ptr<SDL_Texture> ImageLoadDevice::GetImage(int imageNameHash) const
     {
+        // Check if the requested image exists in the map
         if (m_images.contains(imageNameHash))
         {
             return m_images.at(imageNameHash);
         }
 
-        return nullptr;
+        return nullptr; // Return nullptr if image is not found
     }
 
     Size ImageLoadDevice::GetImageSize(int imageNameHash) const
@@ -87,11 +94,13 @@ namespace ForradiaWorld
         auto width { 0 };
         auto height { 0 };
 
+        // Retrieve image dimensions if the texture exists
         if (m_images.contains(imageNameHash))
         {
             SDL_QueryTexture(m_images.at(imageNameHash).get(), nullptr, nullptr, &width, &height);
         }
 
-        return { width, height };
+        return { width, height }; // Return the width and height of the image
     }
+
 }

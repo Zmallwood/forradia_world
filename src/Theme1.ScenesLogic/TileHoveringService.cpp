@@ -18,9 +18,7 @@
  */
 
 #include "TileHoveringService.hpp"
-
 #include "Theme1.Core.Devices/HeroDevice.hpp"
-
 #include "TileGridMath.hpp"
 
 namespace ForradiaWorld

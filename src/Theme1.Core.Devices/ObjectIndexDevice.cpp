@@ -25,6 +25,7 @@ namespace ForradiaWorld
     {
         using namespace ObjectFlags;
 
+        // Adding various object entries to the index with specific flags
         AddEntry("ObjectWoodenFenceHorizontal", "Wooden fence", OBJECT_ALLOWS_SIGHT);
         AddEntry("ObjectWoodenFenceVertical", "Wooden fence", OBJECT_ALLOWS_SIGHT);
         AddEntry("ObjectWoodenFenceNW", "Wooden fence", OBJECT_ALLOWS_SIGHT);
@@ -36,18 +37,24 @@ namespace ForradiaWorld
 
     bool ObjectIndexDevice::ObjectAllowsSight(int objectHash) const
     {
+        // Check if the object hash exists in the entries
         if (m_entries.contains(objectHash))
         {
+            // Retrieve the flags associated with the object
             auto flags = m_entries.at(objectHash).flags;
 
+            // Check if the 'OBJECT_ALLOWS_SIGHT' flag is set
             return (flags & ObjectFlags::OBJECT_ALLOWS_SIGHT) != 0;
         }
 
+        // Return false if the object hash is not found
         return false;
     }
 
     void ObjectIndexDevice::AddEntry(std::string_view objectName, std::string_view label, int flags)
     {
+        // Insert a new entry in the object index with the specified hash, label, and flags
         m_entries.insert({ Hash(objectName), { label.data(), flags } });
     }
+
 }

@@ -21,11 +21,26 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class ImageDrawDevice
+    * @brief Handles rendering images onto the screen.
+    */
     class ImageDrawDevice
     {
       public:
+        /**
+        * @brief Draws an image using its hashed name.
+        * @param imageNameHash The hash of the image name.
+        * @param destination The destination rectangle in normalized coordinates (0.0 - 1.0).
+        */
         void DrawImage(int imageNameHash, RectF destination) const;
 
+        /**
+        * @brief Draws an image using its string name.
+        * @param imageName The name of the image.
+        * @param destination The destination rectangle in normalized coordinates (0.0 - 1.0).
+        */
         void DrawImage(std::string_view imageName, RectF destination) const;
     };
+
 }

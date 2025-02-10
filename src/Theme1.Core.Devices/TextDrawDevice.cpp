@@ -18,7 +18,6 @@
  */
 
 #include "TextDrawDevice.hpp"
-
 #include "SDLDevice.hpp"
 
 namespace ForradiaWorld

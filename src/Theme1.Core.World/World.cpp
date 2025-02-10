@@ -18,7 +18,6 @@
  */
 
 #include "World.hpp"
-
 #include "WorldArea.hpp"
 
 namespace ForradiaWorld

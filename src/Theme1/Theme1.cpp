@@ -18,7 +18,6 @@
  */
 
 #include "Theme1.hpp"
-
 #include "Theme1.Core.Devices/EngineDevice.hpp"
 
 namespace ForradiaWorld

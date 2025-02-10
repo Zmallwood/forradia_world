@@ -18,15 +18,10 @@
  */
 
 #include "EngineDevice.hpp"
-
 #include "KeyboardDevice.hpp"
-
 #include "MouseDevice.hpp"
-
 #include "SDLDevice.hpp"
-
 #include "ScenesServiceDevice.hpp"
-
 #include "FPSCounterDevice.hpp"
 
 namespace ForradiaWorld
