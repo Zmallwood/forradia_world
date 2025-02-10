@@ -23,11 +23,37 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class MainScene
+    * @brief Represents the main scene in the game, where the core gameplay occurs.
+    *
+    * In this scene, the player controls the hero and interacts with the game world.
+    * This class manages the update and render loops specific to the main gameplay scene.
+    */
     class MainScene : public IScene
     {
       protected:
+        /**
+        * @brief Updates the game state for the main scene.
+        *
+        * This function handles updating the movement of animals, the hero's movement
+        * based on both keyboard and mouse input, and any interactions with the tile hovering service.
+        *
+        * @see UpdateAnimalsMovement()
+        * @see UpdateHeroKeyboardMovement()
+        * @see UpdateHeroMouseMovement()
+        * @see TileHoveringService::Update()
+        */
         void UpdateDerived() override;
 
+        /**
+        * @brief Renders the main scene to the screen.
+        *
+        * This function is responsible for rendering the world view, which includes
+        * the game world and all elements that need to be displayed.
+        *
+        * @see WorldViewService::Render()
+        */
         void RenderDerived() const override;
     };
 }

@@ -24,194 +24,148 @@ namespace ForradiaWorld
 {
     void GenerateNewWorld()
     {
+        // Retrieve current world area and references for creatures
         auto worldArea = _<World>().GetCurrentWorldArea();
-
         auto& creaturesMirrorRef = worldArea->GetCreaturesMirrorRef();
-
         auto size = worldArea->GetSize();
 
-        for (auto y = 0; y < size.h; y++)
+        // Helper function to set ground for all tiles in the world
+        auto SetGroundForArea = [&](const std::string& groundType)
         {
-            for (auto x = 0; x < size.w; x++)
+            for (auto y = 0; y < size.h; y++) // Loop over the height of the world
             {
-                auto tile = worldArea->GetTile(x, y);
-
-                tile->SetGround("GroundGrass");
-            }
-        }
-
-        auto numLakes = 30 + rand() % 10;
-
-        for (auto i = 0; i < numLakes; i++)
-        {
-            auto xCenter = rand() % size.w;
-            auto yCenter = rand() % size.h;
-
-            auto r = 3 + rand() % 8;
-
-            for (auto y = yCenter - r; y <= yCenter + r; y++)
-            {
-                for (auto x = xCenter - r; x <= xCenter + r; x++)
+                for (auto x = 0; x < size.w; x++) // Loop over the width of the world
                 {
-                    if (!worldArea->IsValidCoordinate(x, y))
+                    auto tile = worldArea->GetTile(x, y); // Get the tile at coordinates (x, y)
+                    tile->SetGround(groundType); // Set the ground type (e.g., grass or water)
+                }
+            }
+        };
+
+        // Initialize the ground with grass for all tiles
+        SetGroundForArea("GroundGrass");
+
+        // Helper function to generate lakes at random locations in the world
+        auto GenerateLakes = [&](int numLakes)
+        {
+            for (auto i = 0; i < numLakes; i++) // Generate a specified number of lakes
+            {
+                auto xCenter = rand() % size.w; // Random X coordinate for lake center
+                auto yCenter = rand() % size.h; // Random Y coordinate for lake center
+                auto r = 3 + rand() % 8; // Random radius for lake (between 3 and 10)
+
+                // Loop over the area around the lake center
+                for (auto y = yCenter - r; y <= yCenter + r; y++)
+                {
+                    for (auto x = xCenter - r; x <= xCenter + r; x++)
                     {
-                        continue;
-                    }
+                        if (!worldArea->IsValidCoordinate(x, y)) // Skip invalid coordinates
+                        {
+                            continue;
+                        }
 
-                    auto dx = x - xCenter;
-                    auto dy = y - yCenter;
+                        auto dx = x - xCenter; // Distance in X direction from center
+                        auto dy = y - yCenter; // Distance in Y direction from center
 
-                    if (dx * dx + dy * dy <= r * r)
-                    {
-                        auto tile = worldArea->GetTile(x, y);
-
-                        tile->SetGround("GroundWater");
+                        // Check if the point lies within the lake radius
+                        if (dx * dx + dy * dy <= r * r)
+                        {
+                            auto tile = worldArea->GetTile(x, y); // Get the tile at the current coordinates
+                            tile->SetGround("GroundWater"); // Set the ground type to water
+                        }
                     }
                 }
             }
-        }
+        };
 
-        auto numTree1s = 100;
+        // Generate a random number of lakes (between 30 and 40)
+        GenerateLakes(30 + rand() % 10);
 
-        for (auto i = 0; i < numTree1s; i++)
+        // Helper function to generate objects (e.g., trees, flowers) at random locations
+        auto GenerateObjectAtRandomCoordinates = [&](const std::string& objectType, int numObjects)
         {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
-
-            for (auto j = 0; j < 20; j++)
+            for (auto i = 0; i < numObjects; i++) // Generate the specified number of objects
             {
-                if (worldArea->IsValidCoordinate(x, y))
+                auto x = rand() % size.w; // Random X coordinate
+                auto y = rand() % size.h; // Random Y coordinate
+
+                auto tile = worldArea->GetTile(x, y); // Get the tile at the random coordinates
+                if (tile->GetGround() != Hash("GroundWater")) // Ensure the object is not placed on water
                 {
-                    auto tile = worldArea->GetTile(x, y);
-
-                    if (tile->GetGround() != Hash("GroundWater"))
-                    {
-                        tile->SetObject("ObjectTree1");
-                    }
+                    tile->SetObject(objectType); // Place the object (e.g., tree, flower)
                 }
-
-                x += rand() % 4 - rand() % 4;
-                y += rand() % 4 - rand() % 4;
             }
-        }
+        };
 
-        auto numTree2s = 100;
+        // Generate trees, flowers, and boulders at random locations
+        GenerateObjectAtRandomCoordinates("ObjectTree1", 800); // Generate 200 Tree1 objects
+        GenerateObjectAtRandomCoordinates("ObjectTree2", 800); // Generate 200 Tree2 objects
+        GenerateObjectAtRandomCoordinates("ObjectPinkFlower", 200); // Generate 200 PinkFlower objects
+        GenerateObjectAtRandomCoordinates("ObjectStoneBoulder", 200); // Generate 200 StoneBoulder objects
 
-        for (auto i = 0; i < numTree2s; i++)
+        // Helper function to generate creatures (e.g., rabbits, enemies) at random locations
+        auto GenerateCreatures = [&](const std::string& creatureType, int numCreatures)
         {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
-
-            for (auto j = 0; j < 20; j++)
+            for (auto i = 0; i < numCreatures; i++) // Generate the specified number of creatures
             {
-                if (worldArea->IsValidCoordinate(x, y))
+                auto x = rand() % size.w; // Random X coordinate
+                auto y = rand() % size.h; // Random Y coordinate
+
+                auto tile = worldArea->GetTile(x, y); // Get the tile at the random coordinates
+
+                if (tile->GetGround() != Hash("GroundWater")) // Ensure the creature is not placed on water
                 {
-                    auto tile = worldArea->GetTile(x, y);
+                    std::shared_ptr<Creature> newCreature;
 
-                    if (tile->GetGround() != Hash("GroundWater"))
-                    {
-                        tile->SetObject("ObjectTree2");
-                    }
+                    // Create a new creature based on the specified type
+                    if (creatureType == "AnimalWhiteRabbit")
+                        newCreature = std::make_shared<Animal>(creatureType);
+                    else if (creatureType == "Enemy1")
+                        newCreature = std::make_shared<Enemy>(creatureType);
+
+                    tile->SetCreature(newCreature); // Place the creature on the tile
+                    creaturesMirrorRef.insert({ newCreature, { x, y } }); // Update the creature reference
                 }
-
-                x += rand() % 4 - rand() % 4;
-                y += rand() % 4 - rand() % 4;
             }
-        }
+        };
 
-        auto numPinkFlowers = 200;
+        // Generate white rabbits and enemies at random locations
+        GenerateCreatures("AnimalWhiteRabbit", 200); // Generate 200 white rabbit creatures
+        GenerateCreatures("Enemy1", 200); // Generate 200 enemy creatures
 
-        for (auto i = 0; i < numPinkFlowers; i++)
-        {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
+        // Define starting coordinates and size for the fenced area
+        auto startCoordinate = Point { 50, 50 }; // Start coordinate for the player
+        auto areaSize = Size { 11, 11 }; // Size of the fenced area (11x11)
 
-            auto tile = worldArea->GetTile(x, y);
-
-            if (tile->GetGround() != Hash("GroundWater"))
-            {
-                tile->SetObject("ObjectPinkFlower");
-            }
-        }
-
-        auto numStoneBoulders = 200;
-
-        for (auto i = 0; i < numPinkFlowers; i++)
-        {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
-
-            auto tile = worldArea->GetTile(x, y);
-
-            tile->SetObject("ObjectStoneBoulder");
-        }
-
-        auto numWhiteRabbits = 200;
-
-        for (auto i = 0; i < numWhiteRabbits; i++)
-        {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
-
-            auto tile = worldArea->GetTile(x, y);
-
-            if (tile->GetGround() != Hash("GroundWater"))
-            {
-                auto newCreature = std::make_shared<Animal>("AnimalWhiteRabbit");
-
-                tile->SetCreature(newCreature);
-
-                creaturesMirrorRef.insert({ newCreature, { x, y } });
-            }
-        }
-
-        auto numEnemy1s = 200;
-
-        for (auto i = 0; i < numEnemy1s; i++)
-        {
-            auto x = rand() % size.w;
-            auto y = rand() % size.h;
-
-            auto tile = worldArea->GetTile(x, y);
-
-            if (tile->GetGround() != Hash("GroundWater"))
-            {
-                auto newCreature = std::make_shared<Enemy>("Enemy1");
-
-                tile->SetCreature(newCreature);
-
-                creaturesMirrorRef.insert({ newCreature, { x, y } });
-            }
-        }
-
-        auto startCoordinate = Point { 50, 50 };
-        auto areaSize = Size { 11, 11 };
-
+        // Calculate the bounds for the fence (left, right, top, bottom)
         auto left = startCoordinate.x - (areaSize.w - 1) / 2;
         auto right = startCoordinate.x + (areaSize.w - 1) / 2;
         auto top = startCoordinate.y - (areaSize.h - 1) / 2;
         auto bottom = startCoordinate.y + (areaSize.h - 1) / 2;
 
-        auto startTile = worldArea->GetTile(startCoordinate);
+        auto startTile = worldArea->GetTile(startCoordinate); // Get the starting tile
 
-        for (auto y = top; y < bottom; y++)
+        // Set the ground and objects for the fenced area
+        for (auto y = top; y < bottom; y++) // Loop over the vertical range of the fenced area
         {
-            for (auto x = left; x < right; x++)
+            for (auto x = left; x < right; x++) // Loop over the horizontal range of the fenced area
             {
-                auto tile = worldArea->GetTile(x, y);
+                auto tile = worldArea->GetTile(x, y); // Get the tile at the current coordinates
+                tile->SetGround("GroundGrass"); // Set the ground type to grass
 
-                tile->SetGround("GroundGrass");
-
+                // Set vertical fence pieces along the left and right edges
                 if (x == left || x == right - 1)
                 {
                     tile->SetObject("ObjectWoodenFenceVertical");
                 }
 
+                // Set horizontal fence pieces along the top and bottom edges
                 if (y == top || y == bottom - 1)
                 {
                     tile->SetObject("ObjectWoodenFenceHorizontal");
                 }
 
+                // Set corner fence pieces
                 if (x == left && y == top)
                 {
                     tile->SetObject("ObjectWoodenFenceNW");
@@ -234,6 +188,7 @@ namespace ForradiaWorld
             }
         }
 
+        // Set the claim flag at the starting position of the player
         startTile->SetObject("ObjectClaimFlag");
     }
 }

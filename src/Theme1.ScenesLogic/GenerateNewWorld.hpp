@@ -21,5 +21,16 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @brief Generates a new world with various elements such as ground types, lakes, trees, flowers, boulders, and creatures.
+    *
+    * This function is responsible for creating the environment of the world by:
+    * - Setting the ground for all tiles (e.g., grass or water).
+    * - Generating random lakes, trees, flowers, and boulders.
+    * - Spawning creatures like white rabbits and enemies at valid coordinates.
+    * - Creating a fenced area with a claim flag at a specified location.
+    *
+    * The world is generated based on random values for lakes, creatures, and objects, providing a unique world layout each time it's called.
+    */
     void GenerateNewWorld();
 }

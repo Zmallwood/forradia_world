@@ -23,11 +23,30 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class IntroScene
+    * @brief Represents the intro scene in the game, derived from the IScene base class.
+    *
+    * The IntroScene handles the update and render operations specific to the introductory scene,
+    * transitioning to the next scene once the intro is completed.
+    */
     class IntroScene : public IScene
     {
       protected:
+        /**
+        * @brief Updates the state of the IntroScene.
+        *
+        * This function is called every frame and performs any updates necessary
+        * for the intro scene, such as transitioning to the WorldGeneration scene.
+        */
         void UpdateDerived() override;
 
+        /**
+        * @brief Renders the IntroScene to the screen.
+        *
+        * This function is called every frame and draws the elements specific to
+        * the intro scene, such as background images and the logo.
+        */
         void RenderDerived() const override;
     };
 }

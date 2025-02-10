@@ -21,9 +21,12 @@
 
 int main(int argc, char** argv)
 {
+    // Use the ForradiaWorld namespace to access relevant classes and functions.
     using namespace ForradiaWorld;
 
+    // Run the Theme1 theme.
     _<Theme1>().Run();
 
+    // Return 0 to indicate successful execution of the program.
     return 0;
 }

@@ -21,7 +21,23 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @brief Gets the size of the grid (number of columns and rows).
+    *
+    * This function calculates the grid size based on the aspect ratio and the number of grid rows.
+    * It returns the number of columns and rows as a `Size` object.
+    *
+    * @return Size The size of the grid, with columns as the first value and rows as the second.
+    */
     Size GetGridSize();
 
+    /**
+    * @brief Gets the size of a single tile (width and height).
+    *
+    * This function calculates the tile size based on the grid settings. It computes the height from the
+    * number of grid rows and derives the corresponding width using the aspect ratio.
+    *
+    * @return SizeF The size of a tile, with width as the first value and height as the second.
+    */
     SizeF GetTileSize();
 }

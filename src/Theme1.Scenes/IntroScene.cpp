@@ -25,13 +25,16 @@ namespace ForradiaWorld
 {
     void IntroScene::UpdateDerived()
     {
+        // Transition to the next scene (WorldGeneration) when updating the Intro scene.
         _<ScenesServiceDevice>().GoToScene(SceneNames::WorldGeneration);
     }
 
     void IntroScene::RenderDerived() const
     {
+        // Draw the background image for the scene, covering the full canvas.
         _<ImageDrawDevice>().DrawImage("DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
 
+        // Draw the logo at a specific position on the screen (top-center of the canvas).
         _<ImageDrawDevice>().DrawImage("ForradiaWorldLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
     }
 }

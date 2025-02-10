@@ -21,14 +21,33 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @enum SceneNames
+    * @brief Defines the different scene types in the game.
+    *
+    * This enum contains the names of the scenes used within the game. Each value represents
+    * a unique scene that can be used in scene management and transition.
+    */
     enum class SceneNames
     {
+        /**
+        * @brief The introductory scene.
+        */
         Intro,
 
+        /**
+        * @brief The main menu scene where the player can start the game, view settings, etc.
+        */
         MainMenu,
 
+        /**
+        * @brief The scene used for world generation, where the game world is prepared or loaded.
+        */
         WorldGeneration,
 
+        /**
+        * @brief The main gameplay scene where the core interaction occurs.
+        */
         Main
     };
 }

@@ -21,5 +21,16 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @brief Updates the hero's movement based on mouse input.
+    *
+    * This function handles the movement of the hero when the left mouse button is clicked.
+    * It checks if the left mouse button has been clicked and updates the hero's destination
+    * to the hovered tile. It then moves the hero towards the destination if needed,
+    * ensuring the hero moves at the correct speed based on the time interval.
+    *
+    * It handles both horizontal and vertical movement to reach the destination.
+    * The movement is processed only after the specified movement time interval has passed.
+    */
     void UpdateHeroMouseMovement();
 }

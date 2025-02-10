@@ -21,5 +21,14 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @brief Updates the movement of all animals in the world.
+    *
+    * This function iterates over all the creatures in the world, checks if they are animals,
+    * and moves them randomly within the bounds of the world. The movement is performed based
+    * on the animal's movement speed and a time threshold to control movement frequency. The
+    * animal's position is updated in the creatures mirror reference, and the last movement
+    * timestamp is updated.
+    */
     void UpdateAnimalsMovement();
 }

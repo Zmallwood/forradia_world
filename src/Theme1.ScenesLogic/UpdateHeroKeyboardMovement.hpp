@@ -21,5 +21,15 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @brief Updates the hero's movement based on keyboard input (arrow keys).
+    *
+    * This function checks if any of the arrow keys (up, down, left, right) are pressed and
+    * moves the hero accordingly. It also ensures that the hero can only move once per
+    * specified time interval, determined by the hero's movement speed.
+    *
+    * @note This function depends on the `KeyboardDevice` and `HeroDevice` for detecting key presses
+    *       and updating the hero's position.
+    */
     void UpdateHeroKeyboardMovement();
 }

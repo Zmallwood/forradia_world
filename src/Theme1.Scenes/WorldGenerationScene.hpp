@@ -23,11 +23,31 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class WorldGenerationScene
+    * @brief A scene responsible for generating the world.
+    *
+    * This scene handles the logic for generating a new world and transitioning
+    * to the main scene once the generation is complete. It extends from the
+    * base class IScene.
+    */
     class WorldGenerationScene : public IScene
     {
       protected:
+        /**
+        * @brief Updates the scene, generating a new world and transitioning to the main scene.
+        *
+        * This function is called during the update phase of the scene and performs the
+        * world generation and transitions to the next scene once the world is ready.
+        */
         void UpdateDerived() override;
 
+        /**
+        * @brief Renders the scene.
+        *
+        * This function is called during the render phase, but no rendering is performed
+        * in this particular scene.
+        */
         void RenderDerived() const override;
     };
 }

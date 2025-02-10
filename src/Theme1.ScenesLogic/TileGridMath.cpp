@@ -24,23 +24,31 @@ namespace ForradiaWorld
 {
     Size GetGridSize()
     {
+        // Retrieve the number of rows in the grid from settings
         auto numGridRows = _<SettingsDevice>().k_numGridRows;
 
+        // Get the aspect ratio for the grid
         auto aspectRatio = GetAspectRatio();
 
+        // Calculate the number of columns based on the rows and aspect ratio
         auto numGridCols = static_cast<int>(numGridRows * aspectRatio) + 1;
 
+        // Return the grid size as a Size structure (columns, rows)
         return { numGridCols, numGridRows };
     }
 
     SizeF GetTileSize()
     {
+        // Retrieve the number of rows in the grid from settings
         auto numGridRows = _<SettingsDevice>().k_numGridRows;
 
+        // Calculate the tile height based on the number of grid rows
         auto tileHeight = 1.0f / numGridRows;
 
+        // Convert the tile height to its corresponding width based on the aspect ratio
         auto tileWidth = ConvertHeightToWidth(tileHeight);
 
+        // Return the tile size as a SizeF structure (width, height)
         return { tileWidth, tileHeight };
     }
 }

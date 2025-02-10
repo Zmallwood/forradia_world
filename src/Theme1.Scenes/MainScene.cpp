@@ -28,17 +28,22 @@ namespace ForradiaWorld
 {
     void MainScene::UpdateDerived()
     {
+        // Update the movement of all animals in the scene
         UpdateAnimalsMovement();
 
+        // Update the hero's movement based on keyboard input
         UpdateHeroKeyboardMovement();
 
+        // Update the hero's movement based on mouse input
         UpdateHeroMouseMovement();
 
+        // Update the tile hovering service (handles hovering interactions on the map)
         _<TileHoveringService>().Update();
     }
 
     void MainScene::RenderDerived() const
     {
+        // Render the world view (responsible for drawing the game world, including tiles, creatures, etc.)
         _<WorldViewService>().Render();
     }
 }

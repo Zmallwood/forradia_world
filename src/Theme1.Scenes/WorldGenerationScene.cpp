@@ -25,12 +25,15 @@ namespace ForradiaWorld
 {
     void WorldGenerationScene::UpdateDerived()
     {
+        // Generate a new world when the scene is updated.
         GenerateNewWorld();
 
+        // Transition to the main scene once the world is generated.
         _<ScenesServiceDevice>().GoToScene(SceneNames::Main);
     }
 
     void WorldGenerationScene::RenderDerived() const
     {
+        // No rendering is performed in this scene for now.
     }
 }

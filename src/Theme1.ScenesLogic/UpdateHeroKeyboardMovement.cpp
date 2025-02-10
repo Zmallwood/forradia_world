@@ -18,44 +18,49 @@
  */
 
 #include "UpdateHeroKeyboardMovement.hpp"
-#include "Theme1.Core.Devices/KeyboardDevice.hpp"
 #include "Theme1.Core.Devices/HeroDevice.hpp"
+#include "Theme1.Core.Devices/KeyboardDevice.hpp"
 
 namespace ForradiaWorld
 {
     void UpdateHeroKeyboardMovement()
     {
+        // Check if specific arrow keys are pressed
         auto upPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_UP);
         auto rightPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_RIGHT);
         auto downPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_DOWN);
         auto leftPressed = _<KeyboardDevice>().KeyIsPressed(SDLK_LEFT);
 
+        // Get the current time in milliseconds
         auto now = SDL_GetTicks();
 
+        // If enough time has passed since the last movement and a direction key is pressed
         if (now > _<HeroDevice>().GetTicksLastMovement() + 1000 / _<HeroDevice>().GetMovementSpeed()
             && (upPressed || rightPressed || downPressed || leftPressed))
         {
 
+            // Move the hero in the corresponding direction if the key is pressed
             if (upPressed)
             {
-                _<HeroDevice>().MoveUp();
+                _<HeroDevice>().MoveUp(); // Move hero up
             }
 
             if (rightPressed)
             {
-                _<HeroDevice>().MoveRight();
+                _<HeroDevice>().MoveRight(); // Move hero right
             }
 
             if (downPressed)
             {
-                _<HeroDevice>().MoveDown();
+                _<HeroDevice>().MoveDown(); // Move hero down
             }
 
             if (leftPressed)
             {
-                _<HeroDevice>().MoveLeft();
+                _<HeroDevice>().MoveLeft(); // Move hero left
             }
 
+            // Update the hero's last movement time to prevent continuous movement
             _<HeroDevice>().SetTicksLastMovement(now);
         }
     }
