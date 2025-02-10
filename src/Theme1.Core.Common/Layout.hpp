@@ -21,6 +21,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+Different points that a graphical object can be anchored to. */
+
     enum class AnchorStyles
     {
         TopLeft,
