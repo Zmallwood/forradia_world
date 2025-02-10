@@ -21,7 +21,7 @@
 
 namespace ForradiaWorld
 {
-    class WorldView
+    class WorldViewService
     {
       public:
         void Render() const;

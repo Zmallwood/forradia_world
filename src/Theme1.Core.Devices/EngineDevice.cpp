@@ -25,14 +25,14 @@
 
 #include "SDLDevice.hpp"
 
-#include "ScenesDevice.hpp"
+#include "ScenesServiceDevice.hpp"
 
 #include "FPSCounterDevice.hpp"
 
 namespace ForradiaWorld
 {
     /*
-============= CLASS: EngineDevice ============= */
+CLASS: EngineDevice */
 
     void EngineDevice::Run()
     {
@@ -55,14 +55,14 @@ Handle input coming from the player. */
             /*
 Update the engine. */
 
-            _<ScenesDevice>().UpdateCurrentScene();
+            _<ScenesServiceDevice>().UpdateCurrentScene();
             _<FPSCounterDevice>().Update();
 
             /*
 Render the engine. */
 
             _<SDLDevice>().ClearCanvas();
-            _<ScenesDevice>().RenderCurrentScene();
+            _<ScenesServiceDevice>().RenderCurrentScene();
             _<FPSCounterDevice>().Render();
             _<SDLDevice>().PresentCanvas();
         }

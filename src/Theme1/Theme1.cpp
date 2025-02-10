@@ -24,7 +24,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: Theme1 ============= */
+CLASS: TileHovering */
 
     void Theme1::Run()
     {

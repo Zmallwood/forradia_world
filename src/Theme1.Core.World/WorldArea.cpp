@@ -26,7 +26,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: WorldArea ============= */
+CLASS: WorldArea */
 
     WorldArea::WorldArea()
     {

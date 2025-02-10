@@ -39,6 +39,9 @@ Alghorithm from forgotten source on the net. */
         return static_cast<int>(hash);
     }
 
+    /*
+CLASS: SDLDeleter */
+
     void SDLDeleter::operator()(SDL_Window* window) const
     {
         /*

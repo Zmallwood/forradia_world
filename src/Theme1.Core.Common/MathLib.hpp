@@ -27,6 +27,11 @@ namespace ForradiaWorld
     class Point
     {
       public:
+        bool operator==(const Point& other) const
+        {
+            return x == other.x && y == other.y;
+        }
+
         int x { 0 };
         int y { 0 };
     };

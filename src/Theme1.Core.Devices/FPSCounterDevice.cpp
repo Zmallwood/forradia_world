@@ -23,6 +23,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+CLASS: FPSCounterDevice */
+
     void FPSCounterDevice::Update()
     {
         auto now = SDL_GetTicks();

@@ -25,10 +25,10 @@ namespace ForradiaWorld
 {
     class IScene;
 
-    class ScenesDevice
+    class ScenesServiceDevice
     {
       public:
-        ScenesDevice();
+        ScenesServiceDevice();
 
         void UpdateCurrentScene();
 

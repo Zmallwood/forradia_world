@@ -23,6 +23,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+CLASS: TextDrawDevice */
+
     TextDrawDevice::TextDrawDevice()
     {
         TTF_Init();

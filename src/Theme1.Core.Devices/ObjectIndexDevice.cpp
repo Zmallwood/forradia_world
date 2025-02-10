@@ -21,6 +21,9 @@
 
 namespace ForradiaWorld
 {
+    /*
+CLASS: ObjectIndexDevice */
+
     ObjectIndexDevice::ObjectIndexDevice()
     {
         using namespace ObjectFlags;

@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: HeroDevice ============= */
+CLASS: HeroDevice */
 
     void HeroDevice::MoveUp()
     {

@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: MouseButton ============= */
+CLASS: MouseButton */
 
     void MouseButton::RegisterPress()
     {
@@ -69,7 +69,7 @@ Get state, reset it and return. */
     }
 
     /*
-============= CLASS: MouseDevice ============= */
+CLASS: MouseDevice */
 
     MouseDevice::MouseDevice()
         : m_leftButton(std::make_shared<MouseButton>())

@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: KeyboardDevice ============= */
+CLASS: KeyboardDevice */
 
     void KeyboardDevice::RegisterKeyPress(SDL_Keycode key)
     {

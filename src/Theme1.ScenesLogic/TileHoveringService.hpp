@@ -21,7 +21,7 @@
 
 namespace ForradiaWorld
 {
-    class TileHovering
+    class TileHoveringService
     {
       public:
         void Update();

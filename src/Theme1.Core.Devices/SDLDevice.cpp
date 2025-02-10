@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: SDLDevice ============= */
+CLASS: SDLDevice */
 
     SDLDevice::SDLDevice()
     {

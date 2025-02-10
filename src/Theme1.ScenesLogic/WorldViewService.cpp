@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-#include "WorldView.hpp"
+#include "WorldViewService.hpp"
 
 #include "Theme1.Core.Devices/HeroDevice.hpp"
 
@@ -29,14 +29,14 @@
 
 #include "Theme1.ScenesLogic/TileGridMath.hpp"
 
-#include "TileHovering.hpp"
+#include "TileHoveringService.hpp"
 
 namespace ForradiaWorld
 {
     /*
-============= CLASS: WorldView ============= */
+CLASS: WorldViewService */
 
-    void WorldView::Render() const
+    void WorldViewService::Render() const
     {
         /*
 =================== SETUP ====================*/
@@ -47,7 +47,7 @@ namespace ForradiaWorld
         Size gridSize = GetGridSize();
         SizeF tileSize = GetTileSize();
 
-        Point hoveredTile = _<TileHovering>().GetHoveredTile();
+        Point hoveredTile = _<TileHoveringService>().GetHoveredTile();
 
         float smallValue = 0.002f;
 

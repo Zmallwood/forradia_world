@@ -24,7 +24,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: ImageLoadDevice ============= */
+CLASS: ImageLoadDevice */
 
     ImageLoadDevice::ImageLoadDevice()
     {

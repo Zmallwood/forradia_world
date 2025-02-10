@@ -26,7 +26,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: ImageDrawDevice ============= */
+CLASS: ImageDrawDevice */
 
     void ImageDrawDevice::DrawImage(int imageNameHash, RectF destination) const
     {

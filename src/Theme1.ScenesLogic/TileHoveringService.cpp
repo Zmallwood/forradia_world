@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-#include "TileHovering.hpp"
+#include "TileHoveringService.hpp"
 
 #include "Theme1.Core.Devices/HeroDevice.hpp"
 
@@ -26,9 +26,9 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: TileHovering ============= */
+CLASS: TileHoveringService */
 
-    void TileHovering::Update()
+    void TileHoveringService::Update()
     {
         auto mousePosition = GetMousePosition();
         auto gridSize = GetGridSize();

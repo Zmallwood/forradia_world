@@ -21,16 +21,16 @@
 
 #include "Theme1.Core.Devices/ImageDrawDevice.hpp"
 
-#include "Theme1.Core.Devices/ScenesDevice.hpp"
+#include "Theme1.Core.Devices/ScenesServiceDevice.hpp"
 
 namespace ForradiaWorld
 {
     /*
-============= CLASS: IntroScene ============= */
+CLASS: IntroScene */
 
     void IntroScene::UpdateDerived()
     {
-        _<ScenesDevice>().GoToScene(SceneNames::WorldGeneration);
+        _<ScenesServiceDevice>().GoToScene(SceneNames::WorldGeneration);
     }
 
     void IntroScene::RenderDerived() const

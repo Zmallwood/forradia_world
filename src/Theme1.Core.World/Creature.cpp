@@ -22,7 +22,7 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: Creature ============= */
+CLASS: Creature */
 
     Creature::Creature(std::string_view creatureName)
         : m_type(Hash(creatureName))

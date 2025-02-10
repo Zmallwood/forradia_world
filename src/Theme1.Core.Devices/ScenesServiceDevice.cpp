@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-#include "ScenesDevice.hpp"
+#include "ScenesServiceDevice.hpp"
 
 #include "Theme1.Scenes/IntroScene.hpp"
 
@@ -28,9 +28,9 @@
 namespace ForradiaWorld
 {
     /*
-============= CLASS: ScenesDevice ============= */
+CLASS: ScenesServiceDevice */
 
-    ScenesDevice::ScenesDevice()
+    ScenesServiceDevice::ScenesServiceDevice()
     {
         AddScene(SceneNames::Intro, _<IntroScene>());
         AddScene(SceneNames::WorldGeneration, _<WorldGenerationScene>());
@@ -39,12 +39,12 @@ namespace ForradiaWorld
         GoToScene(SceneNames::Intro);
     }
 
-    void ScenesDevice::AddScene(SceneNames sceneName, IScene& scene)
+    void ScenesServiceDevice::AddScene(SceneNames sceneName, IScene& scene)
     {
         m_scenes.insert({ sceneName, scene });
     }
 
-    void ScenesDevice::UpdateCurrentScene()
+    void ScenesServiceDevice::UpdateCurrentScene()
     {
         if (m_scenes.contains(m_currentScene))
         {
@@ -52,7 +52,7 @@ namespace ForradiaWorld
         }
     }
 
-    void ScenesDevice::RenderCurrentScene() const
+    void ScenesServiceDevice::RenderCurrentScene() const
     {
         if (m_scenes.contains(m_currentScene))
         {
@@ -60,7 +60,7 @@ namespace ForradiaWorld
         }
     }
 
-    void ScenesDevice::GoToScene(SceneNames sceneName)
+    void ScenesServiceDevice::GoToScene(SceneNames sceneName)
     {
         m_currentScene = sceneName;
     }

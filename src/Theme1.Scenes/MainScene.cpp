@@ -19,7 +19,7 @@
 
 #include "MainScene.hpp"
 
-#include "Theme1.ScenesLogic/TileHovering.hpp"
+#include "Theme1.ScenesLogic/TileHoveringService.hpp"
 
 #include "Theme1.ScenesLogic/UpdateAnimalsMovement.hpp"
 
@@ -27,12 +27,12 @@
 
 #include "Theme1.ScenesLogic/UpdateHeroMouseMovement.hpp"
 
-#include "Theme1.ScenesLogic/WorldView.hpp"
+#include "Theme1.ScenesLogic/WorldViewService.hpp"
 
 namespace ForradiaWorld
 {
     /*
-============= CLASS: MainScene ============= */
+CLASS: MainScene */
 
     void MainScene::UpdateDerived()
     {
@@ -42,11 +42,11 @@ namespace ForradiaWorld
 
         UpdateHeroMouseMovement();
 
-        _<TileHovering>().Update();
+        _<TileHoveringService>().Update();
     }
 
     void MainScene::RenderDerived() const
     {
-        _<WorldView>().Render();
+        _<WorldViewService>().Render();
     }
 }

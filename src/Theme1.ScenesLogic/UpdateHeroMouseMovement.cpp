@@ -23,7 +23,7 @@
 
 #include "Theme1.Core.Devices/HeroDevice.hpp"
 
-#include "TileHovering.hpp"
+#include "TileHoveringService.hpp"
 
 namespace ForradiaWorld
 {
@@ -32,7 +32,7 @@ namespace ForradiaWorld
         auto now = SDL_GetTicks();
 
         auto leftMouseFired = _<MouseDevice>().GetLeftButton()->GetBeenFiredPickResult();
-        auto hoveredTile = _<TileHovering>().GetHoveredTile();
+        auto hoveredTile = _<TileHoveringService>().GetHoveredTile();
 
         if (leftMouseFired)
         {
@@ -42,7 +42,7 @@ namespace ForradiaWorld
         auto destination = _<HeroDevice>().GetDestination();
         auto heroPos = _<HeroDevice>().GetPosition();
 
-        if (destination.x == heroPos.x && destination.y == heroPos.y)
+        if (destination == heroPos)
         {
             _<HeroDevice>().SetDestination({ -1, -1 });
 
