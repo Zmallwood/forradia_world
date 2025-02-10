@@ -18,19 +18,22 @@
  */
 
 #include "WorldArea.hpp"
-#include "Tile.hpp"
 #include "Theme1.Core.Devices/SettingsDevice.hpp"
+#include "Tile.hpp"
 
 namespace ForradiaWorld
 {
     WorldArea::WorldArea()
     {
+        // Get the world area size from the settings device
         auto size = _<SettingsDevice>().k_worldAreaSize;
 
+        // Initialize the 2D vector to store tiles for each row
         for (auto x = 0; x < size.w; x++)
         {
             m_tiles.push_back(std::vector<std::shared_ptr<Tile>>());
 
+            // Initialize each column (tile) in the row
             for (auto y = 0; y < size.h; y++)
             {
                 m_tiles.at(x).push_back(std::make_shared<Tile>());
@@ -40,31 +43,39 @@ namespace ForradiaWorld
 
     std::shared_ptr<Tile> WorldArea::GetTile(int x, int y) const
     {
+        // Return the tile at the specified (x, y) coordinates
         return m_tiles.at(x).at(y);
     }
 
     std::shared_ptr<Tile> WorldArea::GetTile(Point coordinate) const
     {
+        // Return the tile using the coordinate object
         return GetTile(coordinate.x, coordinate.y);
     }
 
     Size WorldArea::GetSize() const
     {
+        // Get the width (number of rows) and height (number of columns) of the world area
         auto width = static_cast<int>(m_tiles.size());
         auto height = 0;
 
+        // If the world area is not empty, set the height from the first row
         if (width)
         {
             height = static_cast<int>(m_tiles.at(0).size());
         }
 
+        // Return the size as a Size object
         return { width, height };
     }
 
     bool WorldArea::IsValidCoordinate(int x, int y) const
     {
+        // Get the size of the world area
         auto size = GetSize();
 
+        // Check if the coordinates are within the bounds of the world area
         return x >= 0 && y >= 0 && x < size.w && y < size.h;
     }
+
 }

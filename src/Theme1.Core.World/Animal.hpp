@@ -23,9 +23,20 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class Animal
+    * @brief Represents an animal in the game world.
+    *
+    * This class inherits from Creature and does not introduce additional functionality.
+    */
     class Animal : public Creature
     {
       public:
+        /**
+        * @brief Constructs an Animal object using the Creature constructor.
+        * @param creatureName The name of the animal creature.
+        */
         using Creature::Creature;
     };
+
 }

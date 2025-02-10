@@ -23,11 +23,14 @@ namespace ForradiaWorld
 {
     void IScene::Update()
     {
+        // Calls the derived class's implementation of UpdateDerived()
         UpdateDerived();
     }
 
     void IScene::Render() const
     {
+        // Calls the derived class's implementation of RenderDerived()
         RenderDerived();
     }
+
 }

@@ -21,10 +21,22 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class SettingsDevice
+    * @brief Stores global settings and configuration values for the application.
+    */
     class SettingsDevice
     {
       public:
+        /**
+        * @brief The number of grid rows used in the game world.
+        */
         const int k_numGridRows { 15 };
+
+        /**
+        * @brief The size of the world area, defined in grid units.
+        */
         const Size k_worldAreaSize { 100, 100 };
     };
+
 }

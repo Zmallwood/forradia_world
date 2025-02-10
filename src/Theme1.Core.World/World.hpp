@@ -23,17 +23,34 @@ namespace ForradiaWorld
 {
     class WorldArea;
 
+    /**
+    * @class World
+    * @brief Represents the game world, holding information about the current world area.
+    *
+    * This class manages the game world and provides access to the current world area.
+    * It is responsible for storing and retrieving the active world area at any given time.
+    */
     class World
     {
       public:
+        /**
+        * @brief Constructs a new World object.
+        *
+        * The constructor initializes the world by setting the current world area.
+        */
         World();
 
+        /**
+        * @brief Gets the current world area.
+        * @return A shared pointer to the current world area.
+        */
         auto GetCurrentWorldArea() const
         {
             return m_currentWorldArea;
         }
 
       private:
-        std::shared_ptr<WorldArea> m_currentWorldArea;
+        std::shared_ptr<WorldArea> m_currentWorldArea; /**< A shared pointer to the current world area. */
     };
+
 }

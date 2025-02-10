@@ -23,9 +23,21 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class Enemy
+    * @brief Represents an enemy in the game.
+    *
+    * The Enemy class is derived from the Creature class and inherits its attributes and methods.
+    * It can be further extended to include specific behaviors or properties unique to enemies.
+    */
     class Enemy : public Creature
     {
       public:
+        /**
+        * @brief Constructs an Enemy object using the Creature constructor.
+        * @param creatureName The name of the enemy creature.
+        */
         using Creature::Creature;
     };
+
 }

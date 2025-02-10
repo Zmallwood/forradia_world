@@ -21,16 +21,37 @@
 
 namespace ForradiaWorld
 {
+    /**
+    * @class IScene
+    * @brief Base class for all scenes in the application.
+    */
     class IScene
     {
       public:
+        /**
+        * @brief Updates the scene logic.
+        * Calls the derived class's implementation of UpdateDerived().
+        */
         void Update();
 
+        /**
+        * @brief Renders the scene content.
+        * Calls the derived class's implementation of RenderDerived().
+        */
         void Render() const;
 
       protected:
+        /**
+        * @brief Virtual method for updating the scene logic.
+        * Can be overridden by derived classes to implement custom behavior.
+        */
         virtual void UpdateDerived() { }
 
+        /**
+        * @brief Virtual method for rendering the scene content.
+        * Can be overridden by derived classes to implement custom rendering.
+        */
         virtual void RenderDerived() const { }
     };
+
 }

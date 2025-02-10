@@ -21,26 +21,49 @@
 
 namespace ForradiaWorld
 {
+    /**
+ * @class SDLDevice
+ * @brief Manages SDL initialization, window, and rendering operations.
+ */
     class SDLDevice
     {
       public:
+        /**
+        * @brief Constructs an SDLDevice, initializing SDL and creating a window and renderer.
+        */
         SDLDevice();
 
+        /**
+        * @brief Clears the rendering canvas by filling it with a black color.
+        */
         void ClearCanvas() const;
 
+        /**
+        * @brief Presents the current rendering canvas to the screen.
+        */
         void PresentCanvas() const;
 
+        /**
+        * @brief Retrieves the SDL window.
+        * @return A shared pointer to the SDL_Window.
+        */
         auto GetWindow() const
         {
             return m_window;
         }
+
+        /**
+        * @brief Retrieves the SDL renderer.
+        * @return A shared pointer to the SDL_Renderer.
+        */
         auto GetRenderer() const
         {
             return m_renderer;
         }
 
       private:
-        std::shared_ptr<SDL_Window> m_window;
-        std::shared_ptr<SDL_Renderer> m_renderer;
+        std::shared_ptr<SDL_Window> m_window; ///< Smart pointer holding the SDL window.
+        std::shared_ptr<SDL_Renderer> m_renderer; ///< Smart pointer holding the SDL renderer.
     };
+
 }
